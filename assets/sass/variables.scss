@@ -1,0 +1,97 @@
+/* COLORS */
+$black: #000000;
+$white: #FFFFFF;
+$green-dark: #093E34;
+$green-mid: #117D6A;
+$green-light: #D1FFE0;
+$green-light-alt: #B3E8C5;
+$purple-dark: #342484;
+$purple-mid: #5353B8;
+$purple-light: #BFBFFD;
+
+/* SCREEN SIZES */
+$smallmobile: 465px;
+$mobile: 767px;
+$tablet: 1023px;
+$desktop: 1279px;
+$largedesktop: 1439px;
+$maxdesktop: 1680px;
+
+/* FONTS */
+/*
+@font-face {
+    font-family: 'Media Sans SemiCondensed';
+    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot');
+    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff2') format('woff2'),
+        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff') format('woff'),
+        url('./assets/fonts/MediaSansSemiCondensed-Regular.ttf') format('truetype'),
+        url('./assets/fonts/MediaSansSemiCondensed-Regular.svg#MediaSansSemiCondensed-Regular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+*/
+.font-main {
+    font-family: 'Media Sans SemiCondensed', sans-serif;
+}
+.font-sans {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* TITLE */
+h1, .h1 {
+
+}
+h2, .h2 {
+    
+}
+h3, .h3 {
+
+}
+h4, .h4,
+h5, .h5 {
+    
+}
+h6, .h6 {
+
+}
+
+// RESPONSIVE
+@media screen and (max-width: $desktop) {
+    h1, .h1 {
+
+    }
+    h2, .h2 {
+        
+    }
+    h3, .h3 {
+
+    }
+    h4, .h4,
+    h5, .h5 {
+        
+    }
+    h6, .h6 {
+
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    h1, .h1 {
+
+    }
+    h2, .h2 {
+        
+    }
+    h3, .h3 {
+
+    }
+    h4, .h4,
+    h5, .h5 {
+        
+    }
+    h6, .h6 {
+
+    }
+}

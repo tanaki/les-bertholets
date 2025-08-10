@@ -1,0 +1,307 @@
+@use 'variables' as *;
+
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;  
+}
+
+html {
+	font-size: 62.5%;
+	min-height: 100vh;
+	scroll-behavior: smooth;
+}
+
+body {
+	@extend .font-main;
+	font-size: 1.6rem;
+	line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/* HEADER */
+header {
+
+	background-color: $green-dark;
+	color: $purple-light;
+	
+	.block-inside {
+		max-width: $maxdesktop;
+	}
+
+	.logo {
+		display: block;
+		margin: 0 6rem;
+	}
+
+	.header-nav {
+		align-items: center;
+		border-bottom: 0.1rem solid $purple-light;
+		display: flex;
+		height: 13.6rem;
+		justify-content: space-between;
+	}
+	.mobile-nav {
+		display: none;
+	}
+}
+
+nav {
+	margin: 0 3rem;
+
+    a {
+		color: $purple-light;
+		display: block;
+		@extend .font-sans;
+		padding: 3rem;
+		text-transform: uppercase;
+
+        &:hover {
+            color: $green-light;
+        }
+    }
+
+	& > ul {
+		align-items: center;
+        display: flex;
+        justify-content: space-between;
+	}
+
+	.has-secondary-nav { 
+		position: relative; 
+	}
+
+	.secondary-nav { 
+		background-color: $black;
+		left: 0;
+		opacity: 0;
+		padding-bottom: 2rem;
+		position: absolute;
+		top: 6rem;
+		transform: translateY(-2em);
+		transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+		visibility: hidden;
+		width: 22rem;
+		z-index: -1;
+
+		li {
+			&:first-child {
+				margin-top: 1rem;
+			}
+		}
+		a {
+			display: block;
+			padding: 1rem 3rem;
+			text-transform: lowercase;
+		}
+	}
+
+	.has-secondary-nav:focus .secondary-nav,
+	.has-secondary-nav:focus-within .secondary-nav,
+	.has-secondary-nav:hover .secondary-nav {
+		opacity: 1;
+		transform: translateY(0%);
+		transition-delay: 0s, 0s, 0.3s;
+		visibility: visible;
+		z-index: 1;
+	}
+}
+
+/* HEADROOM */
+.headroom {
+	height: 13.6rem;
+	position: fixed;
+	top: 0;
+	width: 100%;
+    will-change: transform;
+    transition: transform 0.3s linear;
+	z-index: 10000;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+}
+
+/* MAIN */
+.main {
+    padding-top: 13.6rem;
+}
+
+/* FOOTER */
+footer {
+	
+}
+
+/* Button */
+
+/* Blocks */
+.block {
+	padding: 2rem 0;
+}
+.block-case-study {
+	padding: 1rem 0;
+}
+
+@media screen and (max-width: $desktop) {
+
+}
+
+@media screen and (max-width: $tablet) {
+	header {
+		&.headroom {
+			height: 8rem;
+		}
+		.container,
+		.header-nav {
+			height: 100%;
+		}
+		.logo {
+			margin: 2rem 0 2rem 2rem;
+			z-index: 1;
+
+			img {
+				display: block;
+				width: 20rem;
+			}
+		}
+
+		.header-nav {
+			border-bottom: none;
+			
+			&:after {
+				background-color: $green-dark;
+				border-bottom: 0.1rem solid $purple-light;
+				content: "";
+				display: block;
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				height: 8rem;
+				width: 100%;
+			}
+		}
+
+		nav {
+			background-color: $green-dark;
+			display: block;
+			bottom: 0;
+			left: 0;
+			height: 100svh;
+			margin: 0;
+			overflow-y: auto;
+			padding-top: 8rem;
+			position: fixed;
+			right: 0;
+			top: 0;
+			transform: translate( 100vw, 0 );
+			transition: transform 0.3s ease;
+
+			& > ul {
+				display: block;
+			}
+			a {
+				padding: 2rem 3rem;
+			}
+			.secondary-nav {
+				display: block;
+				margin-left: 2rem;
+				opacity: 1;
+				position: static;
+				transform: none;
+				visibility: visible;
+			}
+		}
+
+		.mobile-nav {
+			display: block;
+		}
+
+		.toggle-nav {
+			height: 5rem;
+			position: absolute;
+			right: 2rem;
+			top: 50%;
+			transform: translateY(-50%);
+			width: 5rem;
+
+			span,
+			&:before,
+			&:after {
+				background: $purple-light;
+				display: block;
+				height: 0.1rem;
+				opacity: 1;
+				position: absolute;
+				right: 0;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 3rem;
+				transition: all 0.2s linear;
+			}
+
+			&:before,
+			&:after {
+				content: "";
+			}
+
+			&:before {
+				margin-top: -0.6rem;
+			}
+
+			&:after {
+				margin-top: 0.6rem;
+			}
+		}
+		
+		&.nav-open {
+			.container {
+				nav {
+					transform: translate(0, 0);
+				}
+			}
+
+			&.headroom--unpinned {
+				transform: none;
+			}
+
+			.toggle-nav {
+				span {
+					opacity: 0;
+				}
+				&:before,
+				&:after {
+					content: "";
+					margin: 0;
+				}
+				&:before {
+					transform: translateY(-50%) rotate(45deg);
+				}
+				&:after {
+					transform: translateY(-50%) rotate(-45deg);
+				}
+			}
+		}
+	}
+
+	.loaded {
+		header {
+			nav {
+				transition: transform 0.4s ease;
+			}
+		}
+	}
+	.has-nav-open {
+		height: 100svh;
+		overflow: hidden;
+	}
+
+	.main {
+		padding-top: 8rem;
+	}
+}
