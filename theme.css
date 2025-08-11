@@ -69,12 +69,13 @@ table {
     font-display: swap;
 }
 */
-.font-main, body {
-  font-family: "Media Sans SemiCondensed", sans-serif;
+.font-serif, .block-hero .quote {
+  font-family: serif;
 }
 
-.font-sans, nav a {
-  font-family: "Poppins", sans-serif;
+.font-sans, body, nav a {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
 }
 
 /* TITLE */
@@ -105,15 +106,15 @@ header {
   color: #BFBFFD;
 }
 header .block-inside {
-  max-width: 1680px;
+  margin: 0 auto;
+  max-width: 1439px;
 }
 header .logo {
   display: block;
-  margin: 0 6rem;
+  margin: 0;
 }
 header .header-nav {
   align-items: center;
-  border-bottom: 0.1rem solid #BFBFFD;
   display: flex;
   height: 13.6rem;
   justify-content: space-between;
@@ -123,7 +124,47 @@ header .mobile-nav {
 }
 
 nav {
-  margin: 0 3rem;
+  margin: 0;
+  /*
+  .has-secondary-nav { 
+  	position: relative; 
+  }
+
+  .secondary-nav { 
+  	background-color: $black;
+  	left: 0;
+  	opacity: 0;
+  	padding-bottom: 2rem;
+  	position: absolute;
+  	top: 6rem;
+  	transform: translateY(-2em);
+  	transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+  	visibility: hidden;
+  	width: 22rem;
+  	z-index: -1;
+
+  	li {
+  		&:first-child {
+  			margin-top: 1rem;
+  		}
+  	}
+  	a {
+  		display: block;
+  		padding: 1rem 3rem;
+  		text-transform: lowercase;
+  	}
+  }
+
+  .has-secondary-nav:focus .secondary-nav,
+  .has-secondary-nav:focus-within .secondary-nav,
+  .has-secondary-nav:hover .secondary-nav {
+  	opacity: 1;
+  	transform: translateY(0%);
+  	transition-delay: 0s, 0s, 0.3s;
+  	visibility: visible;
+  	z-index: 1;
+  }
+  */
 }
 nav a {
   color: #BFBFFD;
@@ -139,42 +180,13 @@ nav > ul {
   display: flex;
   justify-content: space-between;
 }
-nav .has-secondary-nav {
-  position: relative;
-}
-nav .secondary-nav {
-  background-color: #000000;
-  left: 0;
-  opacity: 0;
-  padding-bottom: 2rem;
-  position: absolute;
-  top: 6rem;
-  transform: translateY(-2em);
-  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
-  visibility: hidden;
-  width: 22rem;
-  z-index: -1;
-}
-nav .secondary-nav li:first-child {
-  margin-top: 1rem;
-}
-nav .secondary-nav a {
-  display: block;
-  padding: 1rem 3rem;
-  text-transform: lowercase;
-}
-nav .has-secondary-nav:focus .secondary-nav,
-nav .has-secondary-nav:focus-within .secondary-nav,
-nav .has-secondary-nav:hover .secondary-nav {
-  opacity: 1;
-  transform: translateY(0%);
-  transition-delay: 0s, 0s, 0.3s;
-  visibility: visible;
-  z-index: 1;
+nav ul li:last-child a {
+  padding-right: 0;
 }
 
 /* HEADROOM */
 .headroom {
+  border-bottom: 0.1rem solid #BFBFFD;
   height: 13.6rem;
   position: fixed;
   top: 0;
@@ -199,6 +211,33 @@ nav .has-secondary-nav:hover .secondary-nav {
 
 /* FOOTER */
 /* Button */
+.button {
+  border-radius: 0.8rem;
+  display: inline-block;
+  font-size: 1.7rem;
+  letter-spacing: -1.5%;
+  padding: 1.5rem 5rem;
+  text-transform: uppercase;
+}
+.button:hover {
+  background-color: #D1FFE0;
+  color: #093E34;
+}
+.button:focus {
+  background-color: #B3E8C5;
+  color: #093E34;
+}
+
+.button-light {
+  background-color: #BFBFFD;
+  color: #093E34;
+}
+
+.button-dark {
+  background-color: #093E34;
+  color: #BFBFFD;
+}
+
 /* Blocks */
 .block {
   padding: 2rem 0;
@@ -208,8 +247,17 @@ nav .has-secondary-nav:hover .secondary-nav {
   padding: 1rem 0;
 }
 
+@media screen and (max-width: 1600px) {
+  header .block-inside {
+    margin: 0 8rem;
+  }
+}
 @media screen and (max-width: 1023px) {
+  header .block-inside {
+    margin: 0 auto;
+  }
   header.headroom {
+    border-bottom: 0;
     height: 8rem;
   }
   header .container,
@@ -258,6 +306,9 @@ nav .has-secondary-nav:hover .secondary-nav {
   }
   header nav a {
     padding: 2rem 3rem;
+  }
+  header nav a:hover {
+    color: #D1FFE0;
   }
   header nav .secondary-nav {
     display: block;
@@ -329,8 +380,39 @@ nav .has-secondary-nav:hover .secondary-nav {
     padding-top: 8rem;
   }
 }
+.block-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.block-grid .button {
+  margin: 2rem auto 0;
+}
+
 .block-hero {
   background-color: #093E34;
+}
+.block-hero .block-inside {
+  display: flex;
+  gap: 1rem;
+  margin: 0 auto;
+  max-width: 1439px;
+}
+.block-hero .col {
+  color: #BFBFFD;
+  width: 50%;
+}
+.block-hero .quote {
+  font-size: 5rem;
+  font-style: italic;
+}
+.block-hero .strong {
+  font-weight: 900;
+}
+.block-hero .author {
+  font-size: 1.6rem;
+  letter-spacing: -1.5%;
+  margin: 2rem 0;
+  text-transform: uppercase;
 }
 
 /*# sourceMappingURL=theme.css.map */

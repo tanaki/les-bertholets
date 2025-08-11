@@ -1,3 +1,0 @@
-<div>
-    Prestations
-</div>

@@ -16,6 +16,7 @@ $tablet: 1023px;
 $desktop: 1279px;
 $largedesktop: 1439px;
 $maxdesktop: 1680px;
+$maxnav: 1600px;
 
 /* FONTS */
 /*
@@ -32,11 +33,15 @@ $maxdesktop: 1680px;
     font-display: swap;
 }
 */
-.font-main {
-    font-family: 'Media Sans SemiCondensed', sans-serif;
+
+.font-serif {
+    // font-family: "sole-serif-small-variable", sans-serif;
+    // font-variation-settings: "opsz" 0, "wght" 200;
+    font-family: serif;
 }
 .font-sans {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    font-optical-sizing: auto;
 }
 
 /* TITLE */

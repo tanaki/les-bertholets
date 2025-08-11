@@ -13,7 +13,8 @@ html {
 }
 
 body {
-	@extend .font-main;
+	// background-color: $green-dark;
+	@extend .font-sans;
 	font-size: 1.6rem;
 	line-height: 1.2;
 }
@@ -30,17 +31,17 @@ header {
 	color: $purple-light;
 	
 	.block-inside {
-		max-width: $maxdesktop;
+		margin: 0 auto;
+		max-width: $largedesktop;
 	}
 
 	.logo {
 		display: block;
-		margin: 0 6rem;
+		margin: 0;
 	}
 
 	.header-nav {
 		align-items: center;
-		border-bottom: 0.1rem solid $purple-light;
 		display: flex;
 		height: 13.6rem;
 		justify-content: space-between;
@@ -51,7 +52,7 @@ header {
 }
 
 nav {
-	margin: 0 3rem;
+	margin: 0;
 
     a {
 		color: $purple-light;
@@ -71,6 +72,11 @@ nav {
         justify-content: space-between;
 	}
 
+	ul li:last-child a {
+		padding-right: 0;
+	}
+
+	/*
 	.has-secondary-nav { 
 		position: relative; 
 	}
@@ -109,10 +115,12 @@ nav {
 		visibility: visible;
 		z-index: 1;
 	}
+	*/
 }
 
 /* HEADROOM */
 .headroom {
+	border-bottom: 0.1rem solid $purple-light;
 	height: 13.6rem;
 	position: fixed;
 	top: 0;
@@ -139,6 +147,31 @@ footer {
 }
 
 /* Button */
+.button {
+	border-radius: 0.8rem;
+	display: inline-block;
+	font-size: 1.7rem;
+	letter-spacing: -1.5%;
+	padding: 1.5rem 5rem;
+	text-transform: uppercase;
+
+	&:hover {
+		background-color: $green-light;
+		color: $green-dark;
+	}
+	&:focus {
+		background-color: $green-light-alt;
+		color: $green-dark;
+	}
+}
+.button-light {
+	background-color: $purple-light;
+	color: $green-dark;
+}
+.button-dark {
+	background-color: $green-dark;
+	color: $purple-light;
+}
 
 /* Blocks */
 .block {
@@ -148,13 +181,25 @@ footer {
 	padding: 1rem 0;
 }
 
+@media screen and (max-width: $maxnav) {
+	header {
+		.block-inside {
+			margin: 0 8rem;
+		}
+	}
+}
+
 @media screen and (max-width: $desktop) {
 
 }
 
 @media screen and (max-width: $tablet) {
 	header {
+		.block-inside {
+			margin: 0 auto;
+		}
 		&.headroom {
+			border-bottom: 0;
 			height: 8rem;
 		}
 		.container,
@@ -207,6 +252,10 @@ footer {
 			}
 			a {
 				padding: 2rem 3rem;
+
+				&:hover {
+					color: $green-light;
+				}
 			}
 			.secondary-nav {
 				display: block;
