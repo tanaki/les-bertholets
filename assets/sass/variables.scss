@@ -35,9 +35,27 @@ $maxnav: 1600px;
 */
 
 .font-serif {
-    // font-family: "sole-serif-small-variable", sans-serif;
-    // font-variation-settings: "opsz" 0, "wght" 200;
-    font-family: serif;
+    font-family: "sole-serif-small-variable", serif;
+}
+.font-serif-light {
+    @extend .font-serif;
+    font-variation-settings: "opsz" 500, "wght" 200;
+}
+.font-serif-regular {
+    @extend .font-serif;
+    font-variation-settings: "opsz" 500, "wght" 400;
+}
+.font-serif-medium {
+    @extend .font-serif;
+    font-variation-settings: "opsz" 500, "wght" 500;
+}
+.font-serif-bold {
+    @extend .font-serif;
+    font-variation-settings: "opsz" 500, "wght" 700;
+}
+.font-serif-black {
+    @extend .font-serif;
+    font-variation-settings: "opsz" 500, "wght" 900;
 }
 .font-sans {
     font-family: 'Montserrat', sans-serif;

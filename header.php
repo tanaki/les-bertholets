@@ -19,6 +19,8 @@
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+		<link rel="stylesheet" href="https://use.typekit.net/gbe2pwk.css">
+
 		<!-- theme -->
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">

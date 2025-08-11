@@ -16,12 +16,12 @@
     }
 
     .quote {
-        @extend .font-serif;
+        @extend .font-serif-light;
         font-size: 5rem;
         font-style: italic;
     }
     .strong {
-        font-weight: 900;
+        @extend .font-serif-black;
     }
     .author {
         font-size: 1.6rem;

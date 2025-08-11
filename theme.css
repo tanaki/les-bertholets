@@ -69,8 +69,28 @@ table {
     font-display: swap;
 }
 */
-.font-serif, .block-hero .quote {
-  font-family: serif;
+.font-serif, .font-serif-black, .block-hero .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .font-serif-light, .block-hero .quote {
+  font-family: "sole-serif-small-variable", serif;
+}
+
+.font-serif-light, .block-hero .quote {
+  font-variation-settings: "opsz" 500, "wght" 200;
+}
+
+.font-serif-regular {
+  font-variation-settings: "opsz" 500, "wght" 400;
+}
+
+.font-serif-medium {
+  font-variation-settings: "opsz" 500, "wght" 500;
+}
+
+.font-serif-bold {
+  font-variation-settings: "opsz" 500, "wght" 700;
+}
+
+.font-serif-black, .block-hero .strong {
+  font-variation-settings: "opsz" 500, "wght" 900;
 }
 
 .font-sans, body, nav a {
@@ -404,9 +424,6 @@ nav ul li:last-child a {
 .block-hero .quote {
   font-size: 5rem;
   font-style: italic;
-}
-.block-hero .strong {
-  font-weight: 900;
 }
 .block-hero .author {
   font-size: 1.6rem;
