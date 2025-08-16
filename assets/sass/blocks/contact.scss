@@ -1,0 +1,22 @@
+@use '../variables' as *;
+
+.block-contact {
+    background: $purple-light;
+    color: $purple-dark;
+
+    .block-inside {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        margin: 0 auto;
+        max-width: $largedesktop;
+        padding: 10rem 0;
+    }
+
+    h5 {
+        @extend .font-serif-regular;
+        font-style: italic;
+        font-size: 3.6rem;
+        max-width: 60%;
+    }
+}

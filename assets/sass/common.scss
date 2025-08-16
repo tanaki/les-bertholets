@@ -19,6 +19,11 @@ body {
 	line-height: 1.2;
 }
 
+::selection {
+	color: $grey-green;
+	background: $green-highlight;
+}
+
 a {
     text-decoration: none;
 }
@@ -36,8 +41,12 @@ header {
 	}
 
 	.logo {
+		color: $purple-light;
 		display: block;
+		height: 5.6rem;
 		margin: 0;
+		transition: color 0.2s ease;
+		width: 28rem;
 	}
 
 	.header-nav {
@@ -262,7 +271,9 @@ footer {
 			height: 100%;
 		}
 		.logo {
+			height: 4rem;
 			margin: 2rem 0 2rem 2rem;
+			width: 20rem;
 			z-index: 1;
 
 			img {
@@ -284,6 +295,7 @@ footer {
 				left: 0;
 				height: 8rem;
 				width: 100%;
+				transiton: all 0.4s ease;
 			}
 		}
 
@@ -365,9 +377,24 @@ footer {
 		}
 		
 		&.nav-open {
+
+			.logo {
+				color: $green-dark;
+			}
+
+			.header-nav:after {
+				background-color: $white;
+				border-bottom-color: $green-dark;
+			}
+
 			.container {
 				nav {
+					background-color: $white;
 					transform: translate(0, 0);
+
+					a {
+						color: $green-dark;
+					}
 				}
 			}
 
@@ -376,6 +403,12 @@ footer {
 			}
 
 			.toggle-nav {
+				span,
+				&:before,
+				&:after {
+					background: $green-dark;
+				}
+
 				span {
 					opacity: 0;
 				}

@@ -1,6 +1,8 @@
 let Content = {
     init : () => {
 
+        console.log( "content::init" );
+
         let intro = document.querySelector('.page-content > p:first-child');
         
         // TITLE

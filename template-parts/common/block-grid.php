@@ -1,28 +1,30 @@
 <div class="block block-grid">
-    <div>
-        Title
-    </div>
+    <div class="block-inside">
+        <h4>
+            Title
+        </h4>
 
-    <div class="grid">
-        <div class="grid-item">
-            Item 1
+        <div class="grid">
+            <div class="grid-item">
+                Item 1
+            </div>
+            <div class="grid-item">
+                Item 2
+            </div>
+            <div class="grid-item">
+                Item 3
+            </div>
+            <div class="grid-item">
+                Item 4
+            </div>
+            <div class="grid-item">
+                Item 5
+            </div>
+            <div class="grid-item">
+                Item 6
+            </div>
         </div>
-        <div class="grid-item">
-            Item 2
-        </div>
-        <div class="grid-item">
-            Item 3
-        </div>
-        <div class="grid-item">
-            Item 4
-        </div>
-        <div class="grid-item">
-            Item 5
-        </div>
-        <div class="grid-item">
-            Item 6
-        </div>
-    </div>
 
-    <a class="button button-dark" href="#">En savoir plus</a>
+        <a class="button button-dark" href="#">En savoir plus</a>
+    </div>
 </div>

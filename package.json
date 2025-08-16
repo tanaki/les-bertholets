@@ -6,10 +6,13 @@
         "watch:css": "sass --watch ./assets/sass/theme.scss ./theme.css",
         "concat:js": "concat-cli -f ./assets/js/components/*.js ./assets/js/main.js -o script.js",
         "watch:js": "watch -p \"**/*.js\" -c \"npm run concat:js\"",
-        "watch" : "npm run watch:css && npm run watch:js"
+        "watch": "npm run watch:css && npm run watch:js"
     },
     "dependencies": {
         "concat-cli": "^4.0.0",
         "sass": "^1.81.0"
+    },
+    "devDependencies": {
+        "watch-cli": "^0.2.3"
     }
 }

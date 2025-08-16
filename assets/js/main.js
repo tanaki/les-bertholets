@@ -29,6 +29,7 @@ if ( headerNavItems ) {
 /* Init on domloaded */
 if ( document ) {
   document.addEventListener("DOMContentLoaded", function(event){
+
     if (headroom) headroom.init();
     gsap.registerPlugin(ScrollTrigger);
 

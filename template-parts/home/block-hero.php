@@ -11,7 +11,7 @@
                 Ryma Hatahet
             </div>
             <a href="#" class="button button-light">
-                propos
+                &Aacute; propos
             </a>
         </div>
 

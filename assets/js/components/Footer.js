@@ -1,6 +1,8 @@
 let Footer = {
     init : () => {
 
+        console.log( "footer::init" );
+
         let container = "footer";
         let lists = document.querySelectorAll("footer .block-inside > div:not(.logo)");
 

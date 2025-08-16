@@ -1,4 +1,10 @@
 <div class="block block-logos">
-    option title centered<br/>
-    Block Logo List
+    <div class="block-inside">
+        <h4>
+            option title centered
+        </h4>
+        <div>
+            Block Logo List
+        </div>
+    </div>
 </div>
