@@ -93,7 +93,7 @@ table {
   font-variation-settings: "opsz" 500, "wght" 900;
 }
 
-.font-sans, body, nav a {
+.font-sans, body, header nav a {
   font-family: "Montserrat", sans-serif;
   font-optical-sizing: auto;
 }
@@ -142,8 +142,7 @@ header .header-nav {
 header .mobile-nav {
   display: none;
 }
-
-nav {
+header nav {
   margin: 0;
   /*
   .has-secondary-nav { 
@@ -186,21 +185,21 @@ nav {
   }
   */
 }
-nav a {
+header nav a {
   color: #BFBFFD;
   display: block;
   padding: 3rem;
   text-transform: uppercase;
 }
-nav a:hover {
+header nav a:hover {
   color: #D1FFE0;
 }
-nav > ul {
+header nav > ul {
   align-items: center;
   display: flex;
   justify-content: space-between;
 }
-nav ul li:last-child a {
+header nav ul li:last-child a {
   padding-right: 0;
 }
 
@@ -230,6 +229,57 @@ nav ul li:last-child a {
 }
 
 /* FOOTER */
+footer {
+  background: #093E34;
+  color: #BFBFFD;
+  font-size: 1.4rem;
+}
+footer a {
+  color: #BFBFFD;
+  transition: color 0.2s ease;
+}
+footer a:hover {
+  color: #D1FFE0;
+}
+footer nav ul {
+  display: flex;
+  flex-direction: column;
+  gap: 2.8rem;
+}
+footer nav a {
+  text-transform: uppercase;
+}
+footer .links-social ul {
+  display: flex;
+  gap: 2.4rem;
+  margin-top: 4rem;
+}
+footer .block-inside {
+  align-items: flex-start;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1439px;
+  padding: 7.2rem 0;
+}
+footer .left-col {
+  align-items: flex-start;
+  display: flex;
+  gap: 8rem;
+  justify-content: space-between;
+}
+footer .block-bottom {
+  border-top: 0.1rem solid #BFBFFD;
+  padding: 2.4rem 0;
+}
+footer .block-bottom .block-bottom-inside {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1439px;
+}
+
 /* Button */
 .button {
   border-radius: 0.8rem;
@@ -238,6 +288,7 @@ nav ul li:last-child a {
   letter-spacing: -1.5%;
   padding: 1.5rem 5rem;
   text-transform: uppercase;
+  transition: all 0.2s ease;
 }
 .button:hover {
   background-color: #D1FFE0;
@@ -326,6 +377,7 @@ nav ul li:last-child a {
   }
   header nav a {
     padding: 2rem 3rem;
+    transition: color 0.2s ease;
   }
   header nav a:hover {
     color: #D1FFE0;

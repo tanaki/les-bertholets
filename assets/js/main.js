@@ -30,5 +30,16 @@ if ( headerNavItems ) {
 if ( document ) {
   document.addEventListener("DOMContentLoaded", function(event){
     if (headroom) headroom.init();
+    gsap.registerPlugin(ScrollTrigger);
+
+    // wait until images, links, fonts, stylesheets, and js is loaded
+    window.addEventListener("load", function(e){
+
+      if ( Title ) Title.init();
+      if ( Content ) Content.init();
+      if ( Footer ) Footer.init();
+
+      document.body.classList.add('loaded');
+    });
   });
 }

@@ -5,8 +5,8 @@ function rhc_theme_setup() {
 add_action( 'after_setup_theme', 'rhc_theme_setup' );
 
 function theme_files() { 
-    // wp_enqueue_script( 'gsap-js', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), false, true );
-    // wp_enqueue_script( 'gsap-st', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js', array('gsap-js'), false, true );
+    wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js', array(), false, true );
+    wp_enqueue_script( 'gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js', array('gsap-js'), false, true );
     wp_enqueue_script( 'theme_script', get_template_directory_uri() . '/script.js', array(), false, true );
 }
 add_action('wp_enqueue_scripts', 'theme_files');

@@ -1,8 +1,5 @@
 
-                <footer>
-                    Footer
-                </footer>
-            
+                
             </div>
         </div>
 
