@@ -4,6 +4,12 @@
     background-color: $white;
     color: $black-bleu;
 
+    .block-inside {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
     .title {
 
     }

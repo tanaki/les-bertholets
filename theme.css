@@ -526,6 +526,11 @@ footer .block-bottom .block-bottom-inside {
   background-color: #FFFFFF;
   color: #1C1C28;
 }
+.block-grid .block-inside {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 .block-grid .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
