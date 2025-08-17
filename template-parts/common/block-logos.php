@@ -1,8 +1,8 @@
 <div class="block block-logos">
     <div class="block-inside">
-        <h4>
+        <h3>
             option title centered
-        </h4>
+        </h3>
         <div>
             Block Logo List
         </div>

@@ -1,5 +1,6 @@
 /* COLORS */
 $black: #000000;
+$black-bleu: #1C1C28;
 $white: #FFFFFF;
 $grey-dark: #333333;
 $grey-green: #2b322e;
@@ -73,7 +74,10 @@ h2, .h2 {
     
 }
 h3, .h3 {
-
+    @extend .font-sans;
+    font-size: 4rem;
+    line-height: 7.2rem;
+    text-transform: uppercase;
 }
 h4, .h4,
 h5, .h5 {

@@ -1,8 +1,8 @@
 <div class="block block-list">
     <div class="block-inside">
-        <h4>
+        <h3>
             Block List
-        </h4>
+        </h3>
         <div>
             <?php 
                 get_template_part('template-parts/case-studies/block-item'); 

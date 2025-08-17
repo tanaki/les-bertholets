@@ -5,6 +5,11 @@
 
 // @use "./components/selector";
 
-@use "./blocks/grid";
 @use "./blocks/hero";
+@use "./blocks/grid";
+@use "./blocks/list";
+@use "./blocks/columns";
+@use "./blocks/content";
 @use "./blocks/contact";
+@use "./blocks/case-studies";
+@use "./blocks/logos";

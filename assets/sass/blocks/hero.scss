@@ -4,30 +4,40 @@
     background-color: $green-dark;
 
     .block-inside {
+        align-items: center;
         display: flex;
-        gap: 1rem;
-        margin: 0 auto;
-        max-width: $largedesktop;
+        gap: 5rem;    
         padding: 12.5rem 0;
     }
 
     .col {
         color: $purple-light;
-        width: 50%;
     }
 
     .quote {
         @extend .font-serif-light;
         font-size: 5rem;
         font-style: italic;
+        margin-top: 3.2rem;
     }
     .strong {
         @extend .font-serif-black;
     }
     .author {
         font-size: 1.6rem;
-        letter-spacing: -1.5%;
-        margin: 2rem 0;
+        line-height: 4.4rem;
+        margin: 1rem 0;
         text-transform: uppercase;
+    }
+    .button {
+        margin-top: 3.2rem;
+    }
+
+    .hero-image {
+        border-radius: 0.8rem;
+        display: block;
+        height: 65.8rem;
+        object-fit: cover;
+        width: 48.5rem;
     }
 }

@@ -1,0 +1,10 @@
+@use '../variables' as *;
+
+.block-logos {
+    background-color: $white;
+    color: $black-bleu;
+
+    h4 {
+        text-align: center;
+    }
+}

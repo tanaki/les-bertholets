@@ -1,12 +1,13 @@
 <?php
     $title = $args['title'];
+    $className = $args['class'];
 ?>
 
-<div class="block block-content">
+<div class="block block-content <?php echo $className; ?>">
     <div class="block-inside">
-        <h4>
+        <h3>
              <?php echo $title; ?>
-        </h4>
+        </h3>
         <div>
             Block content
         </div>

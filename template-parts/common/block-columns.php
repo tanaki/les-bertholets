@@ -8,9 +8,9 @@ $columns = $args["columns"];
 
 <div class="block block-columns">
     <div class="block-inside">
-        <h4>
+        <h3>
             <?php echo $title ?>
-        </h4>
+        </h3>
 
         <div>
             <p><?php echo $chapo ?></p>

@@ -1,8 +1,8 @@
 <div class="block block-grid">
     <div class="block-inside">
-        <h4>
+        <h3>
             Title
-        </h4>
+        </h3>
 
         <div class="grid">
             <div class="grid-item">

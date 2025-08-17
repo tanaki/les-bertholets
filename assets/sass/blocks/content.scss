@@ -1,0 +1,14 @@
+@use '../variables' as *;
+
+.block-content {
+    background-color: $white;
+    color: $black-bleu;
+
+    &.bg-purple-light {
+        background-color: $purple-light;
+        color: $green-dark;
+    }
+    &.bg-has-circles {
+
+    }
+}

@@ -13,7 +13,8 @@ html {
 }
 
 body {
-	// background-color: $green-dark;
+	background-color: $green-dark;
+	color: $purple-light;
 	@extend .font-sans;
 	font-size: 1.6rem;
 	line-height: 1.2;
@@ -240,14 +241,19 @@ footer {
 /* Blocks */
 .block {
 	padding: 2rem 0;
-}
-.block-case-study {
-	padding: 1rem 0;
+
+	.block-inside {
+        margin: 0 auto;
+        max-width: $largedesktop;
+	}
 }
 
 @media screen and (max-width: $maxnav) {
-	header {
-		.block-inside {
+	header,
+	footer,
+	.block {
+		.block-inside,
+		.block-bottom .block-bottom-inside {
 			margin: 0 8rem;
 		}
 	}
@@ -300,7 +306,7 @@ footer {
 		}
 
 		nav {
-			background-color: $green-dark;
+			background-color: $white;
 			display: block;
 			bottom: 0;
 			left: 0;
@@ -318,6 +324,7 @@ footer {
 				display: block;
 			}
 			a {
+				color: $green-dark;
 				padding: 2rem 3rem;
 				transition: color 0.2s ease;
 
@@ -389,12 +396,7 @@ footer {
 
 			.container {
 				nav {
-					background-color: $white;
 					transform: translate(0, 0);
-
-					a {
-						color: $green-dark;
-					}
 				}
 			}
 

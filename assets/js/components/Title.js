@@ -1,10 +1,11 @@
 let Title = {
     init : () => {
 
-        if ( document.querySelector('h1') !== null ) {
-            
-            let title = document.querySelector('h1');
+        let title = document.querySelector('h1');
+        let titles = document.querySelectorAll('h3');
 
+        if ( title !== null ) {
+            
             // TITLE
             if ( title !== null ) {
                 let titleTL = gsap.timeline({
@@ -26,10 +27,8 @@ let Title = {
             }
         }
         
-        if ( document.querySelector('h4') !== null ) {
+        if ( titles !== null ) {
             
-            let titles = document.querySelectorAll('h4');
-
             // TITLE
             if ( titles !== null ) {
 
