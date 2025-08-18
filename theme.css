@@ -105,6 +105,11 @@ h3, .h3 {
   text-transform: uppercase;
 }
 
+h5, .h5 {
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -529,14 +534,21 @@ footer .block-bottom .block-bottom-inside {
 .block-grid .block-inside {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  padding-bottom: 10rem;
+}
+.block-grid h3 {
+  margin-bottom: 4.8rem;
+}
+.block-grid h5 {
+  margin: 1.6rem 0;
 }
 .block-grid .grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: 6.6rem;
 }
 .block-grid .button {
-  margin: 2rem auto 0;
+  margin: 4.8rem auto 0;
 }
 
 .block-list {

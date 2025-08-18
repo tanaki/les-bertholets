@@ -13,9 +13,11 @@
             <?php foreach ( $items as $key => $item ): ?>
 
                 <div class="grid-item">
-                    <?php echo $item['icon']; ?>
-                    <?php echo $item['title']; ?>
-                    <?php echo $item['content']; ?>
+                    <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/' . $item['icon']; ?>.svg" alt="<?php echo $item['title']; ?>" />
+                    <h5><?php echo $item['title']; ?></h5>
+                    <div>
+                        <?php echo $item['content']; ?>
+                    </div>
                 </div>
 
             <?php endforeach; ?>
