@@ -7,7 +7,6 @@
     .block-inside {
         display: flex;
         flex-direction: column;
-        padding-bottom: 10rem;
     }
 
     h3 {
@@ -22,6 +21,10 @@
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 6.6rem;
+    }
+    .item-content {
+        font-size: 1.6rem;
+        line-height: 2.6rem;
     }
 
     .button {

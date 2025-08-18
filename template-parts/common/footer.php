@@ -17,7 +17,7 @@
                 ?>
             </nav>
             <div class="links-social">
-                <h5>Me Suivre</h5>
+                <h6>Me Suivre</h6>
                 <ul>
                     <li>
                         <a href="/" target="_blank">Linkedin</a>

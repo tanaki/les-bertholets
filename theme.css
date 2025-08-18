@@ -69,7 +69,7 @@ table {
     font-display: swap;
 }
 */
-.font-serif, .font-serif-black, .block-hero .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .block-contact h5, .font-serif-light, .block-hero .quote {
+.font-serif, .block-columns .chapo, .font-serif-black, .block-hero .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .block-contact h5, .font-serif-light, .block-hero .quote {
   font-family: "sole-serif-small-variable", serif;
 }
 
@@ -108,6 +108,7 @@ h3, .h3 {
 h5, .h5 {
   font-size: 2.2rem;
   font-weight: 600;
+  line-height: 3.4rem;
 }
 
 * {
@@ -333,11 +334,12 @@ footer .block-bottom .block-bottom-inside {
 
 /* Blocks */
 .block {
-  padding: 2rem 0;
+  padding: 0 2rem;
 }
 .block .block-inside {
   margin: 0 auto;
   max-width: 1439px;
+  padding: 12rem 0;
 }
 
 @media screen and (max-width: 1600px) {
@@ -534,7 +536,6 @@ footer .block-bottom .block-bottom-inside {
 .block-grid .block-inside {
   display: flex;
   flex-direction: column;
-  padding-bottom: 10rem;
 }
 .block-grid h3 {
   margin-bottom: 4.8rem;
@@ -547,6 +548,10 @@ footer .block-bottom .block-bottom-inside {
   grid-template-columns: repeat(3, 1fr);
   gap: 6.6rem;
 }
+.block-grid .item-content {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
+}
 .block-grid .button {
   margin: 4.8rem auto 0;
 }
@@ -555,10 +560,50 @@ footer .block-bottom .block-bottom-inside {
   background-color: #093E34;
   color: #BFBFFD;
 }
+.block-list .block-inside {
+  display: flex;
+  flex-direction: column;
+}
+.block-list .block-list-items {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.block-list .button {
+  margin: 4.8rem auto 0;
+}
 
 .block-columns {
   background-color: #FFFFFF;
   color: #1C1C28;
+}
+.block-columns .block-inside {
+  display: flex;
+  flex-direction: column;
+}
+.block-columns .chapo {
+  color: #5353B8;
+  font-style: italic;
+  font-size: 2.6rem;
+  margin-bottom: 5.6rem;
+  width: 75%;
+}
+.block-columns .block-columns-items {
+  align-items: center;
+  display: flex;
+  gap: 6rem;
+  justify-content: space-between;
+}
+.block-columns .button {
+  margin: 4.8rem auto 0;
+}
+.block-columns .item-title {
+  margin-bottom: 1.6rem;
+}
+.block-columns .item-content {
+  font-size: 1.6rem;
+  line-height: 2.6rem;
 }
 
 .block-content {
@@ -577,7 +622,6 @@ footer .block-bottom .block-bottom-inside {
   align-items: center;
   display: flex;
   justify-content: space-between;
-  padding: 10rem 0;
 }
 .block-contact h5 {
   font-style: italic;

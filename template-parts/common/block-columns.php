@@ -12,18 +12,27 @@ $columns = $args["columns"];
             <?php echo $title ?>
         </h3>
 
-        <div>
-            <p><?php echo $chapo ?></p>
-
-            <div class="w-1/<?php echo count($columns); ?>">
-                    
-                <?php foreach($columns as $key => $column): ?>
-
-                    <div><?php echo $column['title']; ?></div>
-
-                <?php endforeach; ?>
-
-            </div>
+        <div class="chapo">
+            <?php echo $chapo ?>
         </div>
+
+        <div class="block-columns-items w-1/<?php echo count($columns); ?>">
+                
+            <?php foreach($columns as $key => $column): ?>
+
+                <div class="item-column">
+                    <h5 class="item-title">
+                        <?php echo $column['title']; ?>
+                    </h5>
+                    <div class="item-content">
+                        <?php echo $column['content']; ?>
+                    </div>
+                </div>
+
+            <?php endforeach; ?>
+
+        </div>
+
+        <a class="button button-dark" href="#">En savoir plus</a>
     </div>
 </div>

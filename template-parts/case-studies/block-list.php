@@ -1,14 +1,20 @@
+<?php
+    $title = $args['title'];
+    $items = $args['items'];
+?>
 <div class="block block-list">
     <div class="block-inside">
         <h3>
-            Block List
+            <?php echo $title; ?>
         </h3>
-        <div>
+        <div class="block-list-items">
             <?php 
-                get_template_part('template-parts/case-studies/block-item'); 
-                get_template_part('template-parts/case-studies/block-item'); 
-                get_template_part('template-parts/case-studies/block-item'); 
+                foreach( $items as $key => $item ) {
+                    get_template_part('template-parts/case-studies/block-item', null, $item);
+                }
             ?>
         </div>
+
+        <a class="button button-light" href="#">Voir tout</a>
     </div>
 </div>

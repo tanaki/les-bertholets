@@ -240,11 +240,12 @@ footer {
 
 /* Blocks */
 .block {
-	padding: 2rem 0;
+	padding: 0 2rem;
 
 	.block-inside {
         margin: 0 auto;
         max-width: $largedesktop;
+		padding: 12rem 0;
 	}
 }
 
