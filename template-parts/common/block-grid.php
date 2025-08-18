@@ -1,28 +1,24 @@
+<?php
+    $title = $args['title'];
+    $items = $args['items'];
+?>
+
 <div class="block block-grid">
     <div class="block-inside">
         <h3>
-            Title
+            <?php echo $title; ?>
         </h3>
 
         <div class="grid">
-            <div class="grid-item">
-                Item 1
-            </div>
-            <div class="grid-item">
-                Item 2
-            </div>
-            <div class="grid-item">
-                Item 3
-            </div>
-            <div class="grid-item">
-                Item 4
-            </div>
-            <div class="grid-item">
-                Item 5
-            </div>
-            <div class="grid-item">
-                Item 6
-            </div>
+            <?php foreach ( $items as $key => $item ): ?>
+
+                <div class="grid-item">
+                    <?php echo $item['icon']; ?>
+                    <?php echo $item['title']; ?>
+                    <?php echo $item['content']; ?>
+                </div>
+
+            <?php endforeach; ?>
         </div>
 
         <a class="button button-dark" href="#">En savoir plus</a>
