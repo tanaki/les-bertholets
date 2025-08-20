@@ -67,7 +67,8 @@ header {
 			color: $purple-light;
 			display: block;
 			@extend .font-sans;
-			padding: 3rem;
+			font-size: 1.4rem;
+			padding: 1.6rem;
 			text-transform: uppercase;
 
 			&:hover {
@@ -330,7 +331,7 @@ footer {
 				transition: color 0.2s ease;
 
 				&:hover {
-					color: $green-light;
+					color: $purple-mid;
 				}
 			}
 			.secondary-nav {

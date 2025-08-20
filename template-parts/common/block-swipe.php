@@ -10,7 +10,7 @@
         <div class="block-list-items">
             <?php 
                 foreach( $items as $key => $item ) {
-                    get_template_part('template-parts/case-studies/block-item', null, $item);
+                    get_template_part('template-parts/common/block-swipe-item', null, $item);
                 }
             ?>
         </div>

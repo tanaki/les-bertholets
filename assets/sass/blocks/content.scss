@@ -9,7 +9,8 @@
         color: $green-dark;
     }
     &.bg-has-circles {
-
+        background-image: url(./assets/img/bg_circles.svg);
+        background-repeat: no-repeat;
+        background-position: center center;
     }
-    
 }

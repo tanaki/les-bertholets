@@ -211,7 +211,8 @@ header nav {
 header nav a {
   color: #BFBFFD;
   display: block;
-  padding: 3rem;
+  font-size: 1.4rem;
+  padding: 1.6rem;
   text-transform: uppercase;
 }
 header nav a:hover {
@@ -413,7 +414,7 @@ footer .block-bottom .block-bottom-inside {
     transition: color 0.2s ease;
   }
   header nav a:hover {
-    color: #D1FFE0;
+    color: #5353B8;
   }
   header nav .secondary-nav {
     display: block;
@@ -614,6 +615,12 @@ footer .block-bottom .block-bottom-inside {
   background-color: #BFBFFD;
   color: #093E34;
 }
+.block-content.bg-has-circles {
+  background-image: url(./assets/img/bg_circles.svg);
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 .block-contact {
   background: #BFBFFD;
   color: #342484;
@@ -627,10 +634,6 @@ footer .block-bottom .block-bottom-inside {
   font-style: italic;
   font-size: 3.6rem;
   max-width: 60%;
-}
-
-.block-case-study {
-  padding: 1rem 0;
 }
 
 .block-logos {
