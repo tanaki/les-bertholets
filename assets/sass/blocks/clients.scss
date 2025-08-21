@@ -33,6 +33,12 @@
 
     @media screen and (max-width: $tablet) {
         ul {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        ul {
             display: block;
         }
         li {

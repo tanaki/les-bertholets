@@ -8,7 +8,9 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
-        margin: 0 6rem;
+        margin: 0 auto;
+        padding-left: 6rem;
+        padding-right: 6rem;
     }
 
     .block-contact-content {
@@ -25,6 +27,9 @@
     @media screen and (max-width: $desktop) {
         .block-inside {
             display: block;
+            margin: 0;
+            padding-left: 0;
+            padding-right: 0;
             text-align: center;
         }
         .block-contact-content {
