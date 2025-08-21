@@ -158,6 +158,11 @@ footer {
 	color: $purple-light;
 	font-size: 1.4rem;
 
+	.logo,
+	.logo img {
+		display: block;
+	}
+
 	a {
 		color: $purple-light;
 		transition: color 0.2s ease;
@@ -178,8 +183,10 @@ footer {
 		}
 	}
 	.links-social ul {
+		align-items: center;
 		display: flex;
 		gap: 2.4rem;
+		justify-content: center;
 		margin-top: 4rem;
 	}
 
@@ -266,6 +273,10 @@ footer {
 }
 
 @media screen and (max-width: $tablet) {
+	body {
+		overflow-x: hidden;
+	}
+
 	header {
 		.block-inside {
 			margin: 0 auto;
@@ -441,6 +452,42 @@ footer {
 	.has-nav-open {
 		height: 100svh;
 		overflow: hidden;
+	}
+
+	footer {
+		.block-inside {
+			display: block;
+			margin: 6.4rem auto;
+			padding: 0 2rem;
+		}
+		.logo img {
+			margin: 0 auto 4rem;
+		}
+		.left-col {
+			display: block;
+			text-align: center;
+		}
+		.links-social {
+			margin-top: 5.6rem;
+		}
+
+		.block-bottom {
+			padding: 4rem 0;
+
+			.block-bottom-inside {
+				display: block;
+				margin: 0 2rem;
+				text-align: center;
+			}
+
+			div {
+				margin-bottom: 2.4rem;
+			}
+
+			a {
+				font-weight: 500;
+			}
+		}
 	}
 
 	.main {

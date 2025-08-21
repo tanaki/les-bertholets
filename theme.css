@@ -258,6 +258,10 @@ footer {
   color: #BFBFFD;
   font-size: 1.4rem;
 }
+footer .logo,
+footer .logo img {
+  display: block;
+}
 footer a {
   color: #BFBFFD;
   transition: color 0.2s ease;
@@ -274,8 +278,10 @@ footer nav a {
   text-transform: uppercase;
 }
 footer .links-social ul {
+  align-items: center;
   display: flex;
   gap: 2.4rem;
+  justify-content: center;
   margin-top: 4rem;
 }
 footer .block-inside {
@@ -354,6 +360,9 @@ footer .block-bottom .block-bottom-inside {
   }
 }
 @media screen and (max-width: 1023px) {
+  body {
+    overflow-x: hidden;
+  }
   header .block-inside {
     margin: 0 auto;
   }
@@ -491,6 +500,35 @@ footer .block-bottom .block-bottom-inside {
   .has-nav-open {
     height: 100svh;
     overflow: hidden;
+  }
+  footer .block-inside {
+    display: block;
+    margin: 6.4rem auto;
+    padding: 0 2rem;
+  }
+  footer .logo img {
+    margin: 0 auto 4rem;
+  }
+  footer .left-col {
+    display: block;
+    text-align: center;
+  }
+  footer .links-social {
+    margin-top: 5.6rem;
+  }
+  footer .block-bottom {
+    padding: 4rem 0;
+  }
+  footer .block-bottom .block-bottom-inside {
+    display: block;
+    margin: 0 2rem;
+    text-align: center;
+  }
+  footer .block-bottom div {
+    margin-bottom: 2.4rem;
+  }
+  footer .block-bottom a {
+    font-weight: 500;
   }
   .main {
     padding-top: 8rem;
