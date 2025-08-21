@@ -364,6 +364,12 @@ footer .block-bottom .block-bottom-inside {
     margin: 0 8rem;
   }
 }
+@media screen and (max-width: 1279px) {
+  header nav a {
+    font-size: 1.3rem;
+    padding: 0.8rem;
+  }
+}
 @media screen and (max-width: 1023px) {
   .block .block-inside {
     margin: 0 2rem;

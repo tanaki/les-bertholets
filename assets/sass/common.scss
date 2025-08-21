@@ -270,6 +270,14 @@ footer {
 
 @media screen and (max-width: $desktop) {
 
+	header {
+		nav {
+			a {
+				font-size: 1.3rem;
+				padding: 0.8rem;
+			}
+		}
+	}
 }
 
 @media screen and (max-width: $tablet) {
