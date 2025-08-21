@@ -36,7 +36,12 @@
         margin-bottom: 1.6rem;
     }
     .item-content {
-        font-size: 1.6rem;
-        line-height: 2.6rem;
+        @extend .body-copy;
+    }
+
+    @media screen and (max-width: $tablet) {
+        .block-columns-items {
+            display: block;
+        }
     }
 }

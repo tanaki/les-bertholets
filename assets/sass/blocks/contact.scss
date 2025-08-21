@@ -8,12 +8,30 @@
         align-items: center;
         display: flex;
         justify-content: space-between;
+        margin: 0 6rem;
     }
 
-    h5 {
+    .block-contact-content {
+        max-width: 84rem;
+    }
+
+    p {
         @extend .font-serif-regular;
         font-style: italic;
         font-size: 3.6rem;
-        max-width: 60%;
+        line-height: 5rem
+    }
+
+    @media screen and (max-width: $desktop) {
+        .block-inside {
+            display: block;
+            text-align: center;
+        }
+        .block-contact-content {
+            max-width: 100%;
+        }
+        p {
+            margin-bottom: 4rem;
+        }
     }
 }

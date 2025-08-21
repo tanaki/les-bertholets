@@ -273,6 +273,13 @@ footer {
 }
 
 @media screen and (max-width: $tablet) {
+
+	.block {
+		.block-inside {
+			margin: 0 2rem;
+		}
+	}
+
 	body {
 		overflow-x: hidden;
 	}
@@ -454,6 +461,10 @@ footer {
 		overflow: hidden;
 	}
 
+	.main {
+		padding-top: 8rem;
+	}
+
 	footer {
 		.block-inside {
 			display: block;
@@ -488,9 +499,5 @@ footer {
 				font-weight: 500;
 			}
 		}
-	}
-
-	.main {
-		padding-top: 8rem;
 	}
 }

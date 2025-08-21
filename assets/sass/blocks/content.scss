@@ -11,6 +11,32 @@
     &.bg-has-circles {
         background-image: url(./assets/img/bg_circles.svg);
         background-repeat: no-repeat;
-        background-position: center center;
+        // background-position: center center;
+        background-position: right center;
+        background-size: auto 100%;
+    }
+
+    .block-content-content {
+        max-width: 58rem;
+
+        p {
+            @extend .body-copy;
+        }
+        strong {
+            display: block;
+            font-size: 2.2rem;
+            font-weight: bold;
+            line-height: 3.6rem;
+            margin: 3.2rem 0 0.8rem;
+        }
+        p:first-child strong {
+            margin-top: 4.8rem;
+        }
+    }
+
+    @media screen and (max-width: $tablet) {
+        &.bg-has-circles {
+            background-image: none;
+        }
     }
 }

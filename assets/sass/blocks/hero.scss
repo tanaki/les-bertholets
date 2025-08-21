@@ -40,4 +40,12 @@
         object-fit: cover;
         width: 48.5rem;
     }
+
+    @media screen and (max-width: $tablet) {
+
+        .hero-image {
+            display: none;
+        }
+
+    }
 }

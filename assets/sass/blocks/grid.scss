@@ -23,11 +23,17 @@
         gap: 6.6rem;
     }
     .item-content {
-        font-size: 1.6rem;
-        line-height: 2.6rem;
+        @extend .body-copy;
     }
 
     .button {
         margin: 4.8rem auto 0;
+    }
+
+    @media screen and (max-width: $tablet) {
+
+        .grid {
+            display: block;
+        }
     }
 }
