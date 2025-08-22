@@ -4,6 +4,11 @@ $title = $args["title"];
 $chapo = $args["chapo"];
 $columns = $args["columns"];
 
+if ( isset($args["button"]) ) {
+    $buttonLabel = $args["button"]["label"];
+    $buttonLink = $args["button"]["link"];
+}
+
 ?>
 
 <div class="block block-columns">
@@ -32,7 +37,8 @@ $columns = $args["columns"];
             <?php endforeach; ?>
 
         </div>
-
-        <a class="button button-dark" href="#">En savoir plus</a>
+        <?php if ( isset($args["button"]) ) : ?>
+            <a class="button button-dark" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
+        <?php endif; ?>
     </div>
 </div>

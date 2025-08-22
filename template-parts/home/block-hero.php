@@ -1,4 +1,4 @@
-<div class="block block-hero">
+<div class="block block-hero-home">
 
     <div class="block-inside">
 

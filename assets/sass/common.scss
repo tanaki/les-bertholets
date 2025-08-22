@@ -76,6 +76,23 @@ header {
 			}
 		}
 
+		.current-menu-item a {
+			color: $green-light;
+			position: relative;
+
+			&:after {
+				background-color: $green-light;
+				border-radius: 50%;
+				bottom: 0.5rem;
+				content: "";
+				height: 0.4rem;
+				left: 50%;
+				position: absolute;
+				transform: translateX(-0.2rem);
+				width: 0.4rem;
+			}
+		}
+
 		& > ul {
 			align-items: center;
 			display: flex;

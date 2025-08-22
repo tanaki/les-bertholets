@@ -69,11 +69,11 @@ table {
     font-display: swap;
 }
 */
-.font-serif, .block-columns .chapo, .font-serif-black, .block-hero .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .block-contact p, .font-serif-light, .block-hero .quote {
+.font-serif, .block-columns .chapo, .font-serif-black, .block-hero-home .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .block-contact p, .font-serif-light, .block-hero-home .quote {
   font-family: "sole-serif-small-variable", serif;
 }
 
-.font-serif-light, .block-hero .quote {
+.font-serif-light, .block-hero-home .quote {
   font-variation-settings: "opsz" 500, "wght" 200;
 }
 
@@ -89,7 +89,7 @@ table {
   font-variation-settings: "opsz" 500, "wght" 700;
 }
 
-.font-serif-black, .block-hero .strong {
+.font-serif-black, .block-hero-home .strong {
   font-variation-settings: "opsz" 500, "wght" 900;
 }
 
@@ -222,6 +222,21 @@ header nav a {
 }
 header nav a:hover {
   color: #D1FFE0;
+}
+header nav .current-menu-item a {
+  color: #D1FFE0;
+  position: relative;
+}
+header nav .current-menu-item a:after {
+  background-color: #D1FFE0;
+  border-radius: 50%;
+  bottom: 0.5rem;
+  content: "";
+  height: 0.4rem;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-0.2rem);
+  width: 0.4rem;
 }
 header nav > ul {
   align-items: center;
@@ -549,33 +564,33 @@ footer .block-bottom .block-bottom-inside {
     font-weight: 500;
   }
 }
-.block-hero {
+.block-hero-home {
   background-color: #093E34;
 }
-.block-hero .block-inside {
+.block-hero-home .block-inside {
   align-items: center;
   display: flex;
   gap: 5rem;
   padding: 12.5rem 0;
 }
-.block-hero .col {
+.block-hero-home .col {
   color: #BFBFFD;
 }
-.block-hero .quote {
+.block-hero-home .quote {
   font-size: 5rem;
   font-style: italic;
   margin-top: 3.2rem;
 }
-.block-hero .author {
+.block-hero-home .author {
   font-size: 1.6rem;
   line-height: 4.4rem;
   margin: 1rem 0;
   text-transform: uppercase;
 }
-.block-hero .button {
+.block-hero-home .button {
   margin-top: 3.2rem;
 }
-.block-hero .hero-image {
+.block-hero-home .hero-image {
   border-radius: 0.8rem;
   display: block;
   height: 65.8rem;
@@ -583,7 +598,7 @@ footer .block-bottom .block-bottom-inside {
   width: 48.5rem;
 }
 @media screen and (max-width: 1023px) {
-  .block-hero .hero-image {
+  .block-hero-home .hero-image {
     display: none;
   }
 }
