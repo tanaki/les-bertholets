@@ -3,6 +3,7 @@
 $title = $args["title"];
 $chapo = $args["chapo"];
 $columns = $args["columns"];
+$layout = array_key_exists('layout', $args) ? $args['layout'] : null;
 
 if ( isset($args["button"]) ) {
     $buttonLabel = $args["button"]["label"];
@@ -11,7 +12,7 @@ if ( isset($args["button"]) ) {
 
 ?>
 
-<div class="block block-columns">
+<div class="block block-columns <?php if (isset($layout)) echo $layout; ?>">
     <div class="block-inside">
         <h3>
             <?php echo $title ?>
@@ -21,11 +22,16 @@ if ( isset($args["button"]) ) {
             <?php echo $chapo ?>
         </div>
 
-        <div class="block-columns-items w-1/<?php echo count($columns); ?>">
+        <div class="block-columns-items w-1/<?php echo min(3, count($columns)); ?>">
                 
             <?php foreach($columns as $key => $column): ?>
 
                 <div class="item-column">
+                    <?php if ( isset($column['icon']) ) : ?>
+                        <div class="item-icon">
+                            <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/' . $column['icon']; ?>.svg" alt="<?php echo $column['title']; ?>" />
+                        </div>
+                    <?php endif; ?>
                     <h5 class="item-title">
                         <?php echo $column['title']; ?>
                     </h5>

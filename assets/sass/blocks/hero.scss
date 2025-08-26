@@ -1,7 +1,28 @@
 @use '../variables' as *;
 
 .block-hero {
-    
+
+    .block-inside {
+        padding: 8rem 0;
+    }
+
+    h1 {
+        @extend .font-sans;
+        font-size: 4rem;
+        line-height: 7.2rem;
+        text-transform: uppercase;
+    }
+
+    .chapo {
+        @extend .font-serif-light;
+        font-size: 3.2rem;
+        font-style: italic;
+        margin-top: 1.2rem;
+        max-width: 70%;
+    }
+    strong {
+        @extend .font-serif-black;
+    }
 }
 
 .block-hero-home {

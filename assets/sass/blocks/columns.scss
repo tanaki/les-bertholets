@@ -32,11 +32,22 @@
     .item-column {
 
     }
+    .item-icon {
+        margin-bottom: 1.6rem;
+    }
     .item-title {
         margin-bottom: 1.6rem;
     }
     .item-content {
         @extend .body-copy;
+    }
+
+    &.grid {
+        .block-columns-items {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6.4rem 6rem;
+        }
     }
 
     @media screen and (max-width: $tablet) {

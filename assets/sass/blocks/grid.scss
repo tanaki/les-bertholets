@@ -44,3 +44,53 @@
         }
     }
 }
+
+.block-grid-detail {
+    background-color: $white;
+    color: $black-bleu;
+
+    .block-inside {
+        padding: 8rem 0;
+    }
+
+    .item-grid {
+        align-items: start;
+        border-bottom: 0.1rem solid $black-bleu;
+        display: flex;
+        justify-content: flex-start;
+        margin-bottom: 4rem;
+        padding-bottom: 4rem;
+
+        &:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        img {
+            display: block;
+            margin-right: 4rem;
+            width: 7.2rem;
+        }
+
+        h5 {
+            flex-grow: 1;
+        }
+
+        .item-content {
+            @extend .body-copy;
+            margin-left: 4rem;
+            width: 45%;
+
+            ul {
+                list-style-type: disc;
+                margin: 0;
+                padding-left: 1.2em;
+
+                li::marker {
+                    font-size: 1rem;
+                }
+            }
+        }
+    }
+}
