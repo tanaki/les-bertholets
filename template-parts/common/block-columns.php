@@ -43,7 +43,7 @@ if ( isset($args["button"]) ) {
             <?php endforeach; ?>
 
         </div>
-        <?php if ( isset($args["button"]) ) : ?>
+        <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
             <a class="button button-dark" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
         <?php endif; ?>
     </div>

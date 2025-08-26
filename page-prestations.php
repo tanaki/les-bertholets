@@ -57,7 +57,7 @@
         <p>une recherche constante d’équilibre entre technicité, éthique, et pertinence des choix.</p>
         <p><strong>Harmonie</strong></p>
         <p>une approche sensible, presque sacrée, du temps, des matériaux, et de la restauration.</p>",
-        "class" => "bg-purple-light bg-has-circles"
+        "className" => "bg-purple-light bg-has-circles"
     ]);
 
     get_template_part('template-parts/common/block-columns', null, [
