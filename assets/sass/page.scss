@@ -9,3 +9,58 @@
 .single-post {
     
 }
+
+.block-post-content {
+    background-color: $white;
+    color: $black-bleu;
+
+    .block-inside {
+
+    }
+
+    p {
+        @extend .body-copy;
+        margin-bottom: 2.6rem;
+    }
+    strong {
+        font-weight: 700;
+    }
+
+    .wp-block-columns {
+        margin-bottom: 8rem;
+
+        p:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+/* TODO FIX THAT */
+/* Conteneur colonnes fluide */
+.wp-block-columns.is-style-col-fluid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12rem;
+}
+
+/* Mobile */
+.wp-block-columns.is-style-col-fluid > .wp-block-column {
+    flex: 1 1 100% !important;
+}
+
+/* Desktop classique : 3/5 et 2/5 */
+@media (min-width: $tablet) {
+    .wp-block-columns.is-style-col-fluid > .col-3-5 {
+        flex: 0 0 calc(60% - 6rem) !important;
+    }
+    .wp-block-columns.is-style-col-fluid > .col-2-5 {
+        flex: 0 0 calc(40% - 6rem) !important;
+    }
+}
+
+/* Large desktop : 50/50 */
+@media (min-width: $largedesktop) {
+  .wp-block-columns.is-style-col-fluid > .wp-block-column {
+    flex: 0 0 calc(50% - 6rem) !important;
+  }
+}

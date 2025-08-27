@@ -1,11 +1,4 @@
 <?php
-    get_header();
-
-    get_template_part('template-parts/common/block-hero', null, [
-        'title' => 'Prestations',
-        'chapo' => 'Je restaure des <strong>objets d’art métalliques,</strong> des <strong>pièces mécaniques anciennes</strong> et des <strong>collections horlogères,</strong> avec une approche sur mesure, documentée et respectueuse du patrimoine.'
-    ]);
-
     get_template_part('template-parts/common/block-grid-detail', null, [
         'items' => [
             [
@@ -133,5 +126,4 @@
     ]);
 
     get_template_part('template-parts/common/block-contact');
-    get_footer(); 
 ?>

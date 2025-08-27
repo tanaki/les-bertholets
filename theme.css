@@ -98,7 +98,7 @@ table {
   font-optical-sizing: auto;
 }
 
-.body-copy, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content {
+.body-copy, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content, .block-post-content p {
   font-size: 1.6rem;
   line-height: 2.6rem;
 }
@@ -564,6 +564,51 @@ footer .block-bottom .block-bottom-inside {
     font-weight: 500;
   }
 }
+.block-post-content {
+  background-color: #FFFFFF;
+  color: #1C1C28;
+}
+.block-post-content p {
+  margin-bottom: 2.6rem;
+}
+.block-post-content strong {
+  font-weight: 700;
+}
+.block-post-content .wp-block-columns {
+  margin-bottom: 8rem;
+}
+.block-post-content .wp-block-columns p:last-child {
+  margin-bottom: 0;
+}
+
+/* TODO FIX THAT */
+/* Conteneur colonnes fluide */
+.wp-block-columns.is-style-col-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12rem;
+}
+
+/* Mobile */
+.wp-block-columns.is-style-col-fluid > .wp-block-column {
+  flex: 1 1 100% !important;
+}
+
+/* Desktop classique : 3/5 et 2/5 */
+@media (min-width: 1023px) {
+  .wp-block-columns.is-style-col-fluid > .col-3-5 {
+    flex: 0 0 calc(60% - 6rem) !important;
+  }
+  .wp-block-columns.is-style-col-fluid > .col-2-5 {
+    flex: 0 0 calc(40% - 6rem) !important;
+  }
+}
+/* Large desktop : 50/50 */
+@media (min-width: 1439px) {
+  .wp-block-columns.is-style-col-fluid > .wp-block-column {
+    flex: 0 0 calc(50% - 6rem) !important;
+  }
+}
 .block-hero .block-inside {
   padding: 8rem 0;
 }
@@ -578,6 +623,21 @@ footer .block-bottom .block-bottom-inside {
   margin-top: 1.2rem;
   max-width: 70%;
 }
+.block-hero-image-container {
+  height: 44rem;
+  width: 100%;
+}
+.block-hero-image-container .block-hero-image {
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+@media screen and (max-width: 1279px) {
+  .block-hero-image-container {
+    height: 32rem;
+  }
+}
+
 .block-hero-home {
   background-color: #093E34;
 }

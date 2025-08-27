@@ -1,11 +1,4 @@
 <?php
-    get_header();
-
-    get_template_part('template-parts/common/block-hero', null, [
-        'title' => 'Etude de Cas',
-        'chapo' => 'Je restaure des objets d’art métalliques, des pièces mécaniques anciennes et des collections horlogères, avec une approche sur mesure, documentée et respectueuse du patrimoine.'
-    ]);
-
     get_template_part('template-parts/case-studies/block-case-studies', null, [
         'className' => 'bg-white bg-full-list',
         'items' => [
@@ -47,6 +40,4 @@
             ]
         ]
     ]);
-
-    get_footer(); 
 ?>
