@@ -1,43 +1,21 @@
 <?php
+
+    // Prestations
+    $podsPrestations = pods('prestation', array(
+        'limit' => -1
+    ));
+    $prestations = array();
+
+    while ( $podsPrestations->fetch() ) :
+        $prestations[] = array(
+            'title' => $podsPrestations->display('post_title'),
+            'image' => $podsPrestations->display('prestation_image'),
+            'content' => $podsPrestations->display('post_content'),
+        );
+    endwhile;
+
     get_template_part('template-parts/common/block-grid-detail', null, [
-        'items' => [
-            [
-                'icon' => 'icon_globe',
-                'title' => 'Études préalables & conseil technique',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Analyse des besoins et du contexte</li><li>État des lieux et constats d’état d’objets ou de collections</li><li>Rédaction de dossiers d\'étude avec propositions de traitement</li><li>Accompagnement dans la définition des stratégies de conservation et restauration</li></ul>'
-            ],
-            [
-                'icon' => 'icon_compass',
-                'title' => 'Restauration & conservation d’objets métalliques',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Réalisation de traitements techniques sur objets en métal</li><li>Application des procédés adaptés à la nature des matériaux</li><li>Suivi rigoureux des interventions</li></ul>'
-            ],
-            [
-                'icon' => 'icon_microscope',
-                'title' => 'Expertise & investigation scientifique',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Identification des matériaux et procédés de fabrication</li><li>Compréhension du vieillissement des matériaux métalliques</li><li>Études des phénomènes de corrosion et de dégradations chimiques</li></ul>'
-            ],
-            [
-                'icon' => 'icon_erlenmeyer',
-                'title' => 'Coordination d’analyses scientifiques',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Mise en relation avec des spécialistes pour des analyses physico-chimiques ciblées</li><li>Sélection des méthodes d’analyse pertinentes selon les objets</li><li>Interprétation des résultats pour orienter les traitements</li></ul>'
-            ],
-            [
-                'icon' => 'icon_feather',
-                'title' => 'Recherche historique & documentation',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Recherche sur l’origine, les usages et les transformations des objets</li><li>Mise en perspective historique et technique</li><li>Valorisation documentaire des objets étudiés</li></ul>'
-            ],
-            [
-                'icon' => 'icon_handshake',
-                'title' => 'Gestion de projet & coordination d’équipe',
-                'excerpt' => 'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut.',
-                'content' => '<ul><li>Organisation et pilotage d’équipes pluridisciplinaires</li><li>Suivi de chantiers de conservation/restauration</li><li>Communication avec les différents intervenants (musées, laboratoires, institutions…)</li></ul>'
-            ]
-        ]
+        'items' => $prestations
     ]);
 
     get_template_part('template-parts/common/block-content', null, [

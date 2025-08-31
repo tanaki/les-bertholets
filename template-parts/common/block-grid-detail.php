@@ -9,7 +9,7 @@
             <?php foreach ( $items as $key => $item ): ?>
 
                 <div class="item-grid">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/' . $item['icon']; ?>.svg" alt="<?php echo $item['title']; ?>" />
+                    <img src="<?php echo  $item['image']; ?>" alt="<?php echo $item['title']; ?>" />
                     <h5><?php echo $item['title']; ?></h5>
                     <div class="item-content">
                         <?php echo $item['content']; ?>
