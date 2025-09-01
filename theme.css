@@ -568,6 +568,11 @@ footer .block-bottom .block-bottom-inside {
   background-color: #FFFFFF;
   color: #1C1C28;
 }
+.block-post-content h4 {
+  font-size: 2.4rem;
+  font-weight: 600;
+  line-height: 3.6rem;
+}
 .block-post-content p {
   margin-bottom: 2.6rem;
 }
@@ -589,7 +594,7 @@ footer .block-bottom .block-bottom-inside {
 .wp-block-columns.is-style-col-fluid {
   display: flex;
   flex-wrap: wrap;
-  gap: 12rem;
+  gap: 6rem;
 }
 
 /* Mobile */
@@ -598,7 +603,10 @@ footer .block-bottom .block-bottom-inside {
 }
 
 /* Desktop classique : 3/5 et 2/5 */
-@media (min-width: 1023px) {
+@media (min-width: 767px) {
+  .wp-block-columns.is-style-col-fluid {
+    gap: 12rem;
+  }
   .wp-block-columns.is-style-col-fluid > .col-3-5 {
     flex: 0 0 calc(60% - 6rem) !important;
   }

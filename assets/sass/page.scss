@@ -18,6 +18,12 @@
 
     }
 
+    h4 {
+        font-size: 2.4rem;
+        font-weight: 600;
+        line-height: 3.6rem;
+    }
+
     p {
         @extend .body-copy;
         margin-bottom: 2.6rem;
@@ -44,7 +50,7 @@
 .wp-block-columns.is-style-col-fluid {
     display: flex;
     flex-wrap: wrap;
-    gap: 12rem;
+    gap: 6rem;
 }
 
 /* Mobile */
@@ -53,7 +59,10 @@
 }
 
 /* Desktop classique : 3/5 et 2/5 */
-@media (min-width: $tablet) {
+@media (min-width: $mobile) {
+    .wp-block-columns.is-style-col-fluid {
+        gap: 12rem;
+    }
     .wp-block-columns.is-style-col-fluid > .col-3-5 {
         flex: 0 0 calc(60% - 6rem) !important;
     }
