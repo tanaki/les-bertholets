@@ -1,0 +1,11 @@
+@use '../variables' as *;
+
+.block-nav-case-study {
+    background-color: $white;
+
+    .block-inside {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+}

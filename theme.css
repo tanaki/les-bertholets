@@ -612,6 +612,15 @@ footer .block-bottom .block-bottom-inside {
     flex: 0 0 calc(50% - 6rem) !important;
   }
 }
+.block-nav-case-study {
+  background-color: #FFFFFF;
+}
+.block-nav-case-study .block-inside {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+
 .block-hero .block-inside {
   padding: 8rem 0;
 }
