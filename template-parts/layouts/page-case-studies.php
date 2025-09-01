@@ -2,7 +2,8 @@
 
     // Case Studies
     $podsCaseStudies = pods('case_study', array(
-        'limit' => -1
+        'limit' => -1,
+        'orderby' => 'menu_order'
     ));
     $caseStudies = array();
 
@@ -11,7 +12,7 @@
             'title' => $podsCaseStudies->display('post_title'),
             'slug' => $podsCaseStudies->display('post_name'),
             'text' => $podsCaseStudies->display('hero_intro'),
-            'image' => $podsCaseStudies->display('hero_image'),
+            'image' => $podsCaseStudies->display('thumbnail_image'),
         );
     endwhile;
 

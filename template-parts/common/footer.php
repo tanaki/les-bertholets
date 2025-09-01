@@ -35,7 +35,7 @@
             <div>
                 &copy; Ryma Hatahet Conservation <?php echo date('Y'); ?>
             </div>
-            <a href="/">
+            <a href="/privacy-policy/">
                 Mentions légales et politique de confidentialité
             </a>
         </div>

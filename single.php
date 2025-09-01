@@ -14,12 +14,5 @@
         'image' => $podPage->display('hero_image')
     ]);
 
-    $slug = $post->post_name;
-    if ( locate_template("template-parts/layouts/single-{$slug}.php") ) {
-        get_template_part("template-parts/layouts/single", $slug);
-    } else {
-        get_template_part("template-parts/layouts/single", "default");
-    }
-
     get_footer();
 ?>

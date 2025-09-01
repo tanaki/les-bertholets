@@ -614,11 +614,52 @@ footer .block-bottom .block-bottom-inside {
 }
 .block-nav-case-study {
   background-color: #FFFFFF;
+  border-top: 0.1rem solid #BFBFFD;
 }
 .block-nav-case-study .block-inside {
   align-items: center;
   display: flex;
   justify-content: space-between;
+  padding: 4rem 0;
+}
+.block-nav-case-study .prev a,
+.block-nav-case-study .next a {
+  align-items: flex-start;
+  display: flex;
+  color: #1C1C28;
+  flex-direction: column;
+  font-size: 1.6rem;
+  font-weight: 600;
+  line-height: 2.6rem;
+  text-transform: uppercase;
+}
+.block-nav-case-study .prev a:hover,
+.block-nav-case-study .next a:hover {
+  color: #342484;
+}
+.block-nav-case-study .prev .thumbnail,
+.block-nav-case-study .next .thumbnail {
+  display: block;
+  height: 16rem;
+  margin-bottom: 1.6rem;
+  width: 29rem;
+}
+.block-nav-case-study .prev .thumbnail img,
+.block-nav-case-study .next .thumbnail img {
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  width: 100%;
+}
+.block-nav-case-study .prev .arrow,
+.block-nav-case-study .next .arrow {
+  margin-top: 0.5rem;
+}
+.block-nav-case-study .next a {
+  align-items: flex-end;
+}
+.block-nav-case-study .next .arrow {
+  transform: rotate(180deg);
 }
 
 .block-hero .block-inside {

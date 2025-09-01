@@ -2,7 +2,8 @@
 
     // Prestations
     $podsPrestations = pods('prestation', array(
-        'limit' => -1
+        'limit' => -1,
+        'orderby' => 'menu_order'
     ));
     $prestations = array();
 
@@ -52,26 +53,27 @@
             ]
         ]
     ]);
+    
+    // Case Studies
+    $podsCaseStudies = pods('case_study', array(
+        'limit' => -1
+    ));
+    $caseStudies = array();
+
+    while ( $podsCaseStudies->fetch() ) :
+        $caseStudies[] = array(
+            'title' => $podsCaseStudies->display('post_title'),
+            'slug' => $podsCaseStudies->display('post_name'),
+            'image' => $podsCaseStudies->display('thumbnail_image'),
+        );
+    endwhile;
 
     get_template_part('template-parts/case-studies/block-case-studies', null, [
         'title' => 'Etudes de cas',
-        'items' => [
-            [
-                // 'title' => 'L\'horloge astronomique de Besançon',
-                'title' => 'L\'horloge astronomique',
-                'image' => 'horloge.png',
-                'link' => '/horloge'
-            ],
-            [
-                'title' => 'Oiseau chanteur lorem ipsum dolor sit amet',
-                'image' => 'oiseau.png',
-                'link' => '/oiseau'
-            ],
-            [
-                'title' => 'Consectitur dolor lorem ispum nemo enim',
-                'image' => 'lorem.png',
-                'link' => '/lorem'
-            ]
+        'items' => $caseStudies,
+        "button" => [
+            "label" => "Voir tout",
+            "link" => "/case-studies"
         ]
     ]);
 
