@@ -8,8 +8,10 @@
 
     h1 {
         @extend .font-sans;
-        font-size: 4rem;
-        line-height: 7.2rem;
+        font-size: 5rem;
+        letter-spacing: -0.1rem;
+        line-height: 6.8rem;
+        max-width: 60%;
         text-transform: uppercase;
     }
 
@@ -22,6 +24,17 @@
     }
     strong {
         @extend .font-serif-black;
+    }
+
+    @media screen and (max-width: $largedesktop) {
+        h1 {
+            max-width: 80%;
+        }
+    }
+    @media screen and (max-width: $desktop) {
+        h1 {
+            max-width: 100%;
+        }
     }
 }
 

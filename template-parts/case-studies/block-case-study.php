@@ -10,8 +10,10 @@
         <div class="block-case-study-title">
             <?php echo $title; ?>
         </div>
-        <div class="block-case-study-text">
-            <?php echo $text; ?>
-        </div>
+        <?php if ( isset($text) && !empty($text) ) : ?>
+            <div class="block-case-study-text">
+                <?php echo $text; ?>
+            </div>
+        <?php endif; ?>
     </div>
 </a>

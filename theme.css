@@ -674,8 +674,10 @@ footer .block-bottom .block-bottom-inside {
   padding: 8rem 0;
 }
 .block-hero h1 {
-  font-size: 4rem;
-  line-height: 7.2rem;
+  font-size: 5rem;
+  letter-spacing: -0.1rem;
+  line-height: 6.8rem;
+  max-width: 60%;
   text-transform: uppercase;
 }
 .block-hero .chapo {
@@ -684,6 +686,17 @@ footer .block-bottom .block-bottom-inside {
   margin-top: 1.2rem;
   max-width: 70%;
 }
+@media screen and (max-width: 1439px) {
+  .block-hero h1 {
+    max-width: 80%;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .block-hero h1 {
+    max-width: 100%;
+  }
+}
+
 .block-hero-image-container {
   height: 44rem;
   width: 100%;
