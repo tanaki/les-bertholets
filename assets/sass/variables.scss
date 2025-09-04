@@ -73,7 +73,11 @@ $maxnav: 1600px;
 
 /* TITLE */
 h1, .h1 {
-
+    @extend .font-sans;
+    font-size: 5rem;
+    letter-spacing: -0.1rem;
+    line-height: 6.8rem;
+    text-transform: uppercase;
 }
 h2, .h2 {
     

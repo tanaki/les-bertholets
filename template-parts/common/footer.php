@@ -20,10 +20,10 @@
                 <h6>Me Suivre</h6>
                 <ul>
                     <li>
-                        <a href="/" target="_blank">Linkedin</a>
+                        <a href="https://fr.linkedin.com/in/ryma-hatahet-52b7a4100" target="_blank">Linkedin</a>
                     </li>
                     <li>
-                        <a href="/" target="_blank">Facebook</a>
+                        <a href="https://www.instagram.com/ryma.hat/" target="_blank">Instagram</a>
                     </li>
                 </ul>
             </div>
