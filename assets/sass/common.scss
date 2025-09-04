@@ -199,12 +199,28 @@ footer {
 			text-transform: uppercase;
 		}
 	}
-	.links-social ul {
-		align-items: center;
-		display: flex;
-		gap: 2.4rem;
-		justify-content: center;
-		margin-top: 4rem;
+
+	.links-social {
+		ul {
+			align-items: center;
+			display: flex;
+			gap: 2.4rem;
+			justify-content: center;
+			margin-top: 4rem;
+		}
+
+		.link-linkedin,
+		.link-instagram {
+			
+		}
+
+		.link-linkedin {
+			
+		}
+
+		.link-instagram {
+			
+		}
 	}
 
 	.block-inside {

@@ -20,10 +20,20 @@
                 <h6>Me Suivre</h6>
                 <ul>
                     <li>
-                        <a href="https://fr.linkedin.com/in/ryma-hatahet-52b7a4100" target="_blank">Linkedin</a>
+                        <a 
+                            class="link-linkedin"
+                            href="https://fr.linkedin.com/in/ryma-hatahet-52b7a4100" 
+                            target="_blank">
+                                <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/icon_linkedin.svg' ); ?>
+                        </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/ryma.hat/" target="_blank">Instagram</a>
+                        <a 
+                            class="link-instagram"
+                            href="https://www.instagram.com/ryma.hat/" 
+                            target="_blank">
+                                <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/icon_insta.svg' ); ?>
+                        </a>
                     </li>
                 </ul>
             </div>
