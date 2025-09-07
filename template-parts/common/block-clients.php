@@ -10,9 +10,9 @@
         <ul>
             <?php foreach ( $clients as $key => $client ) : ?>
             <li>
-                <a href="<?php echo $client['link']; ?>" target="_blank">
-                    <img src="<?php echo get_template_directory_uri() . '/assets/img/clients/' . $client['image']; ?>" alt="<?php echo $client['name']; ?>" />
-                </a>
+                <?php if ( isset($client['link']) ) { ?><a href="<?php echo $client['link']; ?>" target="_blank"><?php } ?>
+                    <img src="<?php echo $client['image']; ?>" alt="<?php echo $client['name']; ?>" />
+                <?php if ( isset($client['link']) ) { ?></a><?php } ?>
             </li>
             <?php endforeach; ?>
         </ul>
