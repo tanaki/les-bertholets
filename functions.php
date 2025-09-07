@@ -32,8 +32,9 @@ function rhc_theme_add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'rhc_theme_add_slug_body_class' );
 
-function get_label ( $label ) {
-    return pods('label', array( 'where'   => 't.post_title = "' . $label . '"'))->display('label_text');
+function get_label ( $label, $stripTags = false ) {
+    $label = pods('label', array( 'where' => 't.post_title = "' . $label . '"'))->display('label_text');
+    return $stripTags ? strip_tags($label) : $label;
 }
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');

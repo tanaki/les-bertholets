@@ -5,7 +5,7 @@
 </div>
 <?php  
     get_template_part('template-parts/common/block-content', null, [
-        "title" => "Valeurs et vision",
+        "title" => get_label('title_values_vision', true),
         "content" => "<p><strong>Respect du patrimoine</strong> </p>
         <p>Des objets d’art, de leur histoire, et du travail des conservateurs.</p>
         <p><strong>Transmission & pédagogie</strong></p>

@@ -7,7 +7,7 @@
 <div class="block block-form-contact">
     <div class="block-inside">
 
-        <div class="h3">Me contacter</div>
+        <div class="h3"><?php echo get_label('title_contact_me', true); ?></div>
 
         <div class="grid grid-5">
             <div class="col-2 intro-form-contact">

@@ -5,13 +5,13 @@
         <div class="col">
             <img src="<?php echo get_template_directory_uri().'/assets/img/logo_purple.svg'; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
             <div class="quote">
-                Observer, <span class="strong">écouter les mécanismes anciens</span>, et leur redonner voix sans trahir leur histoire.
+                <?php echo get_label('home_hero_quote'); ?>
             </div>
             <div class="author">
-                Ryma Hatahet
+                <?php echo get_label('home_hero_author', true); ?>
             </div>
             <a href="#" class="button button-light">
-                &Agrave; propos
+                <?php echo get_label('btn_about', true); ?>
             </a>
         </div>
 

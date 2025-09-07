@@ -20,7 +20,7 @@
     ]);
 
     get_template_part('template-parts/common/block-content', null, [
-        "title" => "Valeurs et vision",
+        "title" => get_label('title_values_vision', true),
         "content" => "<p><strong>Respect du patrimoine</strong> </p>
         <p>Des objets d’art, de leur histoire, et du travail des conservateurs.</p>
         <p><strong>Transmission & pédagogie</strong></p>
@@ -33,7 +33,7 @@
     ]);
 
     get_template_part('template-parts/common/block-columns', null, [
-        "title" => "Commanditaires",
+        "title" => get_label('title_sponsors', true),
         "chapo" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "columns" => [
             [
@@ -69,17 +69,17 @@
     endwhile;
 
     get_template_part('template-parts/case-studies/block-case-studies', null, [
-        'title' => 'Etudes de cas',
+        "title" => get_label('title_case_studies', true),
         'items' => $caseStudies,
         "button" => [
-            "label" => "Voir tout",
+            "label" => get_label('btn_see_all', true),
             "link" => "/case-studies"
         ]
     ]);
 
     get_template_part('template-parts/common/block-columns', null, [
         "layout" => "grid",
-        "title" => "Processus de travail",
+        "title" => get_label('title_work_process', true),
         "chapo" => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
         "columns" => [
             [

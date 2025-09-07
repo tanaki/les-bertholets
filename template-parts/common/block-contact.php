@@ -1,9 +1,10 @@
 <div class="block block-contact">
     <div class="block-inside">
         <div class="block-contact-content">
-            <p>Vous souhaitez me confier une pièce ou en savoir plus ?</p>
-            <p>Prenons le temps d’échanger autour de votre projet.</p>
+            <?php echo get_label('contact_intro'); ?>
         </div>
-        <a href="/" class="button button-dark">Contact</a>
+        <a href="/" class="button button-dark">
+            <?php echo get_label('btn_contact', true); ?>
+        </a>
     </div>
 </div>

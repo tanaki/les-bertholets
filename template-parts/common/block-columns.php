@@ -9,7 +9,6 @@ if ( isset($args["button"]) ) {
     $buttonLabel = $args["button"]["label"];
     $buttonLink = $args["button"]["link"];
 }
-
 ?>
 
 <div class="block block-columns <?php if (isset($layout)) echo $layout; ?>">

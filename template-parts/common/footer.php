@@ -17,7 +17,7 @@
                 ?>
             </nav>
             <div class="links-social">
-                <h6>Me Suivre</h6>
+                <h6><?php echo get_label('label_follow_me', true); ?></h6>
                 <ul>
                     <li>
                         <a 
@@ -46,7 +46,7 @@
                 &copy; Ryma Hatahet Conservation <?php echo date('Y'); ?>
             </div>
             <a href="/privacy-policy/">
-                Mentions légales et politique de confidentialité
+                <?php echo get_page_by_path( 'privacy-policy', OBJECT, 'page' )->post_title; ?>
             </a>
         </div>
     </div>
