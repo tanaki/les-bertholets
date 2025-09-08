@@ -39,4 +39,34 @@ function get_label ( $label, $stripTags = false ) {
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');
 }
+function get_block_contenu ( $id, $layout = null ) {
+    $podContenu = pods( 'block_contenu', [ 'where' => [ 'contenu_id' => $id ] ] );
+    $podColumns = array();
+
+    forEach( $podContenu->field('contenu_content') as $key => $column ) {
+        array_push( $podColumns, array(
+            "title" => $column['post_title'],
+            "icon" => get_the_post_thumbnail_url($column['ID']),
+            "content" => $column['post_content']
+        ));
+    }
+
+    $button = null;
+    $btnLink = $podContenu->display('btn_link');
+    $btnLabel = $podContenu->display('btn_label');
+    if ( isset($btnLink) && isset($btnLabel) && !empty($btnLink) && !empty($btnLabel) ) {
+        $button = [
+            "label" => $btnLabel,
+            "link" => $btnLink
+        ];
+    }
+    
+    return [
+        "title" => $podContenu->display('post_title'),
+        "chapo" => $podContenu->display('post_content'),
+        "columns" => $podColumns,
+        "layout" => $layout,
+        "button" => $button
+    ];
+}
 ?>

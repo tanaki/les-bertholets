@@ -26,9 +26,9 @@ if ( isset($args["button"]) ) {
             <?php foreach($columns as $key => $column): ?>
 
                 <div class="item-column">
-                    <?php if ( isset($column['icon']) ) : ?>
+                    <?php if ( isset($column['icon']) && !empty($column['icon']) ) : ?>
                         <div class="item-icon">
-                            <img src="<?php echo get_template_directory_uri() . '/assets/img/icons/' . $column['icon']; ?>.svg" alt="<?php echo $column['title']; ?>" />
+                            <img src="<?php echo $column['icon']; ?>" alt="<?php echo $column['title']; ?>" />
                         </div>
                     <?php endif; ?>
                     <h5 class="item-title">
