@@ -19,10 +19,14 @@
     }
 
     .block-columns-items {
-        align-items: center;
+        align-items: flex-start;
         display: flex;
         gap: 6rem;
         justify-content: space-between;
+
+        .item-column {
+            flex: 1;
+        }
     }
 
     .button {

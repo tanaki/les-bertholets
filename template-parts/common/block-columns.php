@@ -21,7 +21,7 @@ if ( isset($args["button"]) ) {
             <?php echo $chapo ?>
         </div>
 
-        <div class="block-columns-items w-1/<?php echo min(3, count($columns)); ?>">
+        <div class="block-columns-items">
                 
             <?php foreach($columns as $key => $column): ?>
 

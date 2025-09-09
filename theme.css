@@ -927,10 +927,13 @@ footer .block-bottom .block-bottom-inside {
   width: 75%;
 }
 .block-columns .block-columns-items {
-  align-items: center;
+  align-items: flex-start;
   display: flex;
   gap: 6rem;
   justify-content: space-between;
+}
+.block-columns .block-columns-items .item-column {
+  flex: 1;
 }
 .block-columns .button {
   margin: 4.8rem auto 0;

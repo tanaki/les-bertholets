@@ -39,7 +39,7 @@ function get_label ( $label, $stripTags = false ) {
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');
 }
-function get_block_contenu ( $id, $layout = null ) {
+function get_block_contenu ( $id, $layout = null, $className = null ) {
     $podContenu = pods( 'block_contenu', [ 'where' => [ 'contenu_id' => $id ] ] );
     $podColumns = array();
 
@@ -66,7 +66,18 @@ function get_block_contenu ( $id, $layout = null ) {
         "chapo" => $podContenu->display('post_content'),
         "columns" => $podColumns,
         "layout" => $layout,
-        "button" => $button
+        "button" => $button,
+        "className" => $className
+    ];
+}
+
+function get_block_content ($id, $className = null) {
+    $podContent = pods( 'block_contenu', [ 'where' => [ 'contenu_id' => $id ] ] );
+
+    return [
+        "title" => $podContent->display('post_title'),
+        "content" => $podContent->display('post_content'),
+        "className" => $className
     ];
 }
 ?>
