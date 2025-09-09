@@ -6,6 +6,7 @@
     if ( isset($args["button"]) ) {
         $buttonLabel = $args["button"]["label"];
         $buttonLink = $args["button"]["link"];
+        $buttonClassName = array_key_exists('className', $args["button"]) ? $args["button"]["className"] : "button-light";
     }
 ?>
 <div class="block block-list <?php if ( isset($className) ) echo $className; ?>">
@@ -24,7 +25,7 @@
         </div>
 
         <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
-            <a class="button button-light" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
+            <a class="button <?php echo $buttonClassName; ?>" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
         <?php endif; ?>
     </div>
 </div>

@@ -99,7 +99,8 @@ table {
   font-optical-sizing: auto;
 }
 
-.body-copy, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content, .block-post-content p {
+.body-copy, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content, .block-post-content p,
+.block-content-content p {
   font-size: 1.6rem;
   line-height: 2.6rem;
 }
@@ -576,24 +577,30 @@ footer .block-bottom .block-bottom-inside {
   background-color: #FFFFFF;
   color: #1C1C28;
 }
-.block-post-content h4 {
+.block-post-content h4,
+.block-content-content h4 {
   font-size: 2.4rem;
   font-weight: 600;
   line-height: 3.6rem;
 }
-.block-post-content p {
+.block-post-content p,
+.block-content-content p {
   margin-bottom: 2.6rem;
 }
-.block-post-content strong {
+.block-post-content strong,
+.block-content-content strong {
   font-weight: 700;
 }
-.block-post-content .wp-block-columns {
+.block-post-content .wp-block-columns,
+.block-content-content .wp-block-columns {
   margin-bottom: 8rem;
 }
-.block-post-content .wp-block-columns p:last-child {
+.block-post-content .wp-block-columns p:last-child,
+.block-content-content .wp-block-columns p:last-child {
   margin-bottom: 0;
 }
-.block-post-content *:last-child {
+.block-post-content *:last-child,
+.block-content-content *:last-child {
   margin-bottom: 0;
 }
 
@@ -834,9 +841,6 @@ footer .block-bottom .block-bottom-inside {
   background-color: #093E34;
   color: #BFBFFD;
 }
-.block-list.bg-white {
-  background-color: #FFFFFF;
-}
 .block-list h3 {
   margin-bottom: 5.6rem;
 }
@@ -898,6 +902,23 @@ footer .block-bottom .block-bottom-inside {
 }
 .block-list .button {
   margin: 4.8rem auto 0;
+}
+.block-list.bg-white {
+  background-color: #FFFFFF;
+}
+.block-list.light-mode {
+  background-color: #FFFFFF;
+}
+.block-list.light-mode h3 {
+  color: #1C1C28;
+}
+.block-list.light-mode .block-case-study-details {
+  border: 0.1rem solid #BFBFFD;
+  border-top: none;
+}
+.block-list.light-mode .block-case-study:hover .block-case-study-details {
+  background-color: #BFBFFD;
+  color: #1C1C28;
 }
 @media screen and (max-width: 1680px) {
   .block-list .block-list-items {
@@ -963,14 +984,21 @@ footer .block-bottom .block-bottom-inside {
   background-color: #BFBFFD;
   color: #093E34;
 }
+.block-content.bg-green-dark {
+  background-color: #093E34;
+  color: #BFBFFD;
+}
 .block-content.bg-has-circles {
   background-image: url(./assets/img/bg_circles.svg);
   background-repeat: no-repeat;
   background-position: right center;
   background-size: auto 100%;
 }
-.block-content .block-content-content {
+.block-content.bg-has-circles .block-content-content {
   max-width: 58rem;
+}
+.block-content h3 {
+  margin-bottom: 4rem;
 }
 .block-content .block-content-content strong {
   display: block;
