@@ -402,13 +402,13 @@ footer .block-bottom .block-bottom-inside {
     margin: 0 8rem;
   }
 }
-@media screen and (max-width: 1279px) {
+@media screen and (max-width: 1439px) {
   header nav a {
     font-size: 1.3rem;
-    padding: 0.8rem;
+    padding: 1.6rem 0.8rem;
   }
 }
-@media screen and (max-width: 1023px) {
+@media screen and (max-width: 1279px) {
   .block .block-inside {
     margin: 0 2rem;
     padding: 8rem 0;
@@ -472,8 +472,18 @@ footer .block-bottom .block-bottom-inside {
   }
   header nav a {
     color: #093E34;
-    padding: 2rem 3rem;
+    padding: 2rem;
+    position: relative;
     transition: color 0.2s ease;
+  }
+  header nav a:after {
+    background: url(./assets/img/arrow-right.svg) no-repeat center center;
+    content: "";
+    height: 5.5rem;
+    position: absolute;
+    right: 1rem;
+    top: 0;
+    width: 5rem;
   }
   header nav a:hover {
     color: #5353B8;
@@ -485,6 +495,20 @@ footer .block-bottom .block-bottom-inside {
     position: static;
     transform: none;
     visibility: visible;
+  }
+  header nav .current-menu-item a {
+    color: #5353B8;
+  }
+  header nav .current-menu-item a:after {
+    background-color: transparent;
+    border-radius: 0;
+    bottom: auto;
+    content: "";
+    height: 5.5rem;
+    left: auto;
+    right: 1rem;
+    transform: none;
+    width: 5rem;
   }
   header .mobile-nav {
     display: block;
