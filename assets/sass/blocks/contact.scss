@@ -187,5 +187,20 @@
             color: $green-dark;
         }
     }
+
+    @media screen and (max-width: $tablet) {
+        .grid {
+            display: block;
+        }
+        .intro-form-contact {
+            margin-bottom: 4rem;
+        }
+        form .button {
+            width: 100%;
+        }
+        .wpcf7-spinner {
+            position: absolute;
+        }
+    }
     
 }

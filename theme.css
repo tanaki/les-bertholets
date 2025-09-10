@@ -259,7 +259,7 @@ header nav .current-menu-item a:after {
   transform: translateX(-0.2rem);
   width: 0.4rem;
 }
-header nav > ul {
+header nav ul {
   align-items: center;
   display: flex;
   justify-content: space-between;
@@ -477,7 +477,7 @@ footer .block-bottom .block-bottom-inside {
     transform: translate(100vw, 0);
     transition: transform 0.3s ease;
   }
-  header nav > ul {
+  header nav ul {
     display: block;
   }
   header nav a {
@@ -908,6 +908,19 @@ footer .block-bottom .block-bottom-inside {
 .block-grid-detail .item-grid .item-content ul li::marker {
   font-size: 1rem;
 }
+@media screen and (max-width: 1023px) {
+  .block-grid-detail .item-grid {
+    flex-direction: column;
+  }
+  .block-grid-detail .item-grid img,
+  .block-grid-detail .item-grid h5 {
+    margin-bottom: 1.6rem;
+  }
+  .block-grid-detail .item-grid .item-content {
+    margin: 0;
+    width: 100%;
+  }
+}
 
 .block-list {
   background-color: #093E34;
@@ -1054,6 +1067,9 @@ footer .block-bottom .block-bottom-inside {
   }
   .block-columns .chapo {
     width: 100%;
+  }
+  .block-columns.grid .block-columns-items {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
@@ -1256,6 +1272,20 @@ footer .block-bottom .block-bottom-inside {
 .block-form-contact form ::placeholder {
   color: #093E34;
 }
+@media screen and (max-width: 1023px) {
+  .block-form-contact .grid {
+    display: block;
+  }
+  .block-form-contact .intro-form-contact {
+    margin-bottom: 4rem;
+  }
+  .block-form-contact form .button {
+    width: 100%;
+  }
+  .block-form-contact .wpcf7-spinner {
+    position: absolute;
+  }
+}
 
 .block-clients {
   background-color: #FFFFFF;
@@ -1341,6 +1371,21 @@ footer .block-bottom .block-bottom-inside {
 }
 .block-split .button {
   margin-top: 2.4rem;
+}
+@media screen and (max-width: 1023px) {
+  .block-split .block-split-container {
+    flex-direction: column;
+  }
+  .block-split .block-split-left,
+  .block-split .block-split-right {
+    padding: 6rem 0;
+  }
+  .block-split .block-split-right {
+    border-left: none;
+    border-top: 0.1rem solid #BFBFFD;
+    padding-left: 0;
+    padding-top: 6rem;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

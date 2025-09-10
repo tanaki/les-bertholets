@@ -93,4 +93,23 @@
             }
         }
     }
+
+
+
+    @media screen and (max-width: $tablet) {
+
+        .item-grid {
+            flex-direction: column;
+
+            img,
+            h5 {
+                margin-bottom: 1.6rem;
+            }
+
+            .item-content {
+                margin: 0;
+                width: 100%;
+            }
+        }
+    }
 }
