@@ -69,7 +69,8 @@ table {
     font-display: swap;
 }
 */
-.font-serif, .block-columns .chapo, .font-serif-black, .block-hero strong, .block-hero-home .strong, .font-serif-bold, .font-serif-medium, .font-serif-regular, .block-contact p, .block-form-contact .intro-form-contact, .font-serif-light, .block-hero .chapo, .block-hero-home .quote {
+.font-serif, .block-columns .chapo, .font-serif-black, .block-hero strong, .block-hero-home .strong, .font-serif-bold, .block-split .block-split-left .block-intro,
+.block-split .block-split-right .block-intro, .font-serif-medium, .font-serif-regular, .block-contact p, .block-form-contact .intro-form-contact, .font-serif-light, .block-hero .chapo, .block-hero-home .quote {
   font-family: "sole-serif-small-variable", serif;
 }
 
@@ -85,7 +86,8 @@ table {
   font-variation-settings: "opsz" 500, "wght" 500;
 }
 
-.font-serif-bold {
+.font-serif-bold, .block-split .block-split-left .block-intro,
+.block-split .block-split-right .block-intro {
   font-variation-settings: "opsz" 500, "wght" 700;
 }
 
@@ -99,7 +101,7 @@ table {
   font-optical-sizing: auto;
 }
 
-.body-copy, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content, .block-post-content p,
+.body-copy, .block-split .block-text, .block-content .block-content-content p, .block-columns .item-content, .block-grid .item-content, .block-grid-detail .item-grid .item-content, .block-post-content p,
 .block-content-content p {
   font-size: 1.6rem;
   line-height: 2.6rem;
@@ -108,7 +110,7 @@ table {
 /* TITLE */
 h1, .h1 {
   font-size: 5rem;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.02rem;
   line-height: 6.8rem;
   text-transform: uppercase;
 }
@@ -344,7 +346,7 @@ footer .block-bottom .block-bottom-inside {
   border-radius: 0.8rem;
   display: inline-block;
   font-size: 1.7rem;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.02rem;
   padding: 1.5rem 5rem;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -358,6 +360,13 @@ footer .block-bottom .block-bottom-inside {
   color: #093E34;
 }
 
+.button-small {
+  font-size: 1.5rem;
+  letter-spacing: -0.02rem;
+  padding: 1.1rem 1.4rem;
+  text-transform: none;
+}
+
 .button-light {
   background-color: #BFBFFD;
   color: #093E34;
@@ -366,6 +375,11 @@ footer .block-bottom .block-bottom-inside {
 .button-dark {
   background-color: #093E34;
   color: #BFBFFD;
+}
+
+.button-border-transparent {
+  background-color: transparent;
+  border: 0.1rem solid #1C1C28;
 }
 
 /* Blocks */
@@ -689,7 +703,7 @@ footer .block-bottom .block-bottom-inside {
   padding: 8rem 0;
 }
 .block-hero h1 {
-  max-width: 60%;
+  max-width: 70%;
 }
 .block-hero .chapo {
   font-size: 3.2rem;
@@ -1128,7 +1142,7 @@ footer .block-bottom .block-bottom-inside {
 .block-form-contact .intro-form-contact {
   font-size: 3.6rem;
   font-style: italic;
-  letter-spacing: -0.1rem;
+  letter-spacing: -0.02rem;
   line-height: 5rem;
 }
 .block-form-contact form .wpcf7-form-control-wrap {
@@ -1215,6 +1229,52 @@ footer .block-bottom .block-bottom-inside {
   .block-clients li {
     margin-bottom: 4rem;
   }
+}
+
+.block-split {
+  background-color: #FFFFFF;
+  color: #1C1C28;
+}
+.block-split .block-inside {
+  padding: 0;
+}
+.block-split .block-split-container {
+  display: flex;
+}
+.block-split .block-split-left,
+.block-split .block-split-right {
+  flex: 1;
+  padding: 12rem 0;
+}
+.block-split .block-split-left .block-intro,
+.block-split .block-split-right .block-intro {
+  font-size: 2.2rem;
+  font-style: italic;
+  margin: 1.6rem 0;
+}
+.block-split .block-split-left {
+  padding-right: 8rem;
+}
+.block-split .block-split-left .block-intro {
+  color: #5353B8;
+}
+.block-split .block-split-left .button {
+  border-color: #5353B8;
+  color: #5353B8;
+}
+.block-split .block-split-right {
+  border-left: 0.1rem solid #BFBFFD;
+  padding-left: 7.9rem;
+}
+.block-split .block-split-right .block-intro {
+  color: #117D6A;
+}
+.block-split .block-split-right .button {
+  border-color: #117D6A;
+  color: #117D6A;
+}
+.block-split .button {
+  margin-top: 2.4rem;
 }
 
 /*# sourceMappingURL=theme.css.map */

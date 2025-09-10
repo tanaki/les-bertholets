@@ -256,7 +256,7 @@ footer {
 	border-radius: 0.8rem;
 	display: inline-block;
 	font-size: 1.7rem;
-	letter-spacing: -0.1rem;
+	letter-spacing: -0.02rem;
 	padding: 1.5rem 5rem;
 	text-transform: uppercase;
 	transition: all 0.2s ease;
@@ -270,6 +270,12 @@ footer {
 		color: $green-dark;
 	}
 }
+.button-small {
+	font-size: 1.5rem;
+	letter-spacing: -0.02rem;
+	padding: 1.1rem 1.4rem;
+	text-transform: none;
+}
 .button-light {
 	background-color: $purple-light;
 	color: $green-dark;
@@ -277,6 +283,10 @@ footer {
 .button-dark {
 	background-color: $green-dark;
 	color: $purple-light;
+}
+.button-border-transparent {
+	background-color: transparent;
+	border: 0.1rem solid $black-bleu;
 }
 
 /* Blocks */

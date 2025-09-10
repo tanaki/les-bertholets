@@ -1,17 +1,9 @@
-<div class="block block-split">
-    <div class="block-inside">
-        
-        <div class="">
-            BLOCK LEFT
-        </div>
-        <div class="">
-            BLOCK RIGHT
-        </div>
-
-    </div>
-</div>
-
 <?php
+    get_template_part('template-parts/common/block-split', null, array(
+        "left" => get_block_split('conservation'),
+        "right" => get_block_split('restauration')
+    ));
+
     // conservation
     get_template_part(
         'template-parts/common/block-content', 

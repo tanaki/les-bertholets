@@ -75,9 +75,22 @@ function get_block_content ($id, $className = null) {
     $podContent = pods( 'block_contenu', [ 'where' => [ 'contenu_id' => $id ] ] );
 
     return [
+        "id" => $id,
         "title" => $podContent->display('post_title'),
         "content" => $podContent->display('post_content'),
         "className" => $className
+    ];
+}
+
+function get_block_split ($id) {
+    $podSplit = pods( 'split', [ 'where' => [ 'split_id' => $id ] ] );
+
+    return [
+        "id" => $id,
+        "title" => $podSplit->display('post_title'),
+        "intro" => $podSplit->display('split_intro'),
+        "text" => $podSplit->display('split_text'),
+        "button" => $podSplit->display('split_btn_label')
     ];
 }
 ?>

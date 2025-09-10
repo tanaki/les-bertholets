@@ -1,0 +1,56 @@
+@use '../variables' as *;
+
+.block-split {
+    background-color: $white;
+    color: $black-bleu;
+
+    .block-inside {
+        padding: 0;
+    }
+
+    .block-split-container {
+        display: flex;
+    }
+    .block-split-left,
+    .block-split-right {
+        flex: 1;
+        padding: 12rem 0;
+
+        .block-intro {
+            @extend .font-serif-bold;
+            font-size: 2.2rem;
+            font-style: italic;
+            margin: 1.6rem 0;
+        }
+    }
+    .block-split-left {
+        padding-right: 8rem;
+
+        .block-intro {
+            color: $purple-mid;
+        }
+        .button {
+            border-color: $purple-mid;
+            color: $purple-mid;
+        }
+    }
+    .block-split-right {
+        border-left: 0.1rem solid $purple-light;
+        padding-left: 7.9rem;
+
+        .block-intro {
+            color: $green-mid;
+        }
+        .button {
+            border-color: $green-mid;
+            color: $green-mid;
+        }
+    }
+
+    .block-text {
+        @extend .body-copy;
+    }
+    .button {
+        margin-top: 2.4rem;
+    }
+}
