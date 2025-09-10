@@ -75,7 +75,7 @@ $maxnav: 1600px;
 h1, .h1 {
     @extend .font-sans;
     font-size: 5rem;
-    letter-spacing: -0.02rem;
+    letter-spacing: -0.05rem;
     line-height: 6.8rem;
     text-transform: uppercase;
 }
@@ -85,6 +85,7 @@ h2, .h2 {
 h3, .h3 {
     @extend .font-sans;
     font-size: 4rem;
+    letter-spacing: -0.05rem;
     line-height: 7.2rem;
     text-transform: uppercase;
 }
@@ -126,13 +127,14 @@ h6, .h6 {
 
 @media screen and (max-width: $tablet) {
     h1, .h1 {
-
+        font-size: 4rem;
     }
     h2, .h2 {
         
     }
     h3, .h3 {
-
+        font-size: 3.4rem;
+        line-height: 7.2rem;
     }
     h4, .h4,
     h5, .h5 {

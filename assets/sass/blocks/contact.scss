@@ -30,7 +30,6 @@
             margin: 0;
             padding-left: 0;
             padding-right: 0;
-            text-align: center;
         }
         .block-contact-content {
             max-width: 100%;
@@ -134,7 +133,7 @@
         @extend .font-serif-regular;
         font-size: 3.6rem;
         font-style: italic;
-        letter-spacing: -0.02rem;
+        letter-spacing: -0.05rem;
         line-height: 5rem;
     }
 

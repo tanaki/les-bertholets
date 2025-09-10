@@ -110,13 +110,14 @@ table {
 /* TITLE */
 h1, .h1 {
   font-size: 5rem;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.05rem;
   line-height: 6.8rem;
   text-transform: uppercase;
 }
 
 h3, .h3 {
   font-size: 4rem;
+  letter-spacing: -0.05rem;
   line-height: 7.2rem;
   text-transform: uppercase;
 }
@@ -127,6 +128,15 @@ h5, .h5 {
   line-height: 3.4rem;
 }
 
+@media screen and (max-width: 1023px) {
+  h1, .h1 {
+    font-size: 4rem;
+  }
+  h3, .h3 {
+    font-size: 3.4rem;
+    line-height: 7.2rem;
+  }
+}
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -346,7 +356,7 @@ footer .block-bottom .block-bottom-inside {
   border-radius: 0.8rem;
   display: inline-block;
   font-size: 1.7rem;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.05rem;
   padding: 1.5rem 5rem;
   text-transform: uppercase;
   transition: all 0.2s ease;
@@ -362,7 +372,7 @@ footer .block-bottom .block-bottom-inside {
 
 .button-small {
   font-size: 1.5rem;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.05rem;
   padding: 1.1rem 1.4rem;
   text-transform: none;
 }
@@ -410,7 +420,7 @@ footer .block-bottom .block-bottom-inside {
 }
 @media screen and (max-width: 1279px) {
   .block .block-inside {
-    margin: 0 2rem;
+    margin: 0;
     padding: 8rem 0;
   }
   body {
@@ -611,6 +621,13 @@ footer .block-bottom .block-bottom-inside {
     font-weight: 500;
   }
 }
+@media screen and (max-width: 1023px) {
+  .button {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
 .block-post-content {
   background-color: #FFFFFF;
   color: #1C1C28;
@@ -745,6 +762,11 @@ footer .block-bottom .block-bottom-inside {
     max-width: 100%;
   }
 }
+@media screen and (max-width: 1023px) {
+  .block-hero .chapo {
+    max-width: 100%;
+  }
+}
 
 .block-hero-image-container {
   height: 44rem;
@@ -795,8 +817,20 @@ footer .block-bottom .block-bottom-inside {
   width: 48.5rem;
 }
 @media screen and (max-width: 1023px) {
+  .block-hero-home .block-inside {
+    display: block;
+    padding: 8rem 0;
+  }
+  .block-hero-home img {
+    display: block;
+    max-width: 7rem;
+  }
   .block-hero-home .hero-image {
     display: none;
+  }
+  .block-hero-home .quote {
+    font-size: 4rem;
+    line-height: 5.5rem;
   }
 }
 
@@ -968,6 +1002,12 @@ footer .block-bottom .block-bottom-inside {
     display: flex;
     flex-direction: column;
   }
+  .block-list.bg-full-list .block-list-items {
+    gap: 4rem;
+  }
+  .block-list .block-case-study .block-case-study-details {
+    padding: 2.4rem 2.4rem 4rem;
+  }
 }
 
 .block-columns {
@@ -1010,7 +1050,10 @@ footer .block-bottom .block-bottom-inside {
 }
 @media screen and (max-width: 1023px) {
   .block-columns .block-columns-items {
-    display: block;
+    flex-direction: column;
+  }
+  .block-columns .chapo {
+    width: 100%;
   }
 }
 
@@ -1080,7 +1123,6 @@ footer .block-bottom .block-bottom-inside {
     margin: 0;
     padding-left: 0;
     padding-right: 0;
-    text-align: center;
   }
   .block-contact .block-contact-content {
     max-width: 100%;
@@ -1166,7 +1208,7 @@ footer .block-bottom .block-bottom-inside {
 .block-form-contact .intro-form-contact {
   font-size: 3.6rem;
   font-style: italic;
-  letter-spacing: -0.02rem;
+  letter-spacing: -0.05rem;
   line-height: 5rem;
 }
 .block-form-contact form .wpcf7-form-control-wrap {

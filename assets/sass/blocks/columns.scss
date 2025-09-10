@@ -56,7 +56,10 @@
 
     @media screen and (max-width: $tablet) {
         .block-columns-items {
-            display: block;
+            flex-direction: column;
+        }
+        .chapo {
+            width: 100%;
         }
     }
 }

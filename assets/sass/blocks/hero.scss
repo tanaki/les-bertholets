@@ -31,6 +31,11 @@
             max-width: 100%;
         }
     }
+    @media screen and (max-width: $tablet) {
+        .chapo {
+            max-width: 100%;
+        }
+    }
 }
 
 .block-hero-image-container {
@@ -91,9 +96,23 @@
 
     @media screen and (max-width: $tablet) {
 
+        .block-inside {
+            display: block;
+            padding: 8rem 0;
+        }
+
+        img {
+            display: block;
+            max-width: 7rem;
+        }
+
         .hero-image {
             display: none;
         }
 
+        .quote {
+            font-size: 4rem;
+            line-height: 5.5rem;
+        }
     }
 }
