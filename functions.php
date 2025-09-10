@@ -1,4 +1,14 @@
 <?php
+// Déclarer un emplacement de menu
+function rhc_register_menus() {
+    register_nav_menus(
+        array(
+            'main-menu' => __( 'Main Menu', 'rhc' ),
+        )
+    );
+}
+add_action( 'init', 'rhc_register_menus' );
+
 function rhc_theme_register_columns_variation() {
     wp_enqueue_script(
         'mytheme-columns-variation',
