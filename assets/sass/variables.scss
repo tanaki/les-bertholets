@@ -66,6 +66,12 @@ $maxnav: 1600px;
     font-optical-sizing: auto;
 }
 
+$wlight: 200;
+$wmedium: 500;
+$wsemibold: 600;
+$wbold: 700;
+$wblack: 700;
+
 .body-copy {
 	font-size: 1.6rem;
     line-height: 2.6rem;
@@ -94,7 +100,7 @@ h4, .h4 {
 }
 h5, .h5 {
     font-size: 2.2rem;
-    font-weight: 600;
+    font-weight: $wsemibold;
     line-height: 3.4rem;
 }
 h6, .h6 {

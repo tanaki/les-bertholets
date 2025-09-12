@@ -37,7 +37,13 @@
 
     }
     .item-icon {
+        height: 9.5rem;
         margin-bottom: 1.6rem;
+
+        img {
+            display: block;
+            height: 100%;
+        }
     }
     .item-title {
         margin-bottom: 1.6rem;

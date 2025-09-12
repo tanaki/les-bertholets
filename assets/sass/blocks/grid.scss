@@ -25,6 +25,12 @@
     .item-content {
         @extend .body-copy;
     }
+    .item-grid {
+        img {
+            display: block;
+            width: 4rem;
+        }
+    }
 
     .button {
         margin: 4.8rem auto 0;
