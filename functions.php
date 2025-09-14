@@ -54,10 +54,14 @@ function get_block_contenu ( $id, $layout = null, $className = null ) {
     $podColumns = array();
 
     forEach( $podContenu->field('contenu_content') as $key => $column ) {
+        
+        $relatedPod = pods( 'contenu', $column['ID'] );
+
         array_push( $podColumns, array(
             "title" => $column['post_title'],
             "icon" => get_the_post_thumbnail_url($column['ID']),
-            "content" => $column['post_content']
+            "content" => $column['post_content'],
+            "subtitle" => $relatedPod->display('contenu_subtitle')
         ));
     }
 

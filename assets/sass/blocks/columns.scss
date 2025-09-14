@@ -48,6 +48,14 @@
     .item-title {
         margin-bottom: 1.6rem;
     }
+    .item-subtitle {
+        color: $purple-mid;
+        font-weight: $wsemibold;
+        font-size: 2.2rem;
+        line-height: 2.8rem;
+        margin-bottom: 1.6rem;
+        text-transform: uppercase;
+    }
     .item-content {
         @extend .body-copy;
     }

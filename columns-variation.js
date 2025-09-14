@@ -4,7 +4,7 @@ wp.domReady( function() {
         'core/columns',
         {
             name: 'col-fluid-3-2',
-            title: 'Colonnes 3/5 – 2/5',
+            title: 'RH - Block Media',
             description: 'Colonne gauche 3/5 et colonne droite 2/5 en desktop (50/50 large écran, 100% mobile).',
             icon: 'columns',
             attributes: {
@@ -23,7 +23,7 @@ wp.domReady( function() {
         'core/columns',
         {
             name: 'col-fluid-2-3',
-            title: 'Colonnes 2/5 – 3/5',
+            title: 'RH - Block Texte',
             description: 'Colonne gauche 2/5 et colonne droite 3/5 en desktop (50/50 large écran, 100% mobile).',
             icon: 'columns',
             attributes: {

@@ -1096,6 +1096,14 @@ footer .block-bottom .block-bottom-inside {
 .block-columns .item-title {
   margin-bottom: 1.6rem;
 }
+.block-columns .item-subtitle {
+  color: #5353B8;
+  font-weight: 600;
+  font-size: 2.2rem;
+  line-height: 2.8rem;
+  margin-bottom: 1.6rem;
+  text-transform: uppercase;
+}
 .block-columns.grid .block-columns-items {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

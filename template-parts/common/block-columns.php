@@ -31,6 +31,11 @@ if ( isset($args["button"]) ) {
                             <img src="<?php echo $column['icon']; ?>" alt="<?php echo $column['title']; ?>" />
                         </div>
                     <?php endif; ?>
+                    <?php if ( isset($column['subtitle']) && !empty($column['subtitle']) ) : ?>
+                        <div class="item-subtitle">
+                            <?php echo $column['subtitle']; ?>
+                        </div>
+                    <?php endif; ?>
                     <h5 class="item-title">
                         <?php echo $column['title']; ?>
                     </h5>
