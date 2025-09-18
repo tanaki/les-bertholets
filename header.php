@@ -29,8 +29,13 @@
 		<!-- libs -->
         <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/headroom.min.js"></script>
 
-		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+			/>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
 
 		<?php wp_head(); ?>
 	</head>

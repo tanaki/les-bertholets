@@ -1338,43 +1338,114 @@ footer .block-bottom .block-bottom-inside {
 .block-clients {
   background-color: #FFFFFF;
   color: #1C1C28;
+  padding: 0;
 }
 .block-clients h3 {
   margin-bottom: 6.4rem;
   text-align: center;
 }
-.block-clients ul {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 4rem;
+.block-clients .block-clients-swiper {
+  width: 100%;
 }
-.block-clients a {
+.block-clients .block-clients-swiper .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 4rem;
+}
+.block-clients .block-clients-swiper .swiper-slide a {
   opacity: 1;
   transition: opacity 0.2s ease;
 }
-.block-clients a:hover {
+.block-clients .block-clients-swiper .swiper-slide a:hover {
   opacity: 0.8;
 }
-.block-clients img {
+.block-clients .block-clients-swiper .swiper-slide img {
   display: block;
   height: 7.6rem;
-  margin: 0 auto;
   width: 17.3rem;
+  object-fit: contain;
 }
-@media screen and (max-width: 1023px) {
-  .block-clients ul {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.block-clients .block-clients-swiper .swiper-pagination {
+  margin-top: 4rem;
+  text-align: center;
 }
-@media screen and (max-width: 767px) {
-  .block-clients ul {
-    display: block;
+.block-clients .block-clients-swiper .swiper-pagination .swiper-pagination-bullet {
+  opacity: 0.2;
+}
+.block-clients .block-clients-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #BFBFFD;
+  opacity: 1;
+}
+@media screen and (min-width: 1023px) {
+  .block-clients .block-clients-swiper {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 4rem;
   }
-  .block-clients li {
-    margin-bottom: 4rem;
+  .block-clients .block-clients-swiper .swiper-wrapper {
+    display: contents;
+  }
+  .block-clients .block-clients-swiper .swiper-slide {
+    width: auto !important;
+    padding: 0;
+    margin-bottom: 0;
+  }
+  .block-clients .block-clients-swiper .swiper-pagination {
+    display: none;
   }
 }
 
+/*
+@use '../variables' as *;
+
+.block-clients {
+    background-color: $white;
+    color: $black-bleu;
+
+    h3 {
+        margin-bottom: 6.4rem;
+        text-align: center;
+    }
+
+    ul {
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        // gap: 4rem;
+    }
+
+    a {
+        opacity: 1;
+        transition: opacity 0.2s ease;
+
+        &:hover {
+            opacity: 0.8;
+        }
+    }
+
+    img {
+        display: block;
+        height: 7.6rem;
+        margin: 0 auto;
+        width: 17.3rem;
+    }
+
+    @media screen and (max-width: $tablet) {
+        ul {
+            // grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        ul {
+            // display: block;
+        }
+        li {
+            margin-bottom: 4rem;
+        }
+    }
+}*/
 .block-split {
   background-color: #FFFFFF;
   color: #1C1C28;

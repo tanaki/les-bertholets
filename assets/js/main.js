@@ -27,20 +27,18 @@ if ( headerNavItems ) {
 }
 
 /* Init on domloaded */
-if ( document ) {
-  document.addEventListener("DOMContentLoaded", function(event){
+document.addEventListener("DOMContentLoaded", () => {
+  if (headroom) headroom.init();
 
-    if (headroom) headroom.init();
+  if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
+  }
 
-    // wait until images, links, fonts, stylesheets, and js is loaded
-    window.addEventListener("load", function(e){
+  // Attendre que tout soit chargé (images, CSS, etc.)
+  window.addEventListener("load", () => {
+    if (Client) Client.init();
+    if (Footer) Footer.init();
 
-      // if ( Title ) Title.init();
-      // if ( Content ) Content.init();
-      if ( Footer ) Footer.init();
-
-      document.body.classList.add('loaded');
-    });
+    document.body.classList.add('loaded');
   });
-}
+});

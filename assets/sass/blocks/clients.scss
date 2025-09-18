@@ -3,6 +3,86 @@
 .block-clients {
     background-color: $white;
     color: $black-bleu;
+    padding: 0;
+
+    h3 {
+        margin-bottom: 6.4rem;
+        text-align: center;
+    }
+
+    .block-clients-swiper {
+        width: 100%;
+
+        .swiper-slide {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 1rem;
+            margin-bottom: 4rem;
+
+            a {
+                opacity: 1;
+                transition: opacity 0.2s ease;
+
+                &:hover {
+                    opacity: 0.8;
+                }
+            }
+
+            img {
+                display: block;
+                height: 7.6rem;
+                width: 17.3rem;
+                object-fit: contain;
+            }
+        }
+
+        .swiper-pagination {
+            margin-top: 4rem;
+            text-align: center;
+
+            .swiper-pagination-bullet {
+                opacity: 0.2;
+
+                &-active {
+                    background: $purple-light;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    // Desktop → grille
+    @media screen and (min-width: $tablet) {
+        .block-clients-swiper {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 4rem;
+
+            .swiper-wrapper {
+                display: contents;
+            }
+
+            .swiper-slide {
+                width: auto !important;
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            .swiper-pagination {
+                display: none;
+            }
+        }
+    }
+}
+
+
+/*
+@use '../variables' as *;
+
+.block-clients {
+    background-color: $white;
+    color: $black-bleu;
 
     h3 {
         margin-bottom: 6.4rem;
@@ -10,9 +90,9 @@
     }
 
     ul {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 4rem;
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        // gap: 4rem;
     }
 
     a {
@@ -33,16 +113,16 @@
 
     @media screen and (max-width: $tablet) {
         ul {
-            grid-template-columns: repeat(2, 1fr);
+            // grid-template-columns: repeat(2, 1fr);
         }
     }
 
     @media screen and (max-width: $mobile) {
         ul {
-            display: block;
+            // display: block;
         }
         li {
             margin-bottom: 4rem;
         }
     }
-}
+}*/
