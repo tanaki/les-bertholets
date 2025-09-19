@@ -2,7 +2,7 @@
     if ( isset($_GET['preview']) ) {
         // Prestations
         $podsPrestations = pods('prestation', array(
-            'limit' => -1,
+            'limit' => 6,
             'orderby' => 'menu_order'
         ));
         $prestations = array();

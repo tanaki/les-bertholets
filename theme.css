@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -865,9 +866,73 @@ footer .block-bottom .block-bottom-inside {
   }
 }
 
+/*
+.block-grid {
+    background-color: $white;
+    color: $black-bleu;
+
+    .block-inside {
+        display: flex;
+        flex-direction: column;
+    }
+
+    h3 {
+        margin-bottom: 4.8rem;
+    }
+
+    h5 {
+        margin: 1.6rem 0;
+    }
+
+    .block-grid-swiper {
+        width: 100%;
+
+        .swiper-wrapper {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6.6rem;
+        }
+
+        .swiper-pagination {
+            margin-top: 4rem;
+            text-align: center;
+
+            .swiper-pagination-bullet {
+                opacity: 0.2;
+
+                &-active {
+                    background: $purple-light;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+    .item-grid {
+        img {
+            display: block;
+            width: 4rem;
+        }
+    }
+    .item-content {
+        @extend .body-copy;
+    }
+
+    .button {
+        margin: 4.8rem auto 0;
+    }
+
+    @media screen and (max-width: $tablet) {
+
+        .grid {
+            display: block;
+        }
+    }
+}
+*/
 .block-grid {
   background-color: #FFFFFF;
   color: #1C1C28;
+  /* Desktop : 2 lignes × 3 colonnes */
 }
 .block-grid .block-inside {
   display: flex;
@@ -879,10 +944,24 @@ footer .block-bottom .block-bottom-inside {
 .block-grid h5 {
   margin: 1.6rem 0;
 }
-.block-grid .grid {
+.block-grid .block-grid-swiper {
+  width: 100%;
+}
+.block-grid .block-grid-swiper .swiper-slide {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6.6rem;
+  grid-template-rows: repeat(3, auto);
+  margin-bottom: 4rem;
+}
+.block-grid .block-grid-swiper .swiper-pagination {
+  position: relative;
+  text-align: center;
+}
+.block-grid .block-grid-swiper .swiper-pagination .swiper-pagination-bullet {
+  opacity: 0.2;
+}
+.block-grid .block-grid-swiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #BFBFFD;
+  opacity: 1;
 }
 .block-grid .item-grid img {
   display: block;
@@ -891,15 +970,25 @@ footer .block-bottom .block-bottom-inside {
 .block-grid .button {
   margin: 4.8rem auto 0;
 }
-@media screen and (max-width: 1023px) {
-  .block-grid .grid {
-    grid-template-columns: repeat(2, 1fr);
+@media screen and (min-width: 1023px) {
+  .block-grid .block-grid-swiper .swiper-wrapper {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 6.6rem;
+  }
+  .block-grid .block-grid-swiper .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+  }
+  .block-grid .swiper-pagination {
+    display: none;
   }
 }
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1023px) {
   .block-grid .grid {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 4.4rem;
+    display: block;
   }
 }
 
@@ -1368,7 +1457,7 @@ footer .block-bottom .block-bottom-inside {
   object-fit: contain;
 }
 .block-clients .block-clients-swiper .swiper-pagination {
-  margin-top: 4rem;
+  position: relative;
   text-align: center;
 }
 .block-clients .block-clients-swiper .swiper-pagination .swiper-pagination-bullet {
@@ -1397,55 +1486,6 @@ footer .block-bottom .block-bottom-inside {
   }
 }
 
-/*
-@use '../variables' as *;
-
-.block-clients {
-    background-color: $white;
-    color: $black-bleu;
-
-    h3 {
-        margin-bottom: 6.4rem;
-        text-align: center;
-    }
-
-    ul {
-        // display: grid;
-        // grid-template-columns: repeat(4, 1fr);
-        // gap: 4rem;
-    }
-
-    a {
-        opacity: 1;
-        transition: opacity 0.2s ease;
-
-        &:hover {
-            opacity: 0.8;
-        }
-    }
-
-    img {
-        display: block;
-        height: 7.6rem;
-        margin: 0 auto;
-        width: 17.3rem;
-    }
-
-    @media screen and (max-width: $tablet) {
-        ul {
-            // grid-template-columns: repeat(2, 1fr);
-        }
-    }
-
-    @media screen and (max-width: $mobile) {
-        ul {
-            // display: block;
-        }
-        li {
-            margin-bottom: 4rem;
-        }
-    }
-}*/
 .block-split {
   background-color: #FFFFFF;
   color: #1C1C28;

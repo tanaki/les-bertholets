@@ -37,6 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attendre que tout soit chargé (images, CSS, etc.)
   window.addEventListener("load", () => {
     if (Client) Client.init();
+    if (Grid) Grid.init();
     if (Footer) Footer.init();
 
     document.body.classList.add('loaded');
