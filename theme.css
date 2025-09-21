@@ -679,6 +679,12 @@ footer .block-bottom .block-bottom-inside {
 .block-content-content *:last-child {
   margin-bottom: 0;
 }
+.block-post-content .wp-block-image,
+.block-post-content .wp-block-embed,
+.block-content-content .wp-block-image,
+.block-content-content .wp-block-embed {
+  margin-bottom: 4rem;
+}
 
 /* TODO FIX THAT */
 /* Conteneur colonnes fluide */

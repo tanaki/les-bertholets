@@ -64,6 +64,11 @@
     *:last-child {
         margin-bottom: 0;
     }
+
+    .wp-block-image,
+    .wp-block-embed {
+        margin-bottom: 4rem;
+    }
 }
 
 /* TODO FIX THAT */
