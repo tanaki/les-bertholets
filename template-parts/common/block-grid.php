@@ -29,17 +29,6 @@
                     </div>
 
                 <?php endforeach; ?>
-                <?php foreach ( $items as $key => $item ): ?>
-
-                    <div class="swiper-slide item-grid">
-                        <img src="<?php echo $item['image']; ?>" alt="<?php echo $item['title']; ?>" />
-                        <h5><?php echo $item['title']; ?></h5>
-                        <div class="item-content">
-                            <?php echo $item['excerpt']; ?>
-                        </div>
-                    </div>
-
-                <?php endforeach; ?>
             </div>
 
             <div class="swiper-pagination"></div>
