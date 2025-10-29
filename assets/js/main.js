@@ -34,11 +34,21 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.registerPlugin(ScrollTrigger);
   }
 
-  // Attendre que tout soit chargé (images, CSS, etc.)
+  // Attendre que tout soit chargé
   window.addEventListener("load", () => {
     if (Client) Client.init();
     if (Grid) Grid.init();
+    if (Title) Title.init();
+    if (Lists) Lists.init();
+    if (Content) Content.init();
     if (Footer) Footer.init();
+
+    // Forcer un refresh de ScrollTrigger après que le layout soit stabilisé
+    setTimeout(() => {
+      if (typeof ScrollTrigger !== "undefined") {
+        ScrollTrigger.refresh();
+      }
+    }, 300);
 
     document.body.classList.add('loaded');
   });

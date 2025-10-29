@@ -16,7 +16,7 @@
                 <?php echo $title; ?>
             </h3>
         <?php endif; ?>
-        <div class="block-list-items">
+        <div class="block-list-items animate-list">
             <?php 
                 foreach( $items as $key => $item ) {
                     get_template_part('template-parts/case-studies/block-case-study', null, $item);
@@ -25,7 +25,7 @@
         </div>
 
         <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
-            <a class="button <?php echo $buttonClassName; ?>" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
+            <a class="button <?php echo $buttonClassName; ?> animate-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
         <?php endif; ?>
     </div>
 </div>

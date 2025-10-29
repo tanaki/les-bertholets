@@ -10,7 +10,7 @@
         <div class="h3"><?php echo get_label('title_contact_me', true); ?></div>
 
         <div class="grid grid-5">
-            <div class="col-2 intro-form-contact">
+            <div class="col-2 intro-form-contact animate-block">
                 <?php
                     $pod  = pods( 'page', get_the_ID() );
                     if ( $pod->exists() ) {
@@ -19,7 +19,7 @@
                 ?>
             </div>
 
-            <div class="col-3">
+            <div class="col-3 animate-block">
                 <?php echo do_shortcode('[contact-form-7 id="2af8acd" title="Formulaire de contact"]'); ?>
             </div>
         </div>

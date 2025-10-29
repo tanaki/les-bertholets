@@ -179,6 +179,10 @@ footer {
 	.logo img {
 		display: block;
 	}
+	.logo img {
+		height: 10rem;
+		width: auto;
+	}
 
 	a {
 		color: $purple-light;

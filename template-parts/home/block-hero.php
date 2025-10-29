@@ -3,7 +3,7 @@
     <div class="block-inside">
 
         <div class="col">
-            <img src="<?php echo get_template_directory_uri().'/assets/img/logo_purple.svg'; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
+            <img class="logo_hero" src="<?php echo get_template_directory_uri().'/assets/img/logo_lilac.svg'; ?>" alt="<?php echo get_bloginfo('title'); ?>" />
             <div class="quote">
                 <?php echo get_label('home_hero_quote'); ?>
             </div>

@@ -17,7 +17,7 @@
         <?php endif; ?>
 
         <div class="block-grid-swiper swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper animate-list">
                 <?php foreach ( $items as $key => $item ): ?>
 
                     <div class="swiper-slide item-grid">
@@ -35,7 +35,7 @@
         </div>
 
         <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
-            <a class="button button-dark" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
+            <a class="button button-dark animate-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
         <?php endif; ?>
     </div>
 </div>

@@ -4,7 +4,7 @@ let Footer = {
         console.log( "footer::init" );
 
         let container = "footer";
-        let lists = document.querySelectorAll("footer .block-inside > div:not(.logo)");
+        let lists = document.querySelectorAll("footer .block-inside > div:not(.logo), footer .block-inside .logo");
 
         // Formules
         let footerTL = gsap.timeline({
@@ -22,7 +22,7 @@ let Footer = {
         },{
             yPercent: 0,
             opacity: 1,
-            stagger : 0.3
+            stagger : 0.1
         });
     }
 }

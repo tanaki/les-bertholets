@@ -21,7 +21,7 @@ if ( isset($args["button"]) ) {
             <?php echo $chapo ?>
         </div>
 
-        <div class="block-columns-items">
+        <div class="block-columns-items animate-list">
                 
             <?php foreach($columns as $key => $column): ?>
 
@@ -48,7 +48,7 @@ if ( isset($args["button"]) ) {
 
         </div>
         <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
-            <a class="button button-dark" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
+            <a class="button button-dark animate-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
         <?php endif; ?>
     </div>
 </div>

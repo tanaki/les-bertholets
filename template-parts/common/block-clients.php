@@ -8,7 +8,7 @@
             <?php echo $title; ?>
         </h3>
         <div class="block-clients-swiper swiper">
-            <div class="swiper-wrapper">
+            <div class="swiper-wrapper animate-list duration-long">
                 <?php foreach ( $clients as $key => $client ) : ?>
                 <div class="swiper-slide client-<?php echo $key; ?>">
                     <?php if ( isset($client['link']) ) { ?><a href="<?php echo $client['link']; ?>" target="_blank"><?php } ?>

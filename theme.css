@@ -306,6 +306,10 @@ footer .logo,
 footer .logo img {
   display: block;
 }
+footer .logo img {
+  height: 10rem;
+  width: auto;
+}
 footer a {
   color: #BFBFFD;
   transition: color 0.2s ease;
@@ -832,6 +836,10 @@ footer .block-bottom .block-bottom-inside {
 }
 .block-hero-home .col {
   color: #BFBFFD;
+}
+.block-hero-home .logo_hero {
+  height: 10rem;
+  width: auto;
 }
 .block-hero-home .quote {
   font-size: 5rem;

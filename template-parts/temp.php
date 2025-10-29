@@ -102,7 +102,7 @@
             <div class="temp-contact temp-invisible"></div>
 
             <div class="temp-content">
-                <img class="temp-logo" alt="Ryma Hatahet Conservation" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_purple.svg" />
+                <img class="temp-logo" alt="Ryma Hatahet Conservation" src="<?php echo get_template_directory_uri(); ?>/assets/img/logo_lilac.svg" />
                 <div class="temp-title">Rendez-vous tr&egrave;s bient&ocirc;t&nbsp;! </div>
                 <div class="temp-subtitle">Mon site web est en cours de r&eacute;alisation. Merci de votre patience.</div>
             </div>

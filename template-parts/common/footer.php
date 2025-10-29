@@ -2,7 +2,7 @@
     <div class="block-inside">
         
         <a href="/" class="logo">
-            <img src="<?php echo get_template_directory_uri().'/assets/img/logo_purple.svg' ?>" alt="<?php echo get_bloginfo('title'); ?>" />
+            <img src="<?php echo get_template_directory_uri().'/assets/img/logo_lilac.svg' ?>" alt="<?php echo get_bloginfo('title'); ?>" />
         </a>
 
         <div class="left-col">

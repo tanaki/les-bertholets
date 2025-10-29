@@ -67,6 +67,11 @@
         color: $purple-light;
     }
 
+    .logo_hero {
+        height: 10rem;
+        width: auto;
+    }
+
     .quote {
         @extend .font-serif-light;
         font-size: 5rem;
