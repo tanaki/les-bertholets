@@ -5,7 +5,7 @@
 <div class="block block-grid-detail">
     <div class="block-inside">
         
-        <div class="grid">
+        <div class="grid animate-list duration-long">
             <?php foreach ( $items as $key => $item ): ?>
 
                 <div class="item-grid">
