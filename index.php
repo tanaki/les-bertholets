@@ -1,16 +1,35 @@
 <?php get_header(); ?>
-    <div>
-        Hero image
+
+    <div class="block">
+        <div class="block-inside">
+            Hero image
+        </div>
     </div>
 
-    <div>
-        Intro title<br/>
-        Intro subtext<br/>
-        Intro text
+    <div class="block">
+        <div class="block-inside">
+            Intro title<br/>
+            Intro subtext<br/>
+            Intro text
+            Intro title<br/>
+            Intro subtext<br/>
+            Intro text
+            Intro title<br/>
+            Intro subtext<br/>
+            Intro text
+            Intro title<br/>
+            Intro subtext<br/>
+            Intro text
+            Intro title<br/>
+            Intro subtext<br/>
+            Intro text
+        </div>
     </div>
 
-    <div>
-        Discover our wines<br/>
-        List of wines
+    <div class="block">
+        <div class="block-inside">
+            Discover our wines<br/>
+            List of wines
+        </div>
     </div>
 <?php get_footer(); ?>

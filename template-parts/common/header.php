@@ -7,19 +7,36 @@
                     Logo
                     <?php //echo file_get_contents( get_template_directory_uri() . '/assets/img/logo_text.svg' ); ?>
                 </a>
-                <nav>
-                    <?php 
-                        wp_nav_menu( 
-                            array(
-                                'theme_location'=> 'main-menu',
-                                'container' => null
-                            ) 
-                        );
-                    ?>
-                </nav>
-                <div>
-                    <a href="#">FR/EN</a>
-                    <a href="#"> --- </a>
+
+                <div class="navigation">
+                    <nav class="site-navigation">
+                        <?php
+                            wp_nav_menu( array(
+                                'theme_location' => 'main-menu',
+                                'container'      => null,
+                            ) );
+                        ?>
+                    </nav>
+
+                    <nav>
+                        <?php
+                        $languages = pll_the_languages( array(
+                            'raw' => 1,          // On récupère les infos des langues sous forme de tableau
+                            'hide_if_empty' => 0 // Pour ne pas cacher les langues sans traduction
+                        ) );
+
+                        if ( ! empty( $languages ) ) : ?>
+                            <ul class="lang-switcher">
+                                <?php foreach ( $languages as $lang ) : ?>
+                                    <li class="<?php echo $lang['current_lang'] ? 'active' : ''; ?>">
+                                        <a href="<?php echo esc_url( $lang['url'] ); ?>">
+                                            <?php echo strtoupper( substr( $lang['name'], 0, 2 ) ); ?>
+                                        </a>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        <?php endif; ?>
+                    </nav>
                 </div>
             </div>
 
@@ -31,23 +48,3 @@
         </div>
     </div>
 </header>
-
-<!--
-        <ul>
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Our Terroir</a>
-            </li>
-            <li>
-                <a href="#">Our Wines</a>
-            </li>
-            <li>
-                <a href="#">Find our wines</a>
-            </li>
-            <li>
-                <a href="#">Contact Us</a>
-            </li>
-        </ul>
--->

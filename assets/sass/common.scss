@@ -14,6 +14,7 @@ html {
 
 body {
 	@extend .font-sans;
+	background: #F3F3F3 url(./assets/img/bg_pattern.jpg) repeat top center;
 	font-size: 1.6rem;
 	line-height: 1.2;
 }
@@ -25,6 +26,26 @@ a {
 
 /* HEADER */
 header {
+
+	.header-nav,
+	.navigation,
+	nav ul {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.navigation,
+	nav ul {
+		gap: 2rem;
+	}
+	nav ul li {
+		padding: 5rem 0;
+	}
+
+	a {
+		color: $black;
+	}
 	
 }
 
@@ -36,6 +57,17 @@ header {
 /* FOOTER */
 footer {
 	
+	.block-inside {
+		padding: 2rem;
+	}
+
+	.block-footer {
+		align-items: flex-start;
+		background-color: grey;
+		display: flex;
+		justify-content: space-between;
+		padding: 2rem;
+	}
 }
 
 /* Button */
@@ -64,12 +96,10 @@ footer {
 
 /* Blocks */
 .block {
-	padding: 0 2rem;
-
 	.block-inside {
         margin: 0 auto;
         max-width: $largedesktop;
-		padding: 12rem 0;
+		padding: 12rem 2rem;
 	}
 }
 
@@ -77,8 +107,10 @@ footer {
 	header,
 	footer,
 	.block {
+		
 		.block-inside,
 		.block-bottom .block-bottom-inside {
+			background-color: $white;
 			margin: 0 8rem;
 		}
 	}
