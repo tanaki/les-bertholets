@@ -1,31 +1,20 @@
 <?php
 // Déclarer un emplacement de menu
-function rhc_register_menus() {
+function berto_register_menus() {
     register_nav_menus(
         array(
-            'main-menu' => __( 'Main Menu', 'rhc' ),
+            'main-menu' => __( 'Main Menu', 'berto' ),
         )
     );
 }
-add_action( 'init', 'rhc_register_menus' );
+add_action( 'init', 'berto_register_menus' );
 
-function rhc_theme_register_columns_variation() {
-    wp_enqueue_script(
-        'mytheme-columns-variation',
-        get_stylesheet_directory_uri() . '/columns-variation.js',
-        array( 'wp-blocks', 'wp-dom-ready', 'wp-edit-post' ),
-        filemtime( get_stylesheet_directory() . '/columns-variation.js' ),
-        true
-    );
-}
-add_action( 'enqueue_block_editor_assets', 'rhc_theme_register_columns_variation' );
-
-
-function rhc_theme_setup() {
+function berto_theme_setup() {
     add_theme_support( 'post-thumbnails' );
 }
-add_action( 'after_setup_theme', 'rhc_theme_setup' );
+add_action( 'after_setup_theme', 'berto_theme_setup' );
 
+/*
 function rhc_theme_files() { 
     wp_enqueue_script( 'gsap-js', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js', array(), false, true );
     wp_enqueue_script( 'gsap-st', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js', array('gsap-js'), false, true );
@@ -107,4 +96,5 @@ function get_block_split ($id) {
         "button" => $podSplit->display('split_btn_label')
     ];
 }
+*/
 ?>

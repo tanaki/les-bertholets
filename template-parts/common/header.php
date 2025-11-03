@@ -4,7 +4,8 @@
 
             <div class="header-nav">
                 <a href="/" class="logo">
-                    <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/logo_text.svg' ); ?>
+                    Logo
+                    <?php //echo file_get_contents( get_template_directory_uri() . '/assets/img/logo_text.svg' ); ?>
                 </a>
                 <nav>
                     <?php 
@@ -16,6 +17,10 @@
                         );
                     ?>
                 </nav>
+                <div>
+                    <a href="#">FR/EN</a>
+                    <a href="#"> --- </a>
+                </div>
             </div>
 
             <div class="mobile-nav">
@@ -26,3 +31,23 @@
         </div>
     </div>
 </header>
+
+<!--
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Our Terroir</a>
+            </li>
+            <li>
+                <a href="#">Our Wines</a>
+            </li>
+            <li>
+                <a href="#">Find our wines</a>
+            </li>
+            <li>
+                <a href="#">Contact Us</a>
+            </li>
+        </ul>
+-->
