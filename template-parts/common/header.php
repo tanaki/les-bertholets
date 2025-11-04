@@ -16,9 +16,7 @@
                                 'container'      => null,
                             ) );
                         ?>
-                    </nav>
-
-                    <nav>
+                        
                         <?php
                         $languages = pll_the_languages( array(
                             'raw' => 1,          // On récupère les infos des langues sous forme de tableau

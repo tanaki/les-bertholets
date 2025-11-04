@@ -15,11 +15,11 @@
 		<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 
 		<!-- fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+        <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+		<!-- <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> -->
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet"> -->
 
-		<link rel="stylesheet" href="https://use.typekit.net/gbe2pwk.css">
+		<!-- <link rel="stylesheet" href="https://use.typekit.net/gbe2pwk.css"> -->
 
 		<!-- theme -->
 		<link rel="profile" href="http://gmpg.org/xfn/11">
@@ -27,8 +27,8 @@
 		<noscript><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/theme.css"></noscript>	
 
 		<!-- libs -->
-        <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/headroom.min.js"></script>
-
+        <!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/headroom.min.js"></script> -->
+	
 		<link
 			rel="stylesheet"
 			href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"

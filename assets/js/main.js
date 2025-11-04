@@ -1,7 +1,7 @@
 
 /* Headroom */
-var headerEl = document.querySelector("header");
-var headroom  = new Headroom(headerEl);
+// var headerEl = document.querySelector("header");
+// var headroom  = new Headroom(headerEl);
 
 /* Nav Mobile */
 var 
@@ -28,27 +28,31 @@ if ( headerNavItems ) {
 
 /* Init on domloaded */
 document.addEventListener("DOMContentLoaded", () => {
+  /*
   if (headroom) headroom.init();
 
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }
+  */
 
   // Attendre que tout soit chargé
   window.addEventListener("load", () => {
-    if (Client) Client.init();
-    if (Grid) Grid.init();
-    if (Title) Title.init();
-    if (Lists) Lists.init();
-    if (Content) Content.init();
-    if (Footer) Footer.init();
+    // if (Client) Client.init();
+    // if (Grid) Grid.init();
+    // if (Title) Title.init();
+    // if (Lists) Lists.init();
+    // if (Content) Content.init();
+    // if (Footer) Footer.init();
 
     // Forcer un refresh de ScrollTrigger après que le layout soit stabilisé
+    /*
     setTimeout(() => {
       if (typeof ScrollTrigger !== "undefined") {
         ScrollTrigger.refresh();
       }
     }, 300);
+    */
 
     document.body.classList.add('loaded');
   });
