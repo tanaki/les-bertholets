@@ -4,8 +4,7 @@
 
             <div class="header-nav">
                 <a href="/" class="logo">
-                    Logo
-                    <?php //echo file_get_contents( get_template_directory_uri() . '/assets/img/logo_text.svg' ); ?>
+                    <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/logo.svg' ); ?>
                 </a>
 
                 <div class="navigation">

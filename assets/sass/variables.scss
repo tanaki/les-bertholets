@@ -26,33 +26,45 @@ $maxnav: 1600px;
     font-display: swap;
 }
 */
+@font-face {
+    font-family: 'Baskerville';
+    src: url('./assets/fonts/Baskerville.eot');
+    src: url('./assets/fonts/Baskerville.eot?#iefix') format('embedded-opentype'),
+        url('./assets/fonts/Baskerville.woff2') format('woff2'),
+        url('./assets/fonts/Baskerville.woff') format('woff'),
+        url('./assets/fonts/Baskerville.ttf') format('truetype'),
+        url('./assets/fonts/Baskerville.svg#Baskerville') format('svg');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MinionVariableConcept-Italic';
+    src: url('./assets/fonts/MinionVariableConcept-Italic.woff2') format('woff2'),
+        url('./assets/fonts/MinionVariableConcept-Italic.woff') format('woff'),
+        url('./assets/fonts/MinionVariableConcept-Italic.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'MinionVariableConcept-Roman';
+    src: url('./assets/fonts/MinionVariableConcept-Roman.woff2') format('woff2'),
+        url('./assets/fonts/MinionVariableConcept-Roman.woff') format('woff'),
+        url('./assets/fonts/MinionVariableConcept-Roman.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
 
+.font-serif-title {
+    font-family: "Baskerville", serif;
+}
 .font-serif {
-    font-family: "sole-serif-small-variable", serif;
+    font-family: "MinionVariableConcept-Roman", serif;
 }
-.font-serif-light {
-    @extend .font-serif;
-    font-variation-settings: "opsz" 500, "wght" 200;
-}
-.font-serif-regular {
-    @extend .font-serif;
-    font-variation-settings: "opsz" 500, "wght" 400;
-}
-.font-serif-medium {
-    @extend .font-serif;
-    font-variation-settings: "opsz" 500, "wght" 500;
-}
-.font-serif-bold {
-    @extend .font-serif;
-    font-variation-settings: "opsz" 500, "wght" 700;
-}
-.font-serif-black {
-    @extend .font-serif;
-    font-variation-settings: "opsz" 500, "wght" 900;
-}
-.font-sans {
-    font-family: 'Montserrat', sans-serif;
-    font-optical-sizing: auto;
+.font-serif-italic {
+    font-family: "MinionVariableConcept-Italic", serif;
 }
 
 $wlight: 200;
@@ -68,7 +80,7 @@ $wblack: 700;
 
 /* TITLE */
 h1, .h1 {
-    @extend .font-sans;
+    @extend .font-serif-title;
     font-size: 5rem;
     letter-spacing: -0.05rem;
     line-height: 6.8rem;
@@ -78,7 +90,7 @@ h2, .h2 {
     
 }
 h3, .h3 {
-    @extend .font-sans;
+    @extend .font-serif-title;
     font-size: 4rem;
     letter-spacing: -0.05rem;
     line-height: 7.2rem;

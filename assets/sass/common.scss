@@ -13,7 +13,7 @@ html {
 }
 
 body {
-	@extend .font-sans;
+	@extend .font-serif;
 	background: #F3F3F3 url(./assets/img/bg_pattern.jpg) repeat top center;
 	font-size: 1.6rem;
 	line-height: 1.2;
@@ -29,6 +29,7 @@ header {
 
 	.header-nav,
 	.navigation,
+	.site-navigation,
 	nav ul {
 		align-items: center;
 		display: flex;
@@ -36,7 +37,7 @@ header {
 	}
 
 	.header-nav {
-		padding: 0 2rem;
+		padding: 4rem 2rem 0;
 	}
 
 	.navigation,
@@ -48,7 +49,60 @@ header {
 	}
 
 	a {
+		@extend .font-serif-title;
 		color: $black;
+		font-size: 1.4rem;
+		font-weight: bold;
+		letter-spacing: 0.1rem;
+		text-transform: uppercase;
+	}
+
+	.menu {
+		a {
+			position: relative;
+			
+			&:before,
+			&:after {
+				background-color: currentColor;
+				content: "";
+				display: inline-block;
+				vertical-align: middle;
+				width: 8px;
+				height: 1px;
+				margin-top: -2px;
+				transform: scaleX(0);
+				opacity: 0;
+				transition: .2s cubic-bezier(.22,.75,.39,.92);
+			}
+
+			&:before {
+				margin-right: 5px;
+				transform-origin: right;
+			}
+
+			&:after {
+				margin-left: 5px;
+				transform-origin: left;
+			}
+
+			&:hover {
+				&:before,
+				&:after {
+					transform: scaleX(1);
+					opacity: 1;
+				}
+			}
+		}
+
+		.current-menu-item {
+			a {
+				&:before,
+				&:after {
+					transform: scaleX(1);
+					opacity: 1;
+				}
+			}
+		}
 	}
 
 	.mobile-nav {
