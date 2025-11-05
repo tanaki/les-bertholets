@@ -8,8 +8,11 @@
             </div>
 
             <div class="image">
-                <div>Image</div>
-                <div>Tagline</div>
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine.png" alt="Domaine Les Bertholets" />
+                <div class="font-italic">
+                    L’abus d’alcool est dangereux pour la santé, à consommer avec modération<br/>
+                    &copy; <?php echo date('Y'); ?> Designed by <span class="font-orange">Caves du Languedoc Roussillon</span>, All Rights Reserved
+                </div>
             </div>
 
             <nav>
