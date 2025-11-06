@@ -308,6 +308,31 @@ if ( headerNavItems ) {
   });
 }
 
+/* Extra side */
+var
+  openButton = document.querySelector('.extra-side--btn-open'),
+  closeButton = document.querySelector('.extra-side--btn-close'),
+  closePanel = document.querySelector('.extra-side-cover');
+
+if ( openButton ) {
+  openButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.body.classList.add('extra-side--opened');
+  });
+}
+if ( closeButton ) {
+  closeButton.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.body.classList.remove('extra-side--opened');
+  });
+}
+if ( closePanel ) {
+  closePanel.addEventListener('click', (e) => {
+    e.preventDefault();
+    document.body.classList.remove('extra-side--opened');
+  });
+}
+
 /* Init on domloaded */
 document.addEventListener("DOMContentLoaded", () => {
   /*

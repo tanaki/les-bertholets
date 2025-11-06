@@ -34,11 +34,11 @@
                                         <?php endforeach; ?>
                                     </ul>
                             <?php endif; ?>
-                            <a href="#" class="toggle-detail">
+                            <a href="#" class="extra-side--btn-open">
                                 <span class="lines">
-                                    <span class="line-1"></span>
-                                    <span class="line-2"></span>
-                                    <span class="line-3"></span>
+                                    <span class="line line-1"></span>
+                                    <span class="line line-2"></span>
+                                    <span class="line line-3"></span>
                                 </span>
                             </a>
                         </div>

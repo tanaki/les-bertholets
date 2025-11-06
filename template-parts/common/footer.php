@@ -30,3 +30,17 @@
 
     </div>
 </footer>
+
+<div class="extra-side-cover"></div>
+<div class="extra-side">
+    <div>
+        LOGO<br/>
+        Follow us on instagram<br/>
+        Image<br/>
+        tagline<br/>
+        Links<br/>
+    </div>
+    <a href="#" class="extra-side--btn-close">
+        X
+    </a>
+</div>
