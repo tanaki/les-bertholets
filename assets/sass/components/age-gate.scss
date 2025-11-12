@@ -1,0 +1,66 @@
+@use '../variables' as *;
+
+.age-gate {
+
+    &--container {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: $white url(./assets/img/bg_pattern.jpg) repeat top left;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1001;
+    }
+
+    &--overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.85);
+        z-index: 1;
+    }
+
+    &--modal {  
+        color: $white;
+        text-align: center;
+        max-width: 60rem;
+        width: 100%;
+        position: relative;
+        z-index: 2;
+    }
+
+    &--title {
+        @extend .font-serif;
+        font-size: 4.8rem;
+        font-variant: small-caps;
+        font-weight: bold;
+        letter-spacing: 0.7rem;
+        margin: 3rem 0 0;
+    }
+    &--subtitle {
+        @extend .font-italic;
+        color: $orange;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+    }
+    &--text {
+        @extend .font-italic;
+        font-weight: bold;
+        font-size: 1.6rem;
+        margin-bottom: 4rem;
+    }
+    &--buttons {
+        display: flex;
+        justify-content: center;
+        gap: 2rem;
+
+        .button {
+            width: 27.5rem;
+        }
+    }
+}

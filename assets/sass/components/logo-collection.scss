@@ -1,0 +1,25 @@
+@use '../variables' as *;
+
+/* LOGO */
+.logo-collection {
+	&--container {
+		text-align: center;
+	}
+
+	&--svg {
+		display: block;
+		max-width: 28rem;
+		margin: 0 auto;
+	}
+		
+	&--subtitle {
+		@extend .font-serif-title;
+		font-size: 2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&--signature {
+		margin-top: 1rem;
+	}
+}

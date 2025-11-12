@@ -68,6 +68,12 @@ $maxnav: 1600px;
 .font-serif-italic {
     font-family: "MinionVariableConcept-Italic", serif;
 }
+.font-orange {
+	color: $orange;
+}
+.font-italic {
+	@extend .font-serif-italic;
+}
 
 $wlight: 200;
 $wmedium: 500;
