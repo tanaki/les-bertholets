@@ -91,7 +91,7 @@ table {
   font-style: normal;
   font-display: swap;
 }
-.font-serif-title, .extra-side .logo-side-subtitle, h3, .h3, h1, .h1 {
+.font-serif-title, .logo-collection--subtitle, h3, .h3, h1, .h1 {
   font-family: "Baskerville", serif;
 }
 
@@ -345,7 +345,7 @@ header .mobile-nav {
 /* MAIN */
 /* TAGLINE */
 .tagline {
-  margin: 4rem 0;
+  margin: 4rem 0 0;
 }
 
 /* INSTAGRAM */
@@ -366,21 +366,74 @@ header .mobile-nav {
   transform: scale(0.9);
 }
 
+/* LOGO */
+.logo-collection--container {
+  text-align: center;
+}
+.logo-collection--svg {
+  display: block;
+  max-width: 28rem;
+  margin: 0 auto;
+}
+.logo-collection--subtitle {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.logo-collection--signature {
+  margin-top: 1rem;
+}
+
 /* FOOTER */
 footer .block-inside {
   padding: 2.5rem;
 }
 footer .block-footer {
-  align-items: flex-start;
   background: #faf9f5 url(./assets/img/bg_footer.jpg) no-repeat center center;
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 3fr 5fr 2fr;
+  gap: 1rem;
   padding: 2.5rem;
+}
+footer .logo-collection--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .image {
+  text-align: center;
 }
 footer .image img {
   display: block;
+  margin: 0 auto;
   max-width: 42rem;
+}
+footer nav {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer nav ul {
+  text-align: right;
+}
+footer nav li {
+  margin-top: 1.6rem;
+}
+footer nav a {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+footer nav a:hover {
+  color: #bc6e44;
+}
+footer nav .social-link {
+  margin: 4rem 0 0;
 }
 
 /* Extra Side */
@@ -452,21 +505,14 @@ footer .image img {
   padding: 12rem 0;
   text-align: center;
 }
-.extra-side .logo-side svg {
-  display: block;
-  max-width: 28rem;
-  margin: 0 auto;
-}
-.extra-side .logo-side-subtitle {
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-}
 .extra-side--subtitle {
   color: #bc6e44;
   font-size: 3.6rem;
   font-weight: bold;
   margin-top: 1.6rem;
+}
+.extra-side .tagline {
+  margin: 4rem 0;
 }
 
 .extra-side-cover {

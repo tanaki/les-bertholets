@@ -257,7 +257,7 @@ header {
 /* TAGLINE */
 .tagline {
 	@extend .font-italic;
-	margin: 4rem 0;
+	margin: 4rem 0 0;
 }
 
 /* INSTAGRAM */
@@ -282,6 +282,30 @@ header {
 	}
 }
 
+/* LOGO */
+.logo-collection {
+	&--container {
+		text-align: center;
+	}
+
+	&--svg {
+		display: block;
+		max-width: 28rem;
+		margin: 0 auto;
+	}
+		
+	&--subtitle {
+		@extend .font-serif-title;
+		font-size: 2rem;
+		font-weight: bold;
+		text-transform: uppercase;
+	}
+
+	&--signature {
+		margin-top: 1rem;
+	}
+}
+
 /* FOOTER */
 footer {
 	
@@ -290,18 +314,59 @@ footer {
 	}
 
 	.block-footer {
-		align-items: flex-start;
 		background: $white url(./assets/img/bg_footer.jpg) no-repeat center center;
 		background-size: cover;
-		display: flex;
-		justify-content: space-between;
+
+		display: grid;
+		grid-template-columns: 3fr 5fr 2fr;
+		gap: 1rem;
+		
 		padding: 2.5rem;
 	}
 
+	.logo-collection--container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+	}
+
 	.image {
+		text-align: center;
 		img {
 			display: block;
+			margin: 0 auto;
 			max-width: 42rem;
+		}
+	}
+
+	nav {
+		align-items: flex-end;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+
+		ul {
+			text-align: right;
+		}
+		li {
+			margin-top: 1.6rem;
+		}
+
+		a {
+			color: $black;
+			font-size: 1.4rem;
+			font-weight: bold;
+			letter-spacing: 0.12rem;
+			text-transform: uppercase;
+
+			&:hover {
+				color: $orange;
+			}
+		}
+
+		.social-link {
+			margin: 4rem 0 0;
 		}
 	}
 }
@@ -387,25 +452,15 @@ footer {
 		text-align: center;
 	}
 
-	.logo-side {
-		svg {
-			display: block;
-			max-width: 28rem;
-			margin: 0 auto;
-		}
-	}
-	.logo-side-subtitle {
-		@extend .font-serif-title;
-		font-size: 2rem;
-		font-weight: bold;
-		text-transform: uppercase;
-	}
 	&--subtitle {
 		@extend .font-italic;
 		color: $orange;
 		font-size: 3.6rem;
 		font-weight: bold;
 		margin-top: 1.6rem;
+	}
+	.tagline {
+		margin: 4rem 0;
 	}
 }
 .extra-side-cover {

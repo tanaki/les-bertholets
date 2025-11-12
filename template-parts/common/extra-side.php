@@ -1,14 +1,7 @@
 <div class="extra-side-cover"></div>
 <div class="extra-side">
     <div class="extra-side--inside">
-        <div class="">
-            <div class="logo-side">
-                <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/logo.svg' ); ?>
-            </div>
-            <div class="logo-side-subtitle">
-                Collection
-            </div>
-        </div>
+        <?php echo get_template_part('template-parts/common/logo'); ?>
 
         <div class="extra-side--subtitle">
             Follow us on instagram

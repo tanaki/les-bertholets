@@ -3,9 +3,7 @@
 
         <div class="block-footer">
     
-            <div class="logo">
-                LOGO
-            </div>
+            <?php echo get_template_part('template-parts/common/logo', null, array( 'signature' => true )); ?>
 
             <div class="image">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine.png" alt="Domaine Les Bertholets" />
@@ -19,9 +17,7 @@
                         'container'      => null
                     ) );
                 ?>
-                <div>
-                    Insta
-                </div>
+                <?php echo get_template_part('template-parts/common/social'); ?>
             </nav>
         </div>
 
