@@ -5,24 +5,11 @@
             Hero image
         </div>
     </div>
-
+    
     <div class="block">
         <div class="block-inside">
             Intro title<br/>
             Intro subtext<br/>
-            Intro text
-            Intro title<br/>
-            Intro subtext<br/>
-            Intro text
-            Intro title<br/>
-            Intro subtext<br/>
-            Intro text
-            Intro title<br/>
-            Intro subtext<br/>
-            Intro text
-            Intro title<br/>
-            Intro subtext<br/>
-            Intro text
         </div>
     </div>
 
