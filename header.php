@@ -39,7 +39,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class("age-verified"); ?>>
 
 		<?php echo get_template_part('template-parts/common/component/age-gate'); ?>
 

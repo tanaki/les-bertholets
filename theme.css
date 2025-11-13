@@ -636,6 +636,10 @@ footer nav .social-link {
   width: 27.5rem;
 }
 
+.age-verified #age-gate {
+  display: none;
+}
+
 /* Back to top */
 #back-to-top {
   background-color: #bc6e44;

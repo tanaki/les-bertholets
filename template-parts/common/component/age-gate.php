@@ -1,4 +1,4 @@
-<div class="age-gate--container">
+<div id="age-gate" class="age-gate--container">
     <div class="age-gate--overlay"></div>
     <div class="age-gate--modal">
         <?php echo get_template_part('template-parts/common/component/logo'); ?>
