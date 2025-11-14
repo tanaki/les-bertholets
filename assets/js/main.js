@@ -79,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attendre que tout soit chargé
   window.addEventListener("load", () => {
     if ( AgeGate ) AgeGate.init();
+    if ( ListSwipe ) ListSwipe.init();
 
     // if (Client) Client.init();
     // if (Grid) Grid.init();

@@ -7,19 +7,22 @@
         'limit' => 1,
         'where' => "ID = '". $post->ID ."'"
     ]);
+?>
+    <div class="block">
+        <div class="block-inside">
+            <?php the_title(); ?>
+        </div>
+    </div>
 
-    get_template_part('template-parts/common/block-hero', null, [
-        'title' => $podPage->display('post_title'),
-        'chapo' => $podPage->display('hero_intro'),
-        'image' => $podPage->display('hero_image')
-    ]);
-
+<?php
+    /*
     $slug = $post->post_name;
     if ( locate_template("template-parts/layouts/page-{$slug}.php") ) {
         get_template_part("template-parts/layouts/page", $slug);
     } else {
         get_template_part("template-parts/layouts/page", "default");
     }
+    */
 
     get_footer();
 ?>

@@ -12,7 +12,7 @@
             To enter this website you must be of legal age as required by the laws of your country. By clicking "Yes I am" you confirm that you are of legal age in your country to visit this website.
         </div>
         <div class="age-gate--buttons">
-            <a href="#" class="button button--orange" data-answer="yes">Yes I am</a>
+            <a href="#" class="button button--primary" data-answer="yes">Yes I am</a>
             <a href="#" class="button button--transparent" data-answer="no">No I am not</a>
         </div>
     </div>

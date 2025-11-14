@@ -1,13 +1,35 @@
+@use '../variables' as *;
+
 .block-list {
 
     .block-inside {
         
     }
 
+    .block-list-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4rem;
+
+        .button {
+            min-width: 15%;
+        }
+    }
+
     .block-list-items {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 2rem;
+    }
+
+    .block-list-item {
+
+    }
+
+    .block-list-item-image {
+        background-color: $white;
+        padding: 0 2rem;
     }
 
     img {

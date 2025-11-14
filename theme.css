@@ -95,7 +95,7 @@ table {
   font-family: "Baskerville", serif;
 }
 
-.font-serif, .button--orange, .age-gate--title, body, header a, header .extra-nav .lang-switcher a {
+.font-serif, .button--primary, .age-gate--title, body, header a, header .extra-nav .lang-switcher a {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
@@ -432,7 +432,7 @@ footer nav .social-link {
   footer .block-bottom .block-bottom-inside,
   .block .block-inside,
   .block .block-bottom .block-bottom-inside {
-    background-color: #faf9f5;
+    background-color: white;
     margin: 0 8rem;
   }
 }
@@ -626,6 +626,10 @@ footer nav .social-link {
   gap: 2rem;
 }
 .age-gate--buttons .button {
+  font-size: 2.8rem;
+  font-variant: small-caps;
+  letter-spacing: 0.5rem;
+  text-transform: none;
   width: 27.5rem;
 }
 
@@ -680,19 +684,24 @@ footer nav .social-link {
   border: 0.1rem solid #000000;
   color: #000000;
   display: inline-block;
-  font-size: 2.8rem;
-  font-variant: small-caps;
+  font-size: 1.6rem;
   font-weight: bold;
-  letter-spacing: 0.5rem;
+  letter-spacing: 0.2rem;
+  opacity: 1;
   padding: 1rem 3rem;
   transition: all 0.3s ease;
+  text-align: center;
+  text-transform: uppercase;
 }
-.button--orange {
+.button:hover {
+  opacity: 0.9;
+}
+.button--primary {
   background-color: #bc6e44;
   border-color: #bc6e44;
   color: #faf9f5;
 }
-.button--orange:hover {
+.button--primary:hover {
   border-color: #faf9f5;
 }
 
@@ -843,14 +852,51 @@ footer nav .social-link {
   display: block;
 }
 
+.block-list .block-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.block-list .block-list-header .button {
+  min-width: 15%;
+}
 .block-list .block-list-items {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
 }
+.block-list .block-list-item-image {
+  background-color: #faf9f5;
+  padding: 0 2rem;
+}
 .block-list img {
   display: block;
   max-width: 100%;
+}
+
+.block-intro {
+  margin-bottom: 4rem;
+}
+.block-intro-content {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+.block-intro-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+.block-intro-text {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-count: 2;
+  column-gap: 4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  margin-bottom: 2.5rem;
+  padding: 0 12rem;
 }
 
 /*# sourceMappingURL=theme.css.map */
