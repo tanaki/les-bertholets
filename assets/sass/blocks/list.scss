@@ -1,0 +1,17 @@
+.block-list {
+
+    .block-inside {
+        
+    }
+
+    .block-list-items {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 2rem;
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}

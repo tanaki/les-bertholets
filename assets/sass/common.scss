@@ -345,7 +345,7 @@ footer {
 	.block-inside {
         margin: 0 auto;
         max-width: $largedesktop;
-		padding: 12rem 2.5rem;
+		padding: 2.5rem;
 	}
 }
 
@@ -557,9 +557,4 @@ footer {
 
 @media screen and (max-width: $tablet) {
 
-	.button {
-		display: block;
-		text-align: center;
-		width: 100%;
-	}
 }

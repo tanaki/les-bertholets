@@ -1,7 +1,7 @@
 <div id="age-gate" class="age-gate--container">
     <div class="age-gate--overlay"></div>
     <div class="age-gate--modal">
-        <?php echo get_template_part('template-parts/common/component/logo'); ?>
+        <?php get_template_part('template-parts/common/component/logo'); ?>
         <div class="age-gate--title">
             Are you over 18?
         </div>

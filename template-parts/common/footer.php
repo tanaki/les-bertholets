@@ -3,11 +3,11 @@
 
         <div class="block-footer">
     
-            <?php echo get_template_part('template-parts/common/component/logo', null, array( 'signature' => true )); ?>
+            <?php get_template_part('template-parts/common/component/logo', null, array( 'signature' => true )); ?>
 
             <div class="image">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine.png" alt="Domaine Les Bertholets" />
-                <?php echo get_template_part('template-parts/common/component/tagline'); ?>
+                <?php get_template_part('template-parts/common/component/tagline'); ?>
             </div>
 
             <nav>
@@ -17,13 +17,13 @@
                         'container'      => null
                     ) );
                 ?>
-                <?php echo get_template_part('template-parts/common/component/social'); ?>
+                <?php get_template_part('template-parts/common/component/social'); ?>
             </nav>
         </div>
 
     </div>
 </footer>
 
-<?php echo get_template_part('template-parts/common/component/extra-side'); ?>
+<?php get_template_part('template-parts/common/component/extra-side'); ?>
 
 <button id="back-to-top" title="Back to top"><span></span></button>

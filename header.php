@@ -41,10 +41,10 @@
 
 	<body <?php body_class("age-verified"); ?>>
 
-		<?php echo get_template_part('template-parts/common/component/age-gate'); ?>
+		<?php get_template_part('template-parts/common/component/age-gate'); ?>
 
 		<div class="wrapper">
 
-            <?php echo get_template_part('template-parts/common/header', false, $args); ?>
+            <?php get_template_part('template-parts/common/header', false, $args); ?>
 
 			<div class="main">

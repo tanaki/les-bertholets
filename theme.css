@@ -422,7 +422,7 @@ footer nav .social-link {
 .block .block-inside {
   margin: 0 auto;
   max-width: 1439px;
-  padding: 12rem 2.5rem;
+  padding: 2.5rem;
 }
 
 @media screen and (max-width: 1600px) {
@@ -574,13 +574,6 @@ footer nav .social-link {
     overflow: hidden;
   }
 }
-@media screen and (max-width: 1023px) {
-  .button {
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-}
 .age-gate--container {
   position: fixed;
   top: 0;
@@ -685,6 +678,8 @@ footer nav .social-link {
 /* Button */
 .button {
   border: 0.1rem solid #000000;
+  color: #000000;
+  display: inline-block;
   font-size: 2.8rem;
   font-variant: small-caps;
   font-weight: bold;
@@ -709,6 +704,13 @@ footer nav .social-link {
   border-color: #faf9f5;
 }
 
+@media screen and (max-width: 1023px) {
+  .button {
+    display: block;
+    text-align: center;
+    width: 100%;
+  }
+}
 /* Extra Side */
 .extra-side {
   background: #faf9f5 url(./assets/img/bg_pattern.jpg) repeat top left;
@@ -825,6 +827,30 @@ footer nav .social-link {
 }
 .logo-collection--signature {
   margin-top: 1rem;
+}
+
+.block-hero {
+  aspect-ratio: 17/9;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+.block-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.block-list .block-list-items {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
+}
+.block-list img {
+  display: block;
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=theme.css.map */
