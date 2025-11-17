@@ -55,20 +55,6 @@ table {
 /* COLORS */
 /* SCREEN SIZES */
 /* FONTS */
-/*
-@font-face {
-    font-family: 'Media Sans SemiCondensed';
-    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot');
-    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff2') format('woff2'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff') format('woff'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.ttf') format('truetype'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.svg#MediaSansSemiCondensed-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-*/
 @font-face {
   font-family: "Baskerville";
   src: url("./assets/fonts/Baskerville.eot");
@@ -91,15 +77,15 @@ table {
   font-style: normal;
   font-display: swap;
 }
-.font-serif-title, .logo-collection--subtitle, h3, .h3, h1, .h1 {
+.font-serif-title, .logo-collection--subtitle {
   font-family: "Baskerville", serif;
 }
 
-.font-serif, .button--primary, .age-gate--title, body, header a, header .extra-nav .lang-switcher a {
+.font-serif, .button--primary, .age-gate--title, header a, header .extra-nav .lang-switcher a, body {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
+.font-serif-italic, .block-intro-subtitle, .block-list .block-list-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -112,36 +98,6 @@ table {
   line-height: 2.6rem;
 }
 
-/* TITLE */
-h1, .h1 {
-  font-size: 5rem;
-  letter-spacing: -0.05rem;
-  line-height: 6.8rem;
-  text-transform: uppercase;
-}
-
-h3, .h3 {
-  font-size: 4rem;
-  letter-spacing: -0.05rem;
-  line-height: 7.2rem;
-  text-transform: uppercase;
-}
-
-h5, .h5 {
-  font-size: 2.2rem;
-  font-weight: 600;
-  line-height: 3.4rem;
-}
-
-@media screen and (max-width: 1023px) {
-  h1, .h1 {
-    font-size: 4rem;
-  }
-  h3, .h3 {
-    font-size: 3.4rem;
-    line-height: 7.2rem;
-  }
-}
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -190,6 +146,61 @@ a {
   50% {
     clip-path: inset(100% 0 0 0);
     -webkit-clip-path: inset(100% 0 0 0);
+  }
+}
+/* MAIN */
+/* TAGLINE */
+.tagline {
+  margin: 4rem 0 0;
+}
+
+/* INSTAGRAM */
+.social-link {
+  display: block;
+  height: 7.4rem;
+  margin: 0 auto;
+  width: 7.4rem;
+}
+.social-link img {
+  display: block;
+  height: 100%;
+  width: 100%;
+  transform: scale(1);
+  transition: transform 0.2s ease;
+}
+.social-link:hover img {
+  transform: scale(0.9);
+}
+
+/* Blocks */
+.block .block-inside {
+  margin: 0 auto;
+  max-width: 1439px;
+  padding: 2.5rem;
+}
+
+@media screen and (max-width: 1600px) {
+  header .block-inside,
+  header .block-bottom .block-bottom-inside,
+  footer .block-inside,
+  footer .block-bottom .block-bottom-inside,
+  .block .block-inside,
+  .block .block-bottom .block-bottom-inside {
+    background-color: white;
+    margin: 0 8rem;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .block .block-inside {
+    margin: 0;
+    padding: 8rem 0;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  .has-nav-open {
+    height: 100svh;
+    overflow: hidden;
   }
 }
 /* HEADER */
@@ -342,108 +353,7 @@ header .mobile-nav {
   display: none;
 }
 
-/* MAIN */
-/* TAGLINE */
-.tagline {
-  margin: 4rem 0 0;
-}
-
-/* INSTAGRAM */
-.social-link {
-  display: block;
-  height: 7.4rem;
-  margin: 0 auto;
-  width: 7.4rem;
-}
-.social-link img {
-  display: block;
-  height: 100%;
-  width: 100%;
-  transform: scale(1);
-  transition: transform 0.2s ease;
-}
-.social-link:hover img {
-  transform: scale(0.9);
-}
-
-/* FOOTER */
-footer .block-inside {
-  padding: 2.5rem;
-}
-footer .block-footer {
-  background: #faf9f5 url(./assets/img/bg_footer.jpg) no-repeat center center;
-  background-size: cover;
-  display: grid;
-  grid-template-columns: 3fr 5fr 2fr;
-  gap: 1rem;
-  padding: 2.5rem;
-}
-footer .logo-collection--container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-footer .image {
-  text-align: center;
-}
-footer .image img {
-  display: block;
-  margin: 0 auto;
-  max-width: 42rem;
-}
-footer nav {
-  align-items: flex-end;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-footer nav ul {
-  text-align: right;
-}
-footer nav li {
-  margin-top: 1.6rem;
-}
-footer nav a {
-  color: #000000;
-  font-size: 1.4rem;
-  font-weight: bold;
-  letter-spacing: 0.12rem;
-  text-transform: uppercase;
-}
-footer nav a:hover {
-  color: #bc6e44;
-}
-footer nav .social-link {
-  margin: 4rem 0 0;
-}
-
-/* Blocks */
-.block .block-inside {
-  margin: 0 auto;
-  max-width: 1439px;
-  padding: 2.5rem;
-}
-
-@media screen and (max-width: 1600px) {
-  header .block-inside,
-  header .block-bottom .block-bottom-inside,
-  footer .block-inside,
-  footer .block-bottom .block-bottom-inside,
-  .block .block-inside,
-  .block .block-bottom .block-bottom-inside {
-    background-color: white;
-    margin: 0 8rem;
-  }
-}
 @media screen and (max-width: 1279px) {
-  .block .block-inside {
-    margin: 0;
-    padding: 8rem 0;
-  }
-  body {
-    overflow-x: hidden;
-  }
   header .block-inside {
     margin: 0 auto;
   }
@@ -569,11 +479,67 @@ footer nav .social-link {
   .loaded header nav {
     transition: transform 0.4s ease;
   }
-  .has-nav-open {
-    height: 100svh;
-    overflow: hidden;
-  }
 }
+/* FOOTER */
+footer .block-inside {
+  padding: 2.5rem;
+}
+footer .block-footer {
+  background: #faf9f5 url(./assets/img/bg_footer.jpg) no-repeat center center;
+  background-size: cover;
+  display: grid;
+  grid-template-columns: 3fr 5fr 2fr;
+  gap: 1rem;
+  padding: 2.5rem;
+}
+footer .logo-collection--container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+footer .image {
+  text-align: center;
+}
+footer .image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 42rem;
+}
+footer nav {
+  align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+footer nav ul {
+  text-align: right;
+}
+footer nav li {
+  margin-top: 1.6rem;
+}
+footer nav a {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+footer nav a:hover {
+  color: #bc6e44;
+}
+footer nav .social-link {
+  margin: 4rem 0 0;
+}
+
+/* TITLE */
+h3, .h3 {
+  font-size: 2.2rem;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
 .age-gate--container {
   position: fixed;
   top: 0;
@@ -866,6 +832,27 @@ footer nav .social-link {
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
 }
+.block-list .block-list-item-title {
+  text-align: center;
+}
+.block-list .block-list-item-title span {
+  display: block;
+}
+.block-list .block-list-item-title .collection {
+  color: #bc6e44;
+  margin-top: 2rem;
+}
+.block-list .block-list-item-title .label {
+  color: #000000;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.block-list .block-list-item-title .detail {
+  color: #000000;
+  font-variant: small-caps;
+  letter-spacing: 0.1rem;
+}
 .block-list .block-list-item-image {
   background-color: #faf9f5;
   padding: 0 2rem;
@@ -875,17 +862,27 @@ footer nav .social-link {
   max-width: 100%;
 }
 
-.block-intro {
-  margin-bottom: 4rem;
-}
 .block-intro-content {
-  max-width: 60rem;
+  padding: 6rem 12rem 0;
+  position: relative;
+}
+.block-intro-title, .block-intro-subtitle {
+  max-width: 40%;
   margin: 0 auto;
+  text-align: center;
 }
 .block-intro-title {
   font-size: 3.2rem;
   font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.2rem;
   margin-bottom: 1.5rem;
+}
+.block-intro-subtitle {
+  color: #bc6e44;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 4rem;
 }
 .block-intro-text {
   break-inside: avoid;
@@ -895,8 +892,19 @@ footer nav .social-link {
   column-gap: 4rem;
   font-size: 1.6rem;
   font-weight: bold;
-  margin-bottom: 2.5rem;
-  padding: 0 12rem;
+  line-height: 2.6rem;
+  margin: 0 auto 2.5rem;
+  max-width: 80%;
+}
+.block-intro-stamp {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.block-intro-stamp img {
+  display: block;
+  height: auto;
+  width: 25rem;
 }
 
 /*# sourceMappingURL=theme.css.map */

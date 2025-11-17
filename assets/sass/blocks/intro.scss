@@ -1,18 +1,32 @@
 @use '../variables' as *;
 
 .block-intro {
-  margin-bottom: 4rem;
-
 
   &-content {
-    max-width: 60rem;
+    padding: 6rem 12rem 0;
+    position: relative;
+  }
+
+  &-title,
+  &-subtitle {
+    max-width: 40%;
     margin: 0 auto;
+    text-align: center;
   }
 
   &-title {
     font-size: 3.2rem;
     font-weight: bold;
+    font-variant: small-caps;
+    letter-spacing: 0.2rem;
     margin-bottom: 1.5rem;
+  }
+  &-subtitle {
+    @extend .font-serif-italic;
+    color: $orange;
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin-bottom: 4rem;
   }
 
   &-text {
@@ -25,7 +39,20 @@
 
     font-size: 1.6rem;
     font-weight: bold;
-    margin-bottom: 2.5rem;
-    padding: 0 12rem;
+    line-height: 2.6rem;
+    margin: 0 auto 2.5rem;
+    max-width: 80%;
+  }
+
+  &-stamp {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    img {
+      display: block;
+      height: auto;
+      width: 25rem;
+    }
   }
 }

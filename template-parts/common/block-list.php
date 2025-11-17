@@ -5,9 +5,9 @@
         <div class="block-list-header">
 
             <?php if ( isset( $title ) ) : ?>
-                <h2 class="block-list-title">
+                <h3 class="block-list-title">
                     <?php echo $title; ?>
-                </h2>
+                </h3>
             <?php endif; ?>
 
             <?php if ( isset( $button ) && is_array( $button ) ) : ?>
@@ -26,9 +26,9 @@
                                 <img src="<?php echo esc_url( $item['image'] ); ?>" alt="<?php echo esc_attr( $item['label'] ); ?>" />
                             </div>
                             <div class="block-list-item-title">
-                                <span><?php echo $item['collection']; ?></span>
-                                <span><?php echo $item['label']; ?></span>
-                                <span><?php echo $item['detail']; ?></span>
+                                <span class="collection"><?php echo $item['collection']; ?></span>
+                                <span class="label"><?php echo $item['label']; ?></span>
+                                <span class="detail"><?php echo $item['detail']; ?></span>
                             </div>
                         </a>
                     <?php endforeach; ?>

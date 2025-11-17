@@ -14,20 +14,6 @@ $maxdesktop: 1680px;
 $maxnav: 1600px;
 
 /* FONTS */
-/*
-@font-face {
-    font-family: 'Media Sans SemiCondensed';
-    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot');
-    src: url('./assets/fonts/MediaSansSemiCondensed-Regular.eot?#iefix') format('embedded-opentype'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff2') format('woff2'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.woff') format('woff'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.ttf') format('truetype'),
-        url('./assets/fonts/MediaSansSemiCondensed-Regular.svg#MediaSansSemiCondensed-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
-*/
 @font-face {
     font-family: 'Baskerville';
     src: url('./assets/fonts/Baskerville.eot');
@@ -84,78 +70,4 @@ $wblack: 700;
 .body-copy {
 	font-size: 1.6rem;
     line-height: 2.6rem;
-}
-
-/* TITLE */
-h1, .h1 {
-    @extend .font-serif-title;
-    font-size: 5rem;
-    letter-spacing: -0.05rem;
-    line-height: 6.8rem;
-    text-transform: uppercase;
-}
-h2, .h2 {
-    
-}
-h3, .h3 {
-    @extend .font-serif-title;
-    font-size: 4rem;
-    letter-spacing: -0.05rem;
-    line-height: 7.2rem;
-    text-transform: uppercase;
-}
-h4, .h4 {
-    
-}
-h5, .h5 {
-    font-size: 2.2rem;
-    font-weight: $wsemibold;
-    line-height: 3.4rem;
-}
-h6, .h6 {
-
-}
-
-.body {
-    
-}
-
-// RESPONSIVE
-@media screen and (max-width: $desktop) {
-    h1, .h1 {
-
-    }
-    h2, .h2 {
-        
-    }
-    h3, .h3 {
-
-    }
-    h4, .h4,
-    h5, .h5 {
-        
-    }
-    h6, .h6 {
-
-    }
-}
-
-@media screen and (max-width: $tablet) {
-    h1, .h1 {
-        font-size: 4rem;
-    }
-    h2, .h2 {
-        
-    }
-    h3, .h3 {
-        font-size: 3.4rem;
-        line-height: 7.2rem;
-    }
-    h4, .h4,
-    h5, .h5 {
-        
-    }
-    h6, .h6 {
-
-    }
 }

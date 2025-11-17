@@ -1,7 +1,10 @@
 @use "reset";
 @use "common";
+@use "header";
+@use "footer";
 @use "page";
 @use "single";
+@use "titles";
 
 @use "./components/age-gate";
 @use "./components/back-top";
