@@ -1,4 +1,3 @@
-
 <?php extract($args); ?>
 <div class="block block-hero">
     <div class="block-inside">

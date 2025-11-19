@@ -85,7 +85,7 @@ table {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-intro-subtitle, .block-list .block-list-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
+.font-serif-italic, .block-region-text-item h4, .block-list .block-list-item-title .collection, .block-intro-subtitle, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -175,18 +175,31 @@ a {
 /* Blocks */
 .block .block-inside {
   margin: 0 auto;
-  max-width: 1439px;
   padding: 2.5rem;
 }
 
-@media screen and (max-width: 1600px) {
+header .block-inside,
+footer .block-inside {
+  background-color: white;
+}
+
+header .block-inside,
+header .block-bottom .block-bottom-inside,
+footer .block-inside,
+footer .block-bottom .block-bottom-inside,
+.block .block-inside,
+.block .block-bottom .block-bottom-inside {
+  max-width: 1439px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1439px) {
   header .block-inside,
   header .block-bottom .block-bottom-inside,
   footer .block-inside,
   footer .block-bottom .block-bottom-inside,
   .block .block-inside,
   .block .block-bottom .block-bottom-inside {
-    background-color: white;
     margin: 0 8rem;
   }
 }
@@ -809,6 +822,9 @@ h3, .h3 {
   padding: 0;
   width: 100%;
 }
+.block-hero .block-inside {
+  background-color: white;
+}
 .block-hero img {
   width: 100%;
   height: 100%;
@@ -817,6 +833,57 @@ h3, .h3 {
   display: block;
 }
 
+.block-intro .block-inside {
+  background-color: white;
+}
+.block-intro-content {
+  padding: 6rem 12rem 0;
+  position: relative;
+}
+.block-intro-title, .block-intro-subtitle {
+  max-width: 40%;
+  margin: 0 auto;
+  text-align: center;
+}
+.block-intro-title {
+  font-size: 3.2rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.2rem;
+  margin-bottom: 1.5rem;
+}
+.block-intro-subtitle {
+  color: #bc6e44;
+  font-size: 2.4rem;
+  font-weight: normal;
+  margin-bottom: 4rem;
+}
+.block-intro-text {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-count: 2;
+  column-gap: 4rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  line-height: 2.6rem;
+  margin: 0 auto 2.5rem;
+  max-width: 80%;
+}
+.block-intro-stamp {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.block-intro-stamp img {
+  display: block;
+  height: auto;
+  width: 25rem;
+}
+
+.block-list .block-inside {
+  background-color: white;
+}
 .block-list .block-list-header {
   display: flex;
   justify-content: space-between;
@@ -861,49 +928,74 @@ h3, .h3 {
   max-width: 100%;
 }
 
-.block-intro-content {
-  padding: 6rem 12rem 0;
+.block-region .block-inside {
+  background-color: white;
+}
+.block-region-content {
+  padding: 0 12rem;
   position: relative;
 }
-.block-intro-title, .block-intro-subtitle {
-  max-width: 40%;
-  margin: 0 auto;
-  text-align: center;
-}
-.block-intro-title {
+.block-region-title {
   font-size: 3.2rem;
   font-weight: bold;
   font-variant: small-caps;
   letter-spacing: 0.2rem;
-  margin-bottom: 1.5rem;
+  margin: 0 auto 4rem;
+  max-width: 40%;
+  text-align: center;
 }
-.block-intro-subtitle {
-  color: #bc6e44;
-  font-size: 2.4rem;
-  font-weight: normal;
-  margin-bottom: 4rem;
+.block-region-details {
+  align-items: flex-start;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
 }
-.block-intro-text {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-count: 2;
-  column-gap: 4rem;
-  font-size: 1.6rem;
-  font-weight: bold;
-  line-height: 2.6rem;
-  margin: 0 auto 2.5rem;
-  max-width: 80%;
+.block-region-text-item {
+  display: flex;
+  margin-bottom: 2rem;
 }
-.block-intro-stamp {
-  position: absolute;
-  right: 0;
-  top: 0;
+.block-region-text-item-content {
+  padding-top: 1rem;
 }
-.block-intro-stamp img {
+.block-region-text-item-icon {
+  flex-shrink: 0;
+  margin-right: 6rem;
+  width: 5rem;
+}
+.block-region-text-item-icon img {
   display: block;
   height: auto;
-  width: 25rem;
+  max-width: 5rem;
+  max-height: 5rem;
+  margin: 0 auto;
+}
+.block-region-text-item h4 {
+  color: #bc6e44;
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+.block-region-text-item h4:before {
+  content: "";
+  border-top: 0.1rem solid #bc6e44;
+  position: absolute;
+  left: -4rem;
+  top: 1.2rem;
+  width: 3rem;
+}
+.block-region-text-item p {
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-variant: small-caps;
+  letter-spacing: 0.2rem;
+}
+.block-region-map {
+  border-left: 0.1rem solid #bc6e44;
+  max-width: 60%;
+}
+.block-region-map img {
+  display: block;
+  width: 100%;
 }
 
 /*# sourceMappingURL=theme.css.map */

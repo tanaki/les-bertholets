@@ -1,0 +1,89 @@
+@use '../variables' as *;
+
+.block-region {
+
+    .block-inside {
+		background-color: white;
+	}
+
+    &-content {
+        padding: 0 12rem;
+        position: relative;
+    }
+
+    &-title {
+        font-size: 3.2rem;
+        font-weight: bold;
+        font-variant: small-caps;
+        letter-spacing: 0.2rem;
+        margin: 0 auto 4rem;
+        max-width: 40%;
+        text-align: center;
+    }
+
+    &-details {
+        align-items: flex-start;
+        display: flex;
+        gap: 4rem;
+        justify-content: space-between;
+    }
+
+    &-text-item {
+        display: flex;
+        margin-bottom: 2rem;
+
+        &-content {
+            padding-top: 1rem;
+        }
+
+        &-icon {
+            flex-shrink: 0;
+            margin-right: 6rem;
+            width: 5rem;
+
+            img {
+                display: block;
+                height: auto;
+                max-width: 5rem;
+                max-height: 5rem;
+                margin: 0 auto;
+            }
+        }
+
+        h4 {
+            @extend .font-serif-italic;
+            color: $orange;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+
+            &:before {
+                content: '';
+                border-top: 0.1rem solid $orange;
+                position: absolute;
+                left: -4rem;
+                top: 1.2rem;
+                width: 3rem;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            font-weight: bold;
+            font-variant: small-caps;
+            letter-spacing: 0.2rem;
+        }
+    }
+
+    &-map {
+        border-left: 0.1rem solid $orange;
+        max-width: 60%;
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+
+
+}

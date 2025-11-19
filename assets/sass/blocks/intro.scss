@@ -2,6 +2,10 @@
 
 .block-intro {
 
+  .block-inside {
+		background-color: white;
+	}
+
   &-content {
     padding: 6rem 12rem 0;
     position: relative;

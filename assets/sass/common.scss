@@ -93,25 +93,41 @@ a {
 .block {
 	.block-inside {
         margin: 0 auto;
-        max-width: $largedesktop;
 		padding: 2.5rem;
 	}
 }
 
+header,
+footer {
+	.block-inside {
+		background-color: white;
+	}
+}
+
+header,
+footer,
+.block {
+	.block-inside,
+	.block-bottom .block-bottom-inside {
+		max-width: $largedesktop;
+		margin: 0 auto;
+	}
+}
+
 @media screen and (max-width: $maxnav) {
+
+}
+
+@media screen and (max-width: $largedesktop) {
 	header,
 	footer,
 	.block {
 		
 		.block-inside,
 		.block-bottom .block-bottom-inside {
-			background-color: white;
 			margin: 0 8rem;
 		}
 	}
-}
-
-@media screen and (max-width: $largedesktop) {
 
 }
 

@@ -1,4 +1,8 @@
 <?php
+    /*
+    Template Name: Terroir Page
+    */
+
     get_header();
 
     /*
@@ -10,17 +14,21 @@
     ]);
     */
 
-    get_template_part( 'template-parts/home/block-hero', null, array(
+    get_template_part( 'template-parts/common/block-hero', null, array(
         'image' => get_template_directory_uri() . '/assets/img/temp/misc/terroir.jpg',
         'title' => 'Terroir',
     ) );
     
-    get_template_part( 'template-parts/home/block-intro', null, array(
+    get_template_part( 'template-parts/common/block-intro', null, array(
         'title' => 'Notre terroir',
         'subtitle' => 'The Languedoc-Roussillon Region.',
         'text' => 'Texte sur 2 colonnes si besoin. Texte sur 2 colonnes si besoin? Texte sur 2 colonnes si besoin? Texte sur 2 colonnes si besoin? Texte sur 2 colonnes si besoin, Texte sur 2 colonnes si besoin'
     ) );
-    
+
+    get_template_part( 'template-parts/region/block-region', null, array(
+        'title' => 'Learn more about us',
+    ) );
+
     get_footer();
 ?>
 
