@@ -416,6 +416,8 @@ if ( closePanel ) {
 /* Init on domloaded */
 document.addEventListener("DOMContentLoaded", () => {
 
+  document.documentElement.classList.add('no-transition');
+
   const btn = document.getElementById('back-to-top');
 
   window.addEventListener('scroll', function () {
@@ -440,6 +442,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Attendre que tout soit chargé
   window.addEventListener("load", () => {
+
+    setTimeout(() => {
+			document.documentElement.classList.remove('no-transition');
+		}, 50);
+
     if ( AgeGate ) AgeGate.init();
     if ( ListSwipe ) ListSwipe.init();
 

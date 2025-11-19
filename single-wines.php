@@ -1,6 +1,10 @@
 <?php
     get_header();
 
+    echo "SINGLE WINE PAGE";
+
+    /*
+
     $pod  = pods( 'case_study', get_the_ID() );
 
     if ( $pod->exists() ) {
@@ -18,6 +22,7 @@
 <?php
         get_template_part('template-parts/case-studies/block-nav');
     }
+        */
 
     get_footer();
 ?>
