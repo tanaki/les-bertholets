@@ -12,7 +12,11 @@
 @use "./components/extra-side";
 @use "./components/logo-collection";
 
+@use "./blocks/grid";
 @use "./blocks/hero";
 @use "./blocks/intro";
 @use "./blocks/list";
 @use "./blocks/region";
+@use "./blocks/wine";
+
+@use "./layout/single-wines";

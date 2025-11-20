@@ -823,6 +823,15 @@ h3, .h3 {
   margin-top: 1rem;
 }
 
+.block-grid .block-inside {
+  background-color: white;
+}
+.block-grid-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4rem;
+}
+
 .block-hero {
   overflow: hidden;
   padding: 0;
@@ -1002,6 +1011,29 @@ h3, .h3 {
 .block-region-map img {
   display: block;
   width: 100%;
+}
+
+.block-wine-detail {
+  background-color: white;
+}
+.block-wine-detail .wine-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+.block-wine-detail .wine-gallery img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.block-wine-navigation {
+  background-color: white;
+}
+
+.single-wines header,
+.single-wines footer {
+  background-color: white;
 }
 
 /*# sourceMappingURL=theme.css.map */

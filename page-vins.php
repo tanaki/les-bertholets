@@ -5,51 +5,66 @@
 
     get_header();
 
-    $args = array(
-        'post_type'      => 'wines', 
-        'posts_per_page' => -1,
-        'post_status'    => 'publish',
-        'lang'           => pll_current_language(),
-    );
+    global $wpdb;
 
-    $query = new WP_Query( $args );
+    $lang = pll_current_language(); // ex : 'fr'
 
-    $wines = array();
+    $params = [
+        'limit'      => -1,
+        'orderby'    => 'post_title ASC',
+        'where'      => "
+            t.post_type = 'wines'
+            AND t.post_status = 'publish'
+            AND t.ID IN (
+                SELECT tr.object_id
+                FROM {$wpdb->term_relationships} tr
+                INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+                INNER JOIN {$wpdb->terms} t2 ON tt.term_id = t2.term_id
+                WHERE tt.taxonomy = 'language'
+                AND t2.slug = '$lang'
+            )
+        ",
+    ];
 
-    if ( $query->have_posts() ) :
-        while ( $query->have_posts() ) : $query->the_post();
+    $pods = pods( 'wines', $params );
 
-            $wines[] = array(
-                'ID'       => get_the_ID(),
-                'slug'     => get_post_field( 'post_name', get_the_ID() ),
-                'title'    => get_the_title(),
-                'content'  => get_the_content(),
-            );
+    $wines = [];
+
+    if ( $pods->total() > 0 ) :
+        while ( $pods->fetch() ) :
+
+            $id = $pods->field('ID');
+
+            $wines[] = [
+                'ID'      => $id,
+                'slug'    => $pods->field('post_name'),
+                'title'   => get_the_title($id),
+                'content' => apply_filters('the_content', get_post_field('post_content', $id)),
+            ];
 
         endwhile;
-        wp_reset_postdata();
     endif;
+
+    // TEMPS
+    $wines = array_merge(...array_fill(0, 6, $wines));
 ?>
-<div class="block block-list <?php if ( isset($className) ) echo $className; ?>">
+<div class="block block-grid">
     <div class="block-inside">
         <?php if ( isset($title) ) : ?>
             <h3>
                 <?php echo $title; ?>
             </h3>
         <?php endif; ?>
-        <div class="block-list-items animate-list">
+        <div class="block-grid-items">
             <?php 
                 foreach( $wines as $key => $wine ) {
                     echo '<a href="' . get_permalink( $wine['ID'] ) . '" class="block-list-item">';
                         echo '<h4>' . $wine['title'] . '</h4>';
+                        echo '<img src="' . get_the_post_thumbnail_url( $wine['ID'], 'medium' ) . '" alt="' . $wine['title'] . '"/>';
                     echo '</a>';
                 }
             ?>
-        </div>
-<!-- 
-        <?php if ( isset($buttonLabel) && isset($buttonLink) ) : ?>
-            <a class="button <?php echo $buttonClassName; ?> animate-button" href="<?php echo $buttonLink; ?>"><?php echo $buttonLabel; ?></a>
-        <?php endif; ?> -->
+        </div>  
     </div>
 </div>
 
