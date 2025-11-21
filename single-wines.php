@@ -70,6 +70,9 @@
                         
                         <article>
                             <h3><?php echo get_the_title($post_id); ?></h3>
+                            <div>
+                                <?php echo $related->display('wine_category'); ?>
+                            </div>
                             <a href="<?php echo get_permalink($post_id); ?>">Voir le vin</a>
                         </article>
 
