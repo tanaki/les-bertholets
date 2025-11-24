@@ -1016,19 +1016,48 @@ h3, .h3 {
 .block-wine-detail {
   background-color: white;
 }
+.block-wine-detail .block-inside {
+  align-items: flex-start;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
+}
 .block-wine-detail .wine-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  flex: 1;
+  grid-template-columns: 1fr 2fr;
   gap: 1rem;
 }
 .block-wine-detail .wine-gallery img {
-  width: 100%;
+  display: block;
   height: auto;
-  border-radius: 8px;
+  width: 100%;
+}
+.block-wine-detail .wine-details {
+  flex: 1;
 }
 
 .block-wine-navigation {
   background-color: white;
+}
+.block-wine-navigation .wine-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4rem;
+}
+.block-wine-navigation .wine-link {
+  text-align: center;
+}
+.block-wine-navigation .wine-thumb {
+  height: 20rem;
+  margin: 0 auto;
+  width: 20rem;
+}
+.block-wine-navigation .wine-thumb img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
 }
 
 .single-wines header,

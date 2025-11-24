@@ -2,20 +2,55 @@
 .block-wine-detail {
     background-color: white;
 
+    .block-inside {
+        align-items: flex-start;
+        display: flex;
+        gap: 4rem;
+        justify-content: space-between;
+    }
+
     .wine-gallery {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        flex: 1;
+        grid-template-columns: 1fr 2fr;
         gap: 1rem;
     }
 
     .wine-gallery img {
-        width: 100%;
+        display: block;
         height: auto;
-        border-radius: 8px;
+        width: 100%;
+    }
+
+    .wine-details {
+        flex: 1;
     }
 
 }
 
 .block-wine-navigation {
     background-color: white;
+
+    .wine-list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 4rem;
+    }
+
+    .wine-link {
+        text-align: center;
+    }
+
+    .wine-thumb {
+        height: 20rem;
+        margin: 0 auto;
+        width: 20rem;
+
+        img {
+            display: block;
+            max-height: 100%;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+    }
 }
