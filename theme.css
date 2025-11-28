@@ -85,7 +85,7 @@ table {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-list .block-list-item-title .collection, .block-intro-subtitle, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -823,6 +823,36 @@ h3, .h3 {
   margin-top: 1rem;
 }
 
+.wine-item-title {
+  text-align: center;
+}
+.wine-item-title span {
+  display: block;
+}
+.wine-item-title .collection {
+  color: #bc6e44;
+  margin-top: 2rem;
+}
+.wine-item-title .label {
+  color: #000000;
+  font-weight: bold;
+  margin-top: 0.5rem;
+  text-transform: uppercase;
+}
+.wine-item-title .detail {
+  color: #000000;
+  font-variant: small-caps;
+  letter-spacing: 0.1rem;
+}
+.wine-item-image {
+  background-color: #faf9f5;
+  padding: 0 2rem;
+}
+.wine-item img {
+  display: block;
+  max-width: 100%;
+}
+
 .block-grid .block-inside {
   background-color: white;
 }
@@ -912,35 +942,6 @@ h3, .h3 {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
-}
-.block-list .block-list-item-title {
-  text-align: center;
-}
-.block-list .block-list-item-title span {
-  display: block;
-}
-.block-list .block-list-item-title .collection {
-  color: #bc6e44;
-  margin-top: 2rem;
-}
-.block-list .block-list-item-title .label {
-  color: #000000;
-  font-weight: bold;
-  margin-top: 0.5rem;
-  text-transform: uppercase;
-}
-.block-list .block-list-item-title .detail {
-  color: #000000;
-  font-variant: small-caps;
-  letter-spacing: 0.1rem;
-}
-.block-list .block-list-item-image {
-  background-color: #faf9f5;
-  padding: 0 2rem;
-}
-.block-list img {
-  display: block;
-  max-width: 100%;
 }
 
 .block-region .block-inside {

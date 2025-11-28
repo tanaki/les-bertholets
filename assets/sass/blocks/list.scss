@@ -22,41 +22,4 @@
         grid-template-columns: repeat(6, 1fr);
         gap: 2rem;
     }
-
-    .block-list-item {
-
-        &-title {
-            text-align: center;
-
-            span {
-                display: block;
-            }
-            .collection {
-                @extend .font-serif-italic;
-                color: $orange;
-                margin-top: 2rem;
-            }
-            .label {
-                color: $black;
-                font-weight: bold;
-                margin-top: 0.5rem;
-                text-transform: uppercase;
-            }
-            .detail {
-                color: $black;
-                font-variant: small-caps;
-                letter-spacing: 0.1rem;
-            }
-        }
-    }
-
-    .block-list-item-image {
-        background-color: $white;
-        padding: 0 2rem;
-    }
-
-    img {
-        display: block;
-        max-width: 100%;
-    }
 }
