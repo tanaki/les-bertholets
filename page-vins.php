@@ -56,14 +56,23 @@
             </h3>
         <?php endif; ?>
         <div class="block-grid-items">
-            <?php 
-                foreach( $wines as $key => $wine ) {
-                    echo '<a href="' . get_permalink( $wine['ID'] ) . '" class="block-list-item">';
-                        echo '<h4>' . $wine['title'] . '</h4>';
-                        echo '<img src="' . get_the_post_thumbnail_url( $wine['ID'], 'medium' ) . '" alt="' . $wine['title'] . '"/>';
-                    echo '</a>';
-                }
-            ?>
+
+            <?php foreach ( $wines as $key => $wine ) :
+                
+                $post_id = $wine['ID'];
+                $item = pods('wines', $post_id);
+                $gallery = $item->field('wine_gallery');
+                $first_img = (!empty($gallery) && !empty($gallery[0]['guid'])) ? $gallery[0]['guid'] : null;
+                
+                get_template_part('template-parts/common/component/wine-item', null, array(
+                    "className" => "block-list-item",
+                    "image" => $first_img,
+                    "link" => get_permalink($post_id),
+                    "label" => esc_attr(get_the_title($post_id)),
+                    "collection" => $item->display('wine_appellation'),
+                    "detail" => $item->display('wine_category'),
+                ));
+            endforeach; ?>
         </div>  
     </div>
 </div>
