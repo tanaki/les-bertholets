@@ -30,6 +30,7 @@ function berto_theme_add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'berto_theme_add_slug_body_class' );
 
+
 /*
 function get_label ( $label, $stripTags = false ) {
     $label = pods('label', array( 'where' => 't.post_title = "' . $label . '"'))->display('label_text');

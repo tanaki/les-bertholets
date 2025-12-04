@@ -1,5 +1,23 @@
 @use 'variables' as *;
+@use 'titles' as *;
 
 .single {
-    
+
+    .block-title {
+        .block-inside {
+            align-items: center;
+            display: flex;
+            justify-content: space-between;
+        }
+        h3 {
+            @extend .font-italic;
+            color: $orange;
+            font-variant: normal;
+        }
+        h4 {
+            @extend .h3;
+            font-size: 3rem;
+        }
+    }
+
 }

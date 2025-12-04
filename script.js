@@ -138,6 +138,25 @@ let Content = {
   }
 };
 
+let DetailGallery = {
+  
+  init: () => {
+
+    const mainImg = document.getElementById("mainImg");
+    const thumbs = document.querySelectorAll(".thumb-img");
+
+    console.log("detail gallery", mainImg, thumbs);
+
+    thumbs.forEach(thumb => {
+        thumb.addEventListener("click", () => {
+            mainImg.srcset = thumb.srcset;
+            mainImg.src = thumb.src;
+        });
+    });
+
+  },
+};
+
 let Footer = {
     init : () => {
 
@@ -449,6 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if ( AgeGate ) AgeGate.init();
     if ( ListSwipe ) ListSwipe.init();
+    if ( DetailGallery ) DetailGallery.init();
 
     // if (Client) Client.init();
     // if (Grid) Grid.init();
@@ -465,6 +485,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 300);
     */
+
 
     document.body.classList.add('loaded');
   });

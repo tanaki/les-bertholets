@@ -1,4 +1,5 @@
 @use '../variables' as *;
+@use '../titles' as *;
 
 .block-wine-detail {
     background-color: white;
@@ -10,27 +11,91 @@
         justify-content: space-between;
     }
 
-    .wine-gallery {
-        display: grid;
-        flex: 1;
-        grid-template-columns: 1fr 2fr;
-        gap: 1rem;
-    }
+    .product {
+        &-container {
+            align-items: flex-start;
+            display: flex;
+            gap: 4rem;
+            justify-content: space-between;
+            width: 100%;
+        }
 
-    .wine-gallery img {
-        display: block;
-        height: auto;
-        width: 100%;
-    }
+        &-gallery-block,
+        &-text-block {
+            flex: 0 0 50%;
+        }
 
-    .wine-details {
-        flex: 1;
+        &-gallery {
+            align-items: flex-end;
+            display: flex;
+            gap: 2rem;
+        }
+        
+        &-main-image {
+            align-items: center;
+            background-color: $white;
+            display: flex;
+            height: 70rem;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+            width: 100%;
+
+            img {
+                display: block;
+                object-fit: contain;
+                margin: 0 auto;
+                max-height: 100%;
+                max-width: 100%;
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        &-thumbs {
+            display: flex;
+            gap: 2rem;
+            flex-direction: column;
+
+            .thumb img {
+                background-color: $white;
+                width: 8rem;
+                height: 8rem;
+                object-fit: cover;
+                cursor: pointer;
+                transition: opacity .3s, transform .2s;
+            }
+            .thumb img:hover {
+                opacity: 0.7;
+                transform: scale(1.05);
+            }
+        }
+
+
+        &-title,
+        &-content {
+            max-width: 50rem;    
+        }
+
+        &-title {
+            @extend .h3;
+            font-size: 4rem;
+            margin-bottom: 2rem;
+        }
+
     }
 
 }
 
 .block-wine-navigation {
     background-color: white;
+
+    .wine-navigation-title {
+        @extend .h3;
+        font-size: 3rem;
+        margin: 4rem 0;
+        text-align: center;
+    }
 
     .wine-list {
         display: grid;

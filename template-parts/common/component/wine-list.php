@@ -1,7 +1,9 @@
 <?php extract($args); ?>
 <div class="block block-wine-navigation">
     <div class="block-inside">
-        <?php echo $title; ?>
+        <div class="wine-navigation-title">
+            <?php echo $title; ?>
+        </div>
 
         <div class="wine-list">
             <?php

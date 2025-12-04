@@ -87,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if ( AgeGate ) AgeGate.init();
     if ( ListSwipe ) ListSwipe.init();
+    if ( DetailGallery ) DetailGallery.init();
 
     // if (Client) Client.init();
     // if (Grid) Grid.init();
@@ -103,6 +104,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }, 300);
     */
+
 
     document.body.classList.add('loaded');
   });

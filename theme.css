@@ -85,7 +85,7 @@ table {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -546,11 +546,24 @@ footer nav .social-link {
 }
 
 /* TITLE */
-h3, .h3 {
+h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .single .block-title h4 {
   font-size: 2.2rem;
   font-variant: small-caps;
   font-weight: bold;
   letter-spacing: 0.2rem;
+}
+
+.single .block-title .block-inside {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+}
+.single .block-title h3 {
+  color: #bc6e44;
+  font-variant: normal;
+}
+.single .block-title h4 {
+  font-size: 3rem;
 }
 
 .age-gate--container {
@@ -858,6 +871,13 @@ h3, .h3 {
   max-height: 100%;
   max-width: 100%;
   padding: 1rem;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
+}
+.wine-item:hover img {
+  opacity: 0.7;
+  transform: scale(0.95);
 }
 
 .block-grid .block-inside {
@@ -1030,23 +1050,72 @@ h3, .h3 {
   gap: 4rem;
   justify-content: space-between;
 }
-.block-wine-detail .wine-gallery {
-  display: grid;
-  flex: 1;
-  grid-template-columns: 1fr 2fr;
-  gap: 1rem;
-}
-.block-wine-detail .wine-gallery img {
-  display: block;
-  height: auto;
+.block-wine-detail .product-container {
+  align-items: flex-start;
+  display: flex;
+  gap: 4rem;
+  justify-content: space-between;
   width: 100%;
 }
-.block-wine-detail .wine-details {
-  flex: 1;
+.block-wine-detail .product-gallery-block, .block-wine-detail .product-text-block {
+  flex: 0 0 50%;
+}
+.block-wine-detail .product-gallery {
+  align-items: flex-end;
+  display: flex;
+  gap: 2rem;
+}
+.block-wine-detail .product-main-image {
+  align-items: center;
+  background-color: #faf9f5;
+  display: flex;
+  height: 70rem;
+  justify-content: center;
+  padding: 2rem;
+  text-align: center;
+  width: 100%;
+}
+.block-wine-detail .product-main-image img {
+  display: block;
+  object-fit: contain;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
+}
+.block-wine-detail .product-thumbs {
+  display: flex;
+  gap: 2rem;
+  flex-direction: column;
+}
+.block-wine-detail .product-thumbs .thumb img {
+  background-color: #faf9f5;
+  width: 8rem;
+  height: 8rem;
+  object-fit: cover;
+  cursor: pointer;
+  transition: opacity 0.3s, transform 0.2s;
+}
+.block-wine-detail .product-thumbs .thumb img:hover {
+  opacity: 0.7;
+  transform: scale(1.05);
+}
+.block-wine-detail .product-title, .block-wine-detail .product-content {
+  max-width: 50rem;
+}
+.block-wine-detail .product-title {
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
 .block-wine-navigation {
   background-color: white;
+}
+.block-wine-navigation .wine-navigation-title {
+  font-size: 3rem;
+  margin: 4rem 0;
+  text-align: center;
 }
 .block-wine-navigation .wine-list {
   display: grid;
