@@ -59,13 +59,16 @@
                     </div>
                     <div class="product-details-list">
                         <div class="product-details-list-item">
-                            Appellation : <?php echo $pod->display('wine_appellation'); ?>
+                            <span class="product-details-list-item-label">Catégorie :</span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_category'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            Catégorie : <?php echo $pod->display('wine_category'); ?>
+                            <span class="product-details-list-item-label">Appellation :</span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_appellation'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            Variétés : <?php echo $pod->display('wine_varietes'); ?>
+                            <span class="product-details-list-item-label">Variétés :</span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_varietes'); ?></span>
                         </div>
                     </div>
                 </div>

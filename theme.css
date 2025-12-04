@@ -85,7 +85,7 @@ table {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -1107,6 +1107,24 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .block-wine-detail .product-title {
   font-size: 4rem;
   margin-bottom: 2rem;
+}
+.block-wine-detail .product-details-content p {
+  line-height: 1.3;
+  margin-bottom: 2rem;
+}
+.block-wine-detail .product-details-content strong {
+  font-weight: 600;
+  font-variant: small-caps;
+}
+.block-wine-detail .product-details-list-item {
+  margin-bottom: 1rem;
+}
+.block-wine-detail .product-details-list-item-label {
+  font-weight: 600;
+  font-variant: small-caps;
+}
+.block-wine-detail .product-details-list-item-info {
+  color: #bc6e44;
 }
 
 .block-wine-navigation {
