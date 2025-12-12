@@ -11,8 +11,10 @@
 @use "./components/button";
 @use "./components/extra-side";
 @use "./components/logo-collection";
+@use "./components/store-locator";
 @use "./components/wine-item";
 
+@use "./blocks/contact";
 @use "./blocks/grid";
 @use "./blocks/hero";
 @use "./blocks/intro";

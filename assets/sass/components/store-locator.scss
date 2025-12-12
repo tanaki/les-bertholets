@@ -1,0 +1,83 @@
+@use '../variables' as *;
+@use '../components/button' as *;
+@use '../titles' as *;
+
+.block-store-locator {
+    .block-inside {
+        background-color: white;
+    }
+
+    h2 {
+        @extend .h3;
+        font-size: 3rem;
+        margin-bottom: 6rem;
+        text-align: center;
+    }
+
+}
+
+/* Conteneur principal */
+.store-locator {
+    display: flex;
+}
+
+/* Colonne liste */
+.store-left {
+    flex: 1;
+    padding: 0 2rem 0;
+}
+.store-list {
+    overflow-y: auto;
+    box-sizing: border-box;
+    max-height: 80vh;
+    overflow: auto;
+}
+
+/* Champ de recherche */
+.store-search {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Liste des magasins */
+.stores {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    .store-item {
+        padding: 1rem;
+        border-bottom: 1px solid $white;
+        cursor: pointer;
+        transition: background-color 0.2s;
+
+        &:hover {
+            background-color: $white;
+        }
+
+        &-name {
+            display: block;
+            font-weight: bold;
+            font-variant: small-caps;
+            font-size: 2rem;
+        }
+        &-address {
+            display: block;
+            font-size: 1.6rem;
+        }
+        &-hours, &-email, &-phone {
+            display: block;
+            font-size: 1.6rem;
+            color: $orange;
+        }
+    }
+}
+
+/* Colonne carte */
+.store-map {
+    flex: 2;
+    min-height: 50rem;
+}

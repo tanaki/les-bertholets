@@ -5,7 +5,7 @@ let DetailGallery = {
     const mainImg = document.getElementById("mainImg");
     const thumbs = document.querySelectorAll(".thumb-img");
 
-    console.log("detail gallery", mainImg, thumbs);
+    if ( !mainImg ) return;
 
     thumbs.forEach(thumb => {
         thumb.addEventListener("click", () => {

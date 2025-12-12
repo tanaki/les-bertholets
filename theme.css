@@ -81,11 +81,18 @@ table {
   font-family: "Baskerville", serif;
 }
 
-.font-serif, .button--primary, .age-gate--title, header a, header .extra-nav .lang-switcher a, body {
+.font-serif, .page-contact-us form input[type=text],
+.page-contact-us form input[type=email],
+.page-contact-us form textarea,
+.page-contactez-nous form input[type=text],
+.page-contactez-nous form input[type=email],
+.page-contactez-nous form textarea, .button--primary, .page-contact-us form input[type=submit],
+.page-contactez-nous form input[type=submit], .age-gate--title, header a, header .extra-nav .lang-switcher a, body {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .page-contact-us .block-post-content-container > p,
+.page-contactez-nous .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -546,7 +553,8 @@ footer nav .social-link {
 }
 
 /* TITLE */
-h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .single .block-title h4 {
+h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .page-contact-us h2,
+.page-contactez-nous h2, .block-store-locator h2, .single .block-title h4 {
   font-size: 2.2rem;
   font-variant: small-caps;
   font-weight: bold;
@@ -672,7 +680,8 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 }
 
 /* Button */
-.button {
+.button, .page-contact-us form input[type=submit],
+.page-contactez-nous form input[type=submit] {
   border: 0.1rem solid #000000;
   color: #000000;
   display: inline-block;
@@ -685,15 +694,18 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   text-align: center;
   text-transform: uppercase;
 }
-.button:hover {
+.button:hover, .page-contact-us form input[type=submit]:hover,
+.page-contactez-nous form input[type=submit]:hover {
   opacity: 0.9;
 }
-.button--primary {
+.button--primary, .page-contact-us form input[type=submit],
+.page-contactez-nous form input[type=submit] {
   background-color: #bc6e44;
   border-color: #bc6e44;
   color: #faf9f5;
 }
-.button--primary:hover {
+.button--primary:hover, .page-contact-us form input[type=submit]:hover,
+.page-contactez-nous form input[type=submit]:hover {
   border-color: #faf9f5;
 }
 
@@ -706,7 +718,8 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 }
 
 @media screen and (max-width: 1023px) {
-  .button {
+  .button, .page-contact-us form input[type=submit],
+  .page-contactez-nous form input[type=submit] {
     display: block;
     text-align: center;
     width: 100%;
@@ -836,6 +849,79 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   margin-top: 1rem;
 }
 
+.block-store-locator .block-inside {
+  background-color: white;
+}
+.block-store-locator h2 {
+  font-size: 3rem;
+  margin-bottom: 6rem;
+  text-align: center;
+}
+
+/* Conteneur principal */
+.store-locator {
+  display: flex;
+}
+
+/* Colonne liste */
+.store-left {
+  flex: 1;
+  padding: 0 2rem 0;
+}
+
+.store-list {
+  overflow-y: auto;
+  box-sizing: border-box;
+  max-height: 80vh;
+  overflow: auto;
+}
+
+/* Champ de recherche */
+.store-search {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Liste des magasins */
+.stores {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.stores .store-item {
+  padding: 1rem;
+  border-bottom: 1px solid #faf9f5;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.stores .store-item:hover {
+  background-color: #faf9f5;
+}
+.stores .store-item-name {
+  display: block;
+  font-weight: bold;
+  font-variant: small-caps;
+  font-size: 2rem;
+}
+.stores .store-item-address {
+  display: block;
+  font-size: 1.6rem;
+}
+.stores .store-item-hours, .stores .store-item-email, .stores .store-item-phone {
+  display: block;
+  font-size: 1.6rem;
+  color: #bc6e44;
+}
+
+/* Colonne carte */
+.store-map {
+  flex: 2;
+  min-height: 50rem;
+}
+
 .wine-item-title {
   text-align: center;
 }
@@ -878,6 +964,94 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .wine-item:hover img {
   opacity: 0.7;
   transform: scale(0.95);
+}
+
+.page-contact-us .block-post-content .block-inside,
+.page-contactez-nous .block-post-content .block-inside {
+  background-color: white;
+}
+.page-contact-us h2,
+.page-contactez-nous h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+.page-contact-us .block-post-content-container > p,
+.page-contactez-nous .block-post-content-container > p {
+  color: #bc6e44;
+  font-size: 2rem;
+  text-align: center;
+}
+.page-contact-us .block-post-content-container p + .wp-block-columns,
+.page-contactez-nous .block-post-content-container p + .wp-block-columns {
+  margin-top: 4rem;
+}
+.page-contact-us form input[type=text],
+.page-contact-us form input[type=email],
+.page-contact-us form textarea,
+.page-contactez-nous form input[type=text],
+.page-contactez-nous form input[type=email],
+.page-contactez-nous form textarea {
+  appearance: none;
+  border: 0.1rem solid #727271;
+  border-radius: 0;
+  font-size: 1.6rem;
+  margin-bottom: 2rem;
+  padding: 1.2rem;
+  width: 100%;
+}
+.page-contact-us form input[type=submit],
+.page-contactez-nous form input[type=submit] {
+  appearance: none;
+  cursor: pointer;
+}
+.page-contact-us form input[aria-invalid=true],
+.page-contact-us form textarea[aria-invalid=true],
+.page-contactez-nous form input[aria-invalid=true],
+.page-contactez-nous form textarea[aria-invalid=true] {
+  border-color: #dc3232;
+}
+.page-contact-us form .wpcf7-form-control-wrap,
+.page-contactez-nous form .wpcf7-form-control-wrap {
+  display: block;
+  position: relative;
+}
+.page-contact-us form .wpcf7-not-valid-tip,
+.page-contactez-nous form .wpcf7-not-valid-tip {
+  font-size: 1.2rem;
+  position: absolute;
+  right: 0;
+  text-align: right;
+  bottom: 0.5rem;
+}
+.page-contact-us .wpcf7 form .wpcf7-response-output,
+.page-contactez-nous .wpcf7 form .wpcf7-response-output {
+  border: none;
+  color: white;
+  margin: 2rem 0 0;
+  padding: 1rem;
+}
+.page-contact-us .wpcf7 form.invalid .wpcf7-response-output,
+.page-contactez-nous .wpcf7 form.invalid .wpcf7-response-output {
+  background: #dc3232;
+}
+.page-contact-us .wpcf7 form.sent .wpcf7-response-output,
+.page-contactez-nous .wpcf7 form.sent .wpcf7-response-output {
+  background: #46b450;
+}
+.page-contact-us .wp-block-image,
+.page-contactez-nous .wp-block-image {
+  height: 60rem;
+}
+.page-contact-us .wp-block-image img,
+.page-contactez-nous .wp-block-image img {
+  display: block;
+  object-fit: cover;
+  margin: 0 auto;
+  max-height: 100%;
+  max-width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .block-grid .block-inside {

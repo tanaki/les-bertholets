@@ -1,19 +1,18 @@
 <?php
     get_header();
-
-    global $post;
-
-    $podPage = pods('page', [
-        'limit' => 1,
-        'where' => "ID = '". $post->ID ."'"
-    ]);
-    
-    $slug = $post->post_name;
-    if ( locate_template("template-parts/layouts/page-{$slug}.php") ) {
-        get_template_part("template-parts/layouts/page", $slug);
-    } else {
-        get_template_part("template-parts/layouts/page", "default");
-    }
-    
+?>
+    <main class="page-content">
+        <div class="block block-post-content">
+            <div class="block-inside">
+                <h2>
+                    <?php the_title(); ?>
+                </h2>
+                <div class="block-post-content-container">
+                    <?php the_content(); ?>
+                </div>
+            </div>
+        </div>
+    </main>
+<?php    
     get_footer();
 ?>

@@ -3,7 +3,6 @@ let ListSwipe = {
     swiperInstance : null,
 
     init: () => {
-        console.log("ListSwipe::init");
         ListSwipe.initSwiper();
     },
 
