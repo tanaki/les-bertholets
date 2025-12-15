@@ -38,8 +38,10 @@ window.StoreLocator = {
         // Bounds pour auto-zoom
         const bounds = new google.maps.LatLngBounds();
 
+        if ( !window.STORES_TO_LOCATE || window.STORES_TO_LOCATE.length === 0 ) return;
+
         // Ajout des markers
-        stores.forEach(store => {
+        window.STORES_TO_LOCATE.forEach(store => {
             StoreLocator.addMarker(store);
             bounds.extend({ lat: store.lat, lng: store.lng });
         });

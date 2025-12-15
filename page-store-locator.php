@@ -26,6 +26,50 @@
             </div>
         </div>
     </main>
+
 <?php 
+
+    $lang = pll_current_language();
+
+    $params = [
+        'limit'      => -1,
+        'where'      => "
+            t.post_type = 'store'
+            AND t.post_status = 'publish'
+            AND t.ID IN (
+                SELECT object_id 
+                FROM {$wpdb->prefix}term_relationships tr
+                INNER JOIN {$wpdb->prefix}term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+                INNER JOIN {$wpdb->prefix}terms t2 ON tt.term_id = t2.term_id
+                WHERE tt.taxonomy = 'language' AND t2.slug = '$lang'
+            )
+        ",
+    ];
+
+
+    $stores = pods('store', $params);
+
+
+    $data = [];
+
+    if ( $stores->total() ) {
+        while ( $stores->fetch() ) {
+            $data[] = [
+                'id'    => $stores->id(),
+                'name' => $stores->display( 'post_title' ),
+                'lat' => floatval($stores->display( 'store-latitude' )),
+                'lng' => floatval($stores->display( 'store-longitude' )),
+                'email' => $stores->display( 'store-email' ),
+                'address' => $stores->display( 'store-address' ),
+                'phone' => $stores->display( 'store-phone' ),
+                'hours' => $stores->display( 'store-hours' ),
+            ];
+        }
+    }
+
+    echo '<script>';
+    echo 'window.STORES_TO_LOCATE = ' . wp_json_encode( $data ) . ';';
+    echo '</script>';
+
     get_footer(); 
 ?>
