@@ -14,7 +14,13 @@
                     <div id="store-locator" class="store-locator">
                         
                         <div class="store-left">
-                            <input type="text" id="search" class="store-search" placeholder="Rechercher un magasin...">
+                            <div class="store-search-container">
+                                <input type="text" id="search" class="store-search" placeholder="Rechercher un magasin...">
+                                <a href="#" id="clear-search" class="clear-search" title="Effacer la recherche" style="display:none;">&times;</a>
+                            </div>
+                            <div id="empty-list" class="empty-list" style="display:none;">
+                                Aucun magasin trouvé.
+                            </div>
                             <div class="store-list">
                                 <ul id="stores" class="stores"></ul>
                             </div>
@@ -48,7 +54,6 @@
 
 
     $stores = pods('store', $params);
-
 
     $data = [];
 

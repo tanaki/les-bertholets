@@ -306,69 +306,76 @@ let Lists = {
     }
 }
 
-// Données des magasins avec coordonnées pré-calculées
-const stores = [
-    { id: 1, name: "Magasin A", address: "10 rue de Rivoli, 75001 Paris", lat: 48.855, lng: 2.357, hours: "9h-18h", email: "", phone: ""},
-    { id: 2, name: "Magasin B", address: "5 avenue Montaigne, 75008 Paris", lat: 48.866, lng: 2.304, hours: "10h-19h", email: "", phone: ""},
-    { id: 3, name: "Magasin C", address: "20 boulevard Saint-Germain, 75001 Paris", lat: 48.853, lng: 2.348, hours: "8h-17h", email: "", phone: ""},
-    { id: 4, name: "Magasin D", address: "15 rue du Faubourg Saint-Honoré, 75008 Paris", lat: 48.870, lng: 2.316, hours: "11h-20h", email: "", phone: ""},
-    { id: 5, name: "Magasin E", address: "30 avenue des Champs-Élysées, 75008 Paris", lat: 48.869, lng: 2.307, hours: "10h-22h", email: "", phone: ""},
-    { id: 6, name: "Magasin F", address: "50 rue de la Paix, 75002 Paris", lat: 48.868, lng: 2.330, hours: "9h-19h", email: "", phone: ""},
-    { id: 7, name: "Magasin G", address: "100 boulevard Haussmann, 75009 Paris", lat: 48.875, lng: 2.325, hours: "10h-20h", email: "", phone: ""},
-    { id: 8, name: "Magasin H", address: "200 rue Saint-Denis, 75004 Paris", lat: 48.864, lng: 2.350, hours: "9h-18h", email: "", phone: ""},
-    { id: 9, name: "Magasin I", address: "75 avenue de la République, 75011 Paris", lat: 48.863, lng: 2.381, hours: "8h-17h", email: "", phone: ""},
-    { id: 10, name: "Magasin J", address: "120 rue de la Convention, 75015 Paris", lat: 48.841, lng: 2.292, hours: "10h-19h", email: "", phone: ""}
-];
-
 window.StoreLocator = {
 
     map: null,
-    markers : [],
+    markers: [],
+    markerCluster: null,
 
-    storeListEl : null,
-    searchInput : null,
+    storeListEl: null,
+    searchInput: null,
+    clearSearchEl: null,
+    emptyList: null,
+    activeStoreId: null,
 
     // Initialisation
     init: () => {
-
-        const mapElement = document.getElementById("map")
-
+        const mapElement = document.getElementById("map");
         if (!mapElement) return;
 
         StoreLocator.storeListEl = document.getElementById('stores');
         StoreLocator.searchInput = document.getElementById('search');
+        StoreLocator.clearSearchEl = document.getElementById('clear-search');
+        StoreLocator.emptyList = document.getElementById('empty-list');
 
         StoreLocator.map = new google.maps.Map(mapElement, {
             center: { lat: 48.8566, lng: 2.3522 },
             zoom: 5,
+            zoomControl: true,
+            mapTypeControl: true,
+            streetViewControl: false,
+            fullscreenControl: false,
+            clickableIcons: true,
+            tilt: 0,
         });
 
-        // Bounds pour auto-zoom
+        if (!window.STORES_TO_LOCATE || window.STORES_TO_LOCATE.length === 0) return;
+
+        // Création des markers
         const bounds = new google.maps.LatLngBounds();
-
-        if ( !window.STORES_TO_LOCATE || window.STORES_TO_LOCATE.length === 0 ) return;
-
-        // Ajout des markers
         window.STORES_TO_LOCATE.forEach(store => {
             StoreLocator.addMarker(store);
             bounds.extend({ lat: store.lat, lng: store.lng });
         });
-
         StoreLocator.map.fitBounds(bounds);
-        
-        // Affiche tous les magasins
-        StoreLocator.displayStores(stores);
+
+        // Création du cluster natif
+        StoreLocator.markerCluster = new markerClusterer.MarkerClusterer({
+            map: StoreLocator.map,
+            markers: StoreLocator.markers.map(obj => obj.marker),
+        });
+
+        // Affiche la liste initiale
+        StoreLocator.displayStores(window.STORES_TO_LOCATE);
 
         // Recherche en direct
         StoreLocator.searchInput.addEventListener('input', StoreLocator.filterStores);
+
+        // Événement pour effacer la recherche
+        if (StoreLocator.clearSearchEl) {
+            StoreLocator.clearSearchEl.addEventListener('click', (e) => {
+                e.preventDefault();
+                StoreLocator.searchInput.value = '';
+                StoreLocator.filterStores();
+            });
+        }
 
         // Filtre selon la vue carte
         StoreLocator.map.addListener('bounds_changed', StoreLocator.filterStores);
     },
 
-    addMarker : (store) => {
+    addMarker: (store) => {
         const marker = new google.maps.Marker({
-            map: StoreLocator.map,
             position: { lat: store.lat, lng: store.lng },
             title: store.name,
             icon: {
@@ -376,13 +383,20 @@ window.StoreLocator = {
                 scaledSize: new google.maps.Size(40, 40),
                 origin: new google.maps.Point(0, 0),
                 anchor: new google.maps.Point(20, 40)
-            }
+            },
+            optimized: true,
         });
+
+        // Click sur marker → smooth pan/zoom + highlight + scroll
+        marker.addListener('click', () => {
+            StoreLocator.smoothPanZoom(marker.getPosition(), 15);
+            StoreLocator.highlightStoreListItem(store.id, true); // scroll = true
+        });
+
         StoreLocator.markers.push({ marker, store });
     },
 
-    createStoreListItem : (store) => {
-
+    createStoreListItem: (store) => {
         const li = document.createElement('li');
         li.classList.add('store-item');
 
@@ -398,54 +412,103 @@ window.StoreLocator = {
         li.dataset.lat = store.lat;
         li.dataset.lng = store.lng;
 
+        // Click sur la liste → smooth pan/zoom + highlight + scroll
         li.addEventListener('click', () => {
             const obj = StoreLocator.markers.find(m => m.store.id === store.id);
             if (obj) {
-                StoreLocator.map.panTo(obj.marker.getPosition());
-                StoreLocator.map.setZoom(15);
+                StoreLocator.smoothPanZoom(obj.marker.getPosition(), 15);
+                StoreLocator.highlightStoreListItem(store.id, true); // scroll = true
             }
         });
 
         return li;
     },
 
-    /**
-     * Affiche une liste de stores
-     */
-    displayStores : (list) => {
+    // Smooth pan + zoom
+    smoothPanZoom: (position, targetZoom) => {
+        StoreLocator.map.panTo(position);
+        const currentZoom = StoreLocator.map.getZoom();
+        let i = currentZoom;
+        const step = currentZoom < targetZoom ? 1 : -1;
+
+        const zoomInterval = setInterval(() => {
+            if (i === targetZoom) {
+                clearInterval(zoomInterval);
+            } else {
+                i += step;
+                StoreLocator.map.setZoom(i);
+            }
+        }, 50);
+    },
+
+    // Highlight + scroll (scroll uniquement si scroll = true)
+    highlightStoreListItem: (storeId, scroll = false) => {
+        StoreLocator.activeStoreId = storeId;
+        StoreLocator.storeListEl.querySelectorAll('.store-item').forEach(li => {
+            li.classList.remove('active');
+        });
+
+        const li = StoreLocator.storeListEl.querySelector(`.store-item[data-store-id='${storeId}']`);
+        if (li) {
+            li.classList.add('active');
+            if (scroll) {
+                li.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    },
+
+    displayStores: (list) => {
         StoreLocator.storeListEl.innerHTML = '';
         list.forEach(store => {
-            StoreLocator.storeListEl.appendChild(
-                StoreLocator.createStoreListItem(store)
-            );
+            const li = StoreLocator.createStoreListItem(store);
+            StoreLocator.storeListEl.appendChild(li);
+
+            // Réapplique le highlight si c’est le store actif
+            if (store.id === StoreLocator.activeStoreId) {
+                li.classList.add('active');
+                // scroll = false ici pour éviter de scroller au filtrage
+            }
         });
     },
 
-    /**
-     * Recherche + filtrage carte en utilisant le même template
-     */
-    filterStores : () => {
+    filterStores: () => {
+        StoreLocator.emptyList.style.display = 'none';
+        StoreLocator.storeListEl.innerHTML = '';
 
         const query = StoreLocator.searchInput.value.toLowerCase();
+        const visibleMarkers = [];
 
-        StoreLocator.storeListEl.innerHTML = '';
+        StoreLocator.clearSearchEl.style.display = query.length === 0 ? 'none' : 'block';
 
         StoreLocator.markers.forEach(obj => {
             const { marker, store } = obj;
-
             const matchesSearch =
                 store.name.toLowerCase().includes(query) ||
                 store.address.toLowerCase().includes(query);
 
             if (matchesSearch) {
                 marker.setMap(StoreLocator.map);
-                StoreLocator.storeListEl.appendChild(
-                    StoreLocator.createStoreListItem(store)
-                );
+                visibleMarkers.push(marker);
             } else {
                 marker.setMap(null);
             }
         });
+
+        // Affiche uniquement les stores visibles
+        const visibleStores = window.STORES_TO_LOCATE.filter(store =>
+            store.name.toLowerCase().includes(query) ||
+            store.address.toLowerCase().includes(query)
+        );
+        StoreLocator.displayStores(visibleStores);
+
+        if (StoreLocator.storeListEl.children.length === 0) {
+            StoreLocator.emptyList.style.display = 'block';
+        }
+
+        if (StoreLocator.markerCluster) {
+            StoreLocator.markerCluster.clearMarkers();
+            StoreLocator.markerCluster.addMarkers(visibleMarkers);
+        }
     }
 };
 

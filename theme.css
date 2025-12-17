@@ -872,17 +872,44 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .store-list {
   overflow-y: auto;
   box-sizing: border-box;
+  min-height: 50rem;
+  height: 80vh;
   max-height: 80vh;
   overflow: auto;
 }
 
 /* Champ de recherche */
-.store-search {
-  width: 100%;
-  padding: 10px;
+.store-search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
   margin-bottom: 20px;
+}
+
+.store-search {
+  flex: 1;
+  width: 100%;
+  padding: 10px 30px 10px 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
+}
+
+.clear-search {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 0;
+  color: #888;
+  cursor: pointer;
+  padding: 8px 12px 12px;
+}
+
+.clear-search:hover {
+  color: #333;
 }
 
 /* Liste des magasins */
@@ -913,6 +940,13 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .stores .store-item-hours, .stores .store-item-email, .stores .store-item-phone {
   display: block;
   font-size: 1.6rem;
+  color: #bc6e44;
+}
+.stores .store-item.active {
+  background-color: #faf9f5;
+  border-left: 3px solid #bc6e44;
+}
+.stores .store-item.active .store-item-address {
   color: #bc6e44;
 }
 
