@@ -20,6 +20,7 @@ body {
 }
 
 a {
+	color: $orange;
     text-decoration: none;
 }
 
@@ -65,6 +66,10 @@ a {
 .tagline {
 	@extend .font-italic;
 	margin: 4rem 0 0;
+
+	a:hover {
+		text-decoration: underline;
+	}
 }
 
 /* INSTAGRAM */
@@ -125,7 +130,7 @@ footer,
 		
 		.block-inside,
 		.block-bottom .block-bottom-inside {
-			margin: 0 8rem;
+			margin: 0;
 		}
 	}
 

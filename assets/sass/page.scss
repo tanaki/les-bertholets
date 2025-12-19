@@ -1,7 +1,32 @@
 @use 'variables' as *;
+@use 'titles' as *;
 
 .page,
 .single {
+
+    .block-post-content {
+        .block-inside {
+            background-color: white;
+        }
+
+        h2 {
+            @extend .h2;
+            font-size: 4rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+    }
+
+    .block-post-content-container {
+        h3 {
+            @extend .h3;
+        }
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            margin-bottom: 2.5rem;
+        }
+    }
     
 }
 

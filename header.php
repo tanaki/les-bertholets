@@ -42,6 +42,7 @@
 	<body <?php body_class("age-verified"); ?>>
 
 		<?php get_template_part('template-parts/common/component/age-gate'); ?>
+		<!-- <?php get_template_part('template-parts/common/component/temporary'); ?> -->
 
 		<div class="wrapper">
 

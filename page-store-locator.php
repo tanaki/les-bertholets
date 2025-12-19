@@ -15,11 +15,11 @@
                         
                         <div class="store-left">
                             <div class="store-search-container">
-                                <input type="text" id="search" class="store-search" placeholder="Rechercher un magasin...">
-                                <a href="#" id="clear-search" class="clear-search" title="Effacer la recherche" style="display:none;">&times;</a>
+                                <input type="text" id="search" class="store-search" placeholder="<?php echo get_label('find-a-store'); ?>" />
+                                <a href="#" id="clear-search" class="clear-search" style="display:none;">&times;</a>
                             </div>
                             <div id="empty-list" class="empty-list" style="display:none;">
-                                Aucun magasin trouvé.
+                                <?php echo get_label('no-store-found'); ?>
                             </div>
                             <div class="store-list">
                                 <ul id="stores" class="stores"></ul>
@@ -35,25 +35,9 @@
 
 <?php 
 
-    $lang = pll_current_language();
-
-    $params = [
+    $stores = pods('store', array(
         'limit'      => -1,
-        'where'      => "
-            t.post_type = 'store'
-            AND t.post_status = 'publish'
-            AND t.ID IN (
-                SELECT object_id 
-                FROM {$wpdb->prefix}term_relationships tr
-                INNER JOIN {$wpdb->prefix}term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                INNER JOIN {$wpdb->prefix}terms t2 ON tt.term_id = t2.term_id
-                WHERE tt.taxonomy = 'language' AND t2.slug = '$lang'
-            )
-        ",
-    ];
-
-
-    $stores = pods('store', $params);
+    ));
 
     $data = [];
 

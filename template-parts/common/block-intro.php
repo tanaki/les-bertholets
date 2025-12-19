@@ -17,9 +17,9 @@
             <?php endif; ?>
 
             <?php if ( isset($text) ) : ?>
-                <p class="block-intro-text">
+                <div class="block-intro-text">
                     <?php echo $text; ?>
-                </p>
+                </div>
             <?php endif; ?>
 
             <?php if ( isset($stamp) && $stamp === true ) : ?>

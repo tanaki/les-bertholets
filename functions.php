@@ -30,12 +30,42 @@ function berto_theme_add_slug_body_class( $classes ) {
 }
 add_filter( 'body_class', 'berto_theme_add_slug_body_class' );
 
+function get_label(string $key): string {
+    static $labels;
+
+    if (!$labels) {
+        $labels = require get_template_directory() . '/inc/labels.php';
+    }
+
+    // Fallback si la clé n'existe pas
+    $default = $labels[$key] ?? $key;
+
+    if (function_exists('pll__')) {
+        return pll__($default);
+    }
+
+    return $default;
+}
+
+
+add_action('init', function () {
+
+    if (!function_exists('pll_register_string')) {
+        return;
+    }
+
+    $labels = require get_template_directory() . '/inc/labels.php';
+
+    foreach ($labels as $key => $default) {
+        pll_register_string(
+            $key,
+            $default,
+            'Theme labels'
+        );
+    }
+});
 
 /*
-function get_label ( $label, $stripTags = false ) {
-    $label = pods('label', array( 'where' => 't.post_title = "' . $label . '"'))->display('label_text');
-    return $stripTags ? strip_tags($label) : $label;
-}
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');
 }

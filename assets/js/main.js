@@ -81,6 +81,18 @@ document.addEventListener("DOMContentLoaded", () => {
   // Attendre que tout soit chargé
   window.addEventListener("load", () => {
 
+    let tempEl = document.querySelector('#temporary');
+    if ( tempEl ) {
+      if (window.location.search.includes('preview')) {
+        sessionStorage.setItem('preview', 'true');
+        tempEl.style.display = 'none';
+      }
+
+      if ( sessionStorage.getItem('preview') === 'true' ) {
+        tempEl.style.display = 'none';
+      }
+    }
+
     setTimeout(() => {
 			document.documentElement.classList.remove('no-transition');
 		}, 50);

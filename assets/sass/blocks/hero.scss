@@ -18,3 +18,9 @@
         display: block;
     }
 }
+
+@media screen and (min-width: $desktop) {
+    .home .block-hero .block-inside {
+        aspect-ratio: 2/1;
+    }
+}

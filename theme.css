@@ -124,6 +124,7 @@ body {
 }
 
 a {
+  color: #bc6e44;
   text-decoration: none;
 }
 
@@ -159,6 +160,9 @@ a {
 /* TAGLINE */
 .tagline {
   margin: 4rem 0 0;
+}
+.tagline a:hover {
+  text-decoration: underline;
 }
 
 /* INSTAGRAM */
@@ -207,7 +211,7 @@ footer .block-bottom .block-bottom-inside,
   footer .block-bottom .block-bottom-inside,
   .block .block-inside,
   .block .block-bottom .block-bottom-inside {
-    margin: 0 8rem;
+    margin: 0;
   }
 }
 @media screen and (max-width: 1279px) {
@@ -553,12 +557,38 @@ footer nav .social-link {
 }
 
 /* TITLE */
+h2, .h2, .page .block-post-content h2,
+.single .block-post-content h2 {
+  font-size: 3rem;
+  font-variant: small-caps;
+  font-weight: bold;
+  letter-spacing: 0.2rem;
+}
+
 h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .page-contact-us h2,
-.page-contactez-nous h2, .block-store-locator h2, .single .block-title h4 {
+.page-contactez-nous h2, .block-store-locator h2, .single .block-title h4, .page .block-post-content-container h3,
+.single .block-post-content-container h3 {
   font-size: 2.2rem;
   font-variant: small-caps;
   font-weight: bold;
   letter-spacing: 0.2rem;
+}
+
+.page .block-post-content .block-inside,
+.single .block-post-content .block-inside {
+  background-color: white;
+}
+.page .block-post-content h2,
+.single .block-post-content h2 {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+  text-align: center;
+}
+.page .block-post-content-container p,
+.single .block-post-content-container p {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
 }
 
 .single .block-title .block-inside {
@@ -1000,10 +1030,6 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   transform: scale(0.95);
 }
 
-.page-contact-us .block-post-content .block-inside,
-.page-contactez-nous .block-post-content .block-inside {
-  background-color: white;
-}
 .page-contact-us h2,
 .page-contactez-nous h2 {
   font-size: 3rem;
@@ -1113,6 +1139,11 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   display: block;
 }
 
+@media screen and (min-width: 1279px) {
+  .home .block-hero .block-inside {
+    aspect-ratio: 2/1;
+  }
+}
 .block-intro .block-inside {
   background-color: white;
 }
@@ -1242,10 +1273,12 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 }
 .block-region-map {
   border-left: 0.1rem solid #bc6e44;
-  max-width: 60%;
+  min-width: 60%;
+  width: 60%;
 }
 .block-region-map img {
   display: block;
+  height: auto;
   width: 100%;
 }
 

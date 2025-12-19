@@ -4,7 +4,7 @@
         <?php get_template_part('template-parts/common/component/logo'); ?>
 
         <div class="extra-side--subtitle">
-            Follow us on instagram
+            <?php echo get_label('follow-us-instagram'); ?>
         </div>
 
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine.png" alt="Domaine Les Bertholets" />
