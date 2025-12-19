@@ -8,8 +8,9 @@
 
 	&--svg {
 		display: block;
-		max-width: 28rem;
 		margin: 0 auto;
+		max-width: 28rem;
+		width: 28rem;
 	}
 		
 	&--subtitle {
@@ -21,5 +22,7 @@
 
 	&--signature {
 		margin-top: 1rem;
+		max-width: 24rem;
+		width: 24rem;
 	}
 }

@@ -868,8 +868,9 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 }
 .logo-collection--svg {
   display: block;
-  max-width: 28rem;
   margin: 0 auto;
+  max-width: 28rem;
+  width: 28rem;
 }
 .logo-collection--subtitle {
   font-size: 2rem;
@@ -878,6 +879,8 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 }
 .logo-collection--signature {
   margin-top: 1rem;
+  max-width: 24rem;
+  width: 24rem;
 }
 
 .block-store-locator .block-inside {
