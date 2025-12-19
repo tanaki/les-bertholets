@@ -65,6 +65,12 @@ add_action('init', function () {
     }
 });
 
+add_filter('style_loader_tag', function ($html, $handle, $href) {
+  if ($handle === 'theme-style') {
+    return "<link rel='preload' as='style' href='$href' onload=\"this.rel='stylesheet'\">";
+  }
+  return $html;
+}, 10, 3);
 
 /*
 function get_thumb ( $postType, $id ) {

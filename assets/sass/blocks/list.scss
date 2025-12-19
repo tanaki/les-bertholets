@@ -7,9 +7,10 @@
 	}
 
     .block-list-header {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
+        display: flex;
+        gap: 4rem;
+        justify-content: center;
         margin-bottom: 4rem;
 
         .button {

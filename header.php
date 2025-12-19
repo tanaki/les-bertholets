@@ -22,6 +22,11 @@
 		<!-- <link rel="stylesheet" href="https://use.typekit.net/gbe2pwk.css"> -->
 
 		<!-- theme -->
+		<style>
+			body:not(.loaded) {
+				visibility: hidden;
+			}
+		</style>
 		<link rel="profile" href="http://gmpg.org/xfn/11">
 		<link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/theme.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 		<noscript><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/theme.css"></noscript>	

@@ -67,7 +67,7 @@
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_appellation'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-label">Variétés :</span> 
+                            <span class="product-details-list-item-label">Cépages :</span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_varietes'); ?></span>
                         </div>
                     </div>

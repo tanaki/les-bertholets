@@ -1218,16 +1218,17 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .block-intro-stamp img {
   display: block;
   height: auto;
-  width: 25rem;
+  width: 20rem;
 }
 
 .block-list .block-inside {
   background-color: white;
 }
 .block-list .block-list-header {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  display: flex;
+  gap: 4rem;
+  justify-content: center;
   margin-bottom: 4rem;
 }
 .block-list .block-list-header .button {
