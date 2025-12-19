@@ -3,6 +3,36 @@
     Template Name: Wine List Page
     */
 
+    function render_child_categories_nav($slug_fr, $slug_en) {
+        // Détecte la langue (WPML / Polylang ou autre)
+        $lang = function_exists('pll_current_language') ? pll_current_language() : 'fr'; // exemple avec Polylang
+        $slug = ($lang === 'en') ? $slug_en : $slug_fr;
+
+        // Récupère la catégorie parent par slug
+        $parent_cat = get_category_by_slug($slug);
+        if (!$parent_cat) return; // si la catégorie n'existe pas
+
+        // Récupère les enfants
+        $child_categories = get_categories([
+            'taxonomy'   => 'category',  // ou ton slug Pods si custom
+            'child_of'   => $parent_cat->term_id,
+            'hide_empty' => false,
+            'orderby'    => 'name',
+            'order'      => 'ASC',
+        ]);
+
+        if (!empty($child_categories)) {
+            echo '<ul class="nav-child-categories">';
+            foreach ($child_categories as $cat) {
+                echo '<li class="nav-item">';
+                echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' 
+                    . esc_html($cat->name) . '</a>';
+                echo '</li>';
+            }
+            echo '</ul>';
+        }
+    }
+
     get_header();
 
     global $wpdb;
@@ -44,12 +74,13 @@
 
         endwhile;
     endif;
-
-    // TEMPS
-    $wines = array_merge(...array_fill(0, 6, $wines));
 ?>
+
 <div class="block block-grid">
     <div class="block-inside">
+
+        <?php render_child_categories_nav('vins', 'wines'); ?>
+
         <?php if ( isset($title) ) : ?>
             <h3>
                 <?php echo $title; ?>
