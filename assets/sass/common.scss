@@ -14,7 +14,8 @@ html {
 
 body {
 	@extend .font-serif;
-	background: $white url(./assets/img/bg_pattern.jpg) repeat top left;
+	// background: $white url(./assets/img/bg_pattern.jpg) repeat top left;
+	background: $white url(./assets/img/bg_footer.jpg) repeat center center;
 	font-size: 1.6rem;
 	line-height: 1.2;
 }
@@ -102,8 +103,7 @@ a {
 	}
 }
 
-header,
-footer {
+header {
 	.block-inside {
 		background-color: white;
 	}

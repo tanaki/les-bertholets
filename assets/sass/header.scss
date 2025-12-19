@@ -86,6 +86,8 @@ header {
 
 		.current-menu-item {
 			a {
+				color: $orange;
+				
 				&:before,
 				&:after {
 					transform: scaleX(1);

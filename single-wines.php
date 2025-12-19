@@ -10,7 +10,7 @@
 <div class="block block-title">
     <div class="block-inside">
         <h4>
-            Wine shop
+            
         </h4>
         <h3>
             <?php echo $pod->display('wine_category') .' - '. get_the_title(); ?>

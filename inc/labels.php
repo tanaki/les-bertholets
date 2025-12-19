@@ -10,5 +10,6 @@ return [
     'no-store-found' => 'No store found.',
     'privacy-policy' => 'Privacy Policy',
     'privacy-policy-link' => 'Link to privacy policy page',
+    'no-wine-found' => 'No wine found in this category.',
 ];
 ?>

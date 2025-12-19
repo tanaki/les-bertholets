@@ -1,113 +1,175 @@
 <?php
-    /*
-    Template Name: Wine List Page
-    */
+/*
+Template Name: Wine List Page
+*/
 
-    function render_child_categories_nav($slug_fr, $slug_en) {
-        // Détecte la langue (WPML / Polylang ou autre)
-        $lang = function_exists('pll_current_language') ? pll_current_language() : 'fr'; // exemple avec Polylang
-        $slug = ($lang === 'en') ? $slug_en : $slug_fr;
+get_header();
 
-        // Récupère la catégorie parent par slug
-        $parent_cat = get_category_by_slug($slug);
-        if (!$parent_cat) return; // si la catégorie n'existe pas
+global $wpdb;
 
-        // Récupère les enfants
-        $child_categories = get_categories([
-            'taxonomy'   => 'category',  // ou ton slug Pods si custom
-            'child_of'   => $parent_cat->term_id,
-            'hide_empty' => false,
-            'orderby'    => 'name',
-            'order'      => 'ASC',
-        ]);
+/**
+ * -------------------------------------------------------
+ * Langue courante (Polylang)
+ * -------------------------------------------------------
+ */
+$lang = function_exists('pll_current_language') ? pll_current_language() : 'fr';
 
-        if (!empty($child_categories)) {
-            echo '<ul class="nav-child-categories">';
-            foreach ($child_categories as $cat) {
-                echo '<li class="nav-item">';
-                echo '<a href="' . esc_url(get_category_link($cat->term_id)) . '">' 
-                    . esc_html($cat->name) . '</a>';
-                echo '</li>';
-            }
-            echo '</ul>';
-        }
+/**
+ * -------------------------------------------------------
+ * Catégorie parente selon la langue
+ * -------------------------------------------------------
+ */
+$parent_slug = ($lang === 'en') ? 'wines' : 'vins';
+$parent_cat  = get_category_by_slug($parent_slug);
+
+if (!$parent_cat) {
+    echo '<p>Aucune catégorie trouvée.</p>';
+    get_footer();
+    return;
+}
+
+/**
+ * -------------------------------------------------------
+ * Catégories enfants
+ * -------------------------------------------------------
+ */
+$child_categories = get_categories([
+    'taxonomy'   => 'category',
+    'child_of'   => $parent_cat->term_id,
+    'hide_empty' => false,
+    'orderby'    => 'name',
+    'order'      => 'ASC',
+]);
+
+/**
+ * -------------------------------------------------------
+ * Catégorie active
+ * - ?category=slug
+ * - sinon première catégorie
+ * -------------------------------------------------------
+ */
+$active_category_slug = null;
+
+if (!empty($_GET['category'])) {
+    $active_category_slug = sanitize_text_field($_GET['category']);
+} elseif (!empty($child_categories)) {
+    $active_category_slug = $child_categories[0]->slug;
+}
+
+/**
+ * -------------------------------------------------------
+ * Navigation des catégories
+ * -------------------------------------------------------
+ */
+function render_child_categories_nav($categories, $active_category_slug) {
+
+    if (empty($categories)) return;
+
+    echo '<ul class="nav-child-categories">';
+
+    foreach ($categories as $cat) {
+
+        $is_active = ($cat->slug === $active_category_slug) ? 'is-active' : '';
+
+        echo '<li class="nav-item ' . esc_attr($is_active) . '">';
+        echo '<a href="' . esc_url(add_query_arg('category', $cat->slug)) . '">';
+        echo esc_html($cat->name);
+        echo '</a>';
+        echo '</li>';
     }
 
-    get_header();
+    echo '</ul>';
+}
 
-    global $wpdb;
+/**
+ * -------------------------------------------------------
+ * Filtrage catégorie (SQL)
+ * -------------------------------------------------------
+ */
+$where_category = '';
 
-    $lang = pll_current_language(); // ex : 'fr'
+if ($active_category_slug) {
+    $where_category = "
+        AND t.ID IN (
+            SELECT tr2.object_id
+            FROM {$wpdb->term_relationships} tr2
+            INNER JOIN {$wpdb->term_taxonomy} tt2 ON tr2.term_taxonomy_id = tt2.term_taxonomy_id
+            INNER JOIN {$wpdb->terms} t3 ON tt2.term_id = t3.term_id
+            WHERE tt2.taxonomy = 'category'
+            AND t3.slug = '{$active_category_slug}'
+        )
+    ";
+}
 
-    $params = [
-        'limit'      => -1,
-        'orderby'    => 'post_title ASC',
-        'where'      => "
-            t.post_type = 'wines'
-            AND t.post_status = 'publish'
-            AND t.ID IN (
-                SELECT tr.object_id
-                FROM {$wpdb->term_relationships} tr
-                INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                INNER JOIN {$wpdb->terms} t2 ON tt.term_id = t2.term_id
-                WHERE tt.taxonomy = 'language'
-                AND t2.slug = '$lang'
-            )
-        ",
-    ];
+/**
+ * -------------------------------------------------------
+ * Requête Pods
+ * -------------------------------------------------------
+ */
+$params = [
+    'limit'   => -1,
+    'orderby' => 'post_title ASC',
+    'where'   => "
+        t.post_type = 'wines'
+        AND t.post_status = 'publish'
+        {$where_category}
+        AND t.ID IN (
+            SELECT tr.object_id
+            FROM {$wpdb->term_relationships} tr
+            INNER JOIN {$wpdb->term_taxonomy} tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
+            INNER JOIN {$wpdb->terms} t2 ON tt.term_id = t2.term_id
+            WHERE tt.taxonomy = 'language'
+            AND t2.slug = '{$lang}'
+        )
+    ",
+];
 
-    $pods = pods( 'wines', $params );
-
-    $wines = [];
-
-    if ( $pods->total() > 0 ) :
-        while ( $pods->fetch() ) :
-
-            $id = $pods->field('ID');
-
-            $wines[] = [
-                'ID'      => $id,
-                'slug'    => $pods->field('post_name'),
-                'title'   => get_the_title($id),
-                'content' => apply_filters('the_content', get_post_field('post_content', $id)),
-            ];
-
-        endwhile;
-    endif;
+$pods = pods('wines', $params);
 ?>
 
 <div class="block block-grid">
     <div class="block-inside">
 
-        <?php render_child_categories_nav('vins', 'wines'); ?>
+        <?php render_child_categories_nav($child_categories, $active_category_slug); ?>
 
-        <?php if ( isset($title) ) : ?>
-            <h3>
-                <?php echo $title; ?>
-            </h3>
+        
+        <?php if ($pods->total() > 0) : ?>
+
+            <div class="block-grid-items">
+
+                <?php while ($pods->fetch()) :
+
+                    $post_id = $pods->field('ID');
+                    $item = pods('wines', $post_id);
+
+                    $gallery   = $item->field('wine_gallery');
+                    $first_img = (!empty($gallery) && !empty($gallery[0]['guid'])) ? $gallery[0]['guid'] : null;
+
+                    get_template_part(
+                        'template-parts/common/component/wine-item',
+                        null,
+                        [
+                            'className'  => 'block-list-item',
+                            'image'      => $first_img,
+                            'link'       => get_permalink($post_id),
+                            'label'      => esc_attr(get_the_title($post_id)),
+                            'collection' => $item->display('wine_appellation'),
+                            'detail'     => $item->display('wine_category'),
+                        ]
+                    );
+
+                endwhile; ?>
+            </div>
+
+        <?php else : ?>
+
+            <p class="no-wines">
+                <?php echo get_label('no-wine-found'); ?>
+            </p>
+
         <?php endif; ?>
-        <div class="block-grid-items">
 
-            <?php foreach ( $wines as $key => $wine ) :
-                
-                $post_id = $wine['ID'];
-                $item = pods('wines', $post_id);
-                $gallery = $item->field('wine_gallery');
-                $first_img = (!empty($gallery) && !empty($gallery[0]['guid'])) ? $gallery[0]['guid'] : null;
-                
-                get_template_part('template-parts/common/component/wine-item', null, array(
-                    "className" => "block-list-item",
-                    "image" => $first_img,
-                    "link" => get_permalink($post_id),
-                    "label" => esc_attr(get_the_title($post_id)),
-                    "collection" => $item->display('wine_appellation'),
-                    "detail" => $item->display('wine_category'),
-                ));
-            endforeach; ?>
-        </div>  
     </div>
 </div>
 
-<?php
-    get_footer();
-?>
+<?php get_footer(); ?>

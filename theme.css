@@ -81,7 +81,7 @@ table {
   font-family: "Baskerville", serif;
 }
 
-.font-serif, .page-contact-us form input[type=text],
+.font-serif, .block-grid .nav-item a, .page-contact-us form input[type=text],
 .page-contact-us form input[type=email],
 .page-contact-us form textarea,
 .page-contactez-nous form input[type=text],
@@ -118,7 +118,7 @@ html {
 }
 
 body {
-  background: #faf9f5 url(./assets/img/bg_pattern.jpg) repeat top left;
+  background: #faf9f5 url(./assets/img/bg_footer.jpg) repeat center center;
   font-size: 1.6rem;
   line-height: 1.2;
 }
@@ -189,8 +189,7 @@ a {
   padding: 2.5rem;
 }
 
-header .block-inside,
-footer .block-inside {
+header .block-inside {
   background-color: white;
 }
 
@@ -291,6 +290,9 @@ header .menu a:after {
 header .menu a:hover:before, header .menu a:hover:after {
   transform: scaleX(1);
   opacity: 1;
+}
+header .menu .current-menu-item a {
+  color: #bc6e44;
 }
 header .menu .current-menu-item a:before, header .menu .current-menu-item a:after {
   transform: scaleX(1);
@@ -506,15 +508,14 @@ header .mobile-nav {
 }
 /* FOOTER */
 footer .block-inside {
-  padding: 2.5rem;
+  padding: 0;
 }
 footer .block-footer {
-  background: #faf9f5 url(./assets/img/bg_footer.jpg) no-repeat center center;
-  background-size: cover;
+  background: transparent;
   display: grid;
   grid-template-columns: 3fr 5fr 2fr;
   gap: 1rem;
-  padding: 2.5rem;
+  padding: 5rem;
 }
 footer .logo-collection--container {
   display: flex;
@@ -1117,10 +1118,35 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
 .block-grid .block-inside {
   background-color: white;
 }
+.block-grid .nav-child-categories {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+.block-grid .nav-item a {
+  color: #000000;
+  font-size: 1.4rem;
+  font-weight: bold;
+  letter-spacing: 0.12rem;
+  text-transform: uppercase;
+}
+.block-grid .nav-item a:hover {
+  color: #bc6e44;
+}
+.block-grid .nav-item.is-active a {
+  color: #bc6e44;
+  font-weight: bold;
+}
 .block-grid-items {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 4rem;
+}
+.block-grid .no-wines {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
 .block-hero {
@@ -1396,8 +1422,7 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   margin: 0 auto;
 }
 
-.single-wines header,
-.single-wines footer {
+.single-wines header {
   background-color: white;
 }
 

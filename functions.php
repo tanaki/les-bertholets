@@ -65,6 +65,7 @@ add_action('init', function () {
     }
 });
 
+
 /*
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');

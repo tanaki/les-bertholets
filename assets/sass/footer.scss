@@ -4,18 +4,16 @@
 footer {
 	
 	.block-inside {
-		padding: 2.5rem;
+		padding: 0;
 	}
 
 	.block-footer {
-		background: $white url(./assets/img/bg_footer.jpg) no-repeat center center;
-		background-size: cover;
-
+		background: transparent;
 		display: grid;
 		grid-template-columns: 3fr 5fr 2fr;
 		gap: 1rem;
 		
-		padding: 2.5rem;
+		padding: 5rem;
 	}
 
 	.logo-collection--container {
