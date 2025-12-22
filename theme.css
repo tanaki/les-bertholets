@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -86,12 +87,13 @@ table {
 .page-contact-us form textarea,
 .page-contactez-nous form input[type=text],
 .page-contactez-nous form input[type=email],
-.page-contactez-nous form textarea, .button--primary, .page-contact-us form input[type=submit],
+.page-contactez-nous form textarea, .page-contact-us .wpcf7-file::file-selector-button,
+.page-contactez-nous .wpcf7-file::file-selector-button, .button--primary, .page-contact-us form input[type=submit],
 .page-contactez-nous form input[type=submit], .age-gate--title, header a, header .extra-nav .lang-switcher a, body {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .page-contact-us .block-post-content-container > p,
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .block-intro-text h6, .page-contact-us .block-post-content-container > p,
 .page-contactez-nous .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
@@ -248,7 +250,7 @@ header nav ul {
   justify-content: space-between;
 }
 header .header-nav {
-  padding: 8rem 2.5rem 0;
+  padding: 2.5rem 2.5rem 0;
 }
 header .navigation,
 header nav ul {
@@ -1034,6 +1036,13 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   transform: scale(0.95);
 }
 
+.page-contact-us,
+.page-contactez-nous {
+  /* Conteneur */
+  /* Input file */
+  /* Bouton "Choisir un fichier" */
+  /* Focus accessibilité */
+}
 .page-contact-us h2,
 .page-contactez-nous h2 {
   font-size: 3rem;
@@ -1117,6 +1126,40 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   height: 100%;
   width: 100%;
 }
+.page-contact-us .wpcf7-form-control-wrap,
+.page-contactez-nous .wpcf7-form-control-wrap {
+  display: inline-block;
+  position: relative;
+}
+.page-contact-us .wpcf7-file,
+.page-contactez-nous .wpcf7-file {
+  font-family: inherit;
+  font-size: 14px;
+  color: #111;
+}
+.page-contact-us .wpcf7-file::file-selector-button,
+.page-contactez-nous .wpcf7-file::file-selector-button {
+  font-variant: small-caps;
+  padding: 10px 16px;
+  margin-right: 12px;
+  border: 0.1rem solid #bc6e44;
+  background-color: #bc6e44;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  opacity: 1;
+  transition: all 0.3s ease;
+}
+.page-contact-us .wpcf7-file::file-selector-button:hover,
+.page-contactez-nous .wpcf7-file::file-selector-button:hover {
+  border-color: #faf9f5;
+  opacity: 0.9;
+}
+.page-contact-us .wpcf7-file:focus::file-selector-button,
+.page-contactez-nous .wpcf7-file:focus::file-selector-button {
+  outline: 2px solid #93c5fd;
+  outline-offset: 2px;
+}
 
 .block-grid .block-inside {
   background-color: white;
@@ -1152,6 +1195,10 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   margin-bottom: 4rem;
 }
 
+.page .block-grid .block-inside {
+  padding-bottom: 6rem;
+}
+
 .block-hero {
   overflow: hidden;
   padding: 0;
@@ -1177,11 +1224,11 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   background-color: white;
 }
 .block-intro-content {
-  padding: 6rem 12rem 0;
+  padding: 0 12rem;
   position: relative;
 }
 .block-intro-title, .block-intro-subtitle {
-  max-width: 40%;
+  max-width: 60%;
   margin: 0 auto;
   text-align: center;
 }
@@ -1190,25 +1237,45 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   font-weight: bold;
   font-variant: small-caps;
   letter-spacing: 0.2rem;
-  margin-bottom: 1.5rem;
 }
 .block-intro-subtitle {
   color: #bc6e44;
-  font-size: 2.4rem;
-  font-weight: normal;
+  font-size: 4rem;
+  font-weight: bold;
   margin-bottom: 4rem;
 }
 .block-intro-text {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-count: 2;
-  column-gap: 4rem;
   font-size: 1.6rem;
   font-weight: bold;
   line-height: 2.6rem;
   margin: 0 auto 2.5rem;
   max-width: 80%;
+}
+.block-intro-text i {
+  font-style: italic;
+}
+.block-intro-text b, .block-intro-text strong {
+  font-weight: bold;
+}
+.block-intro-text h6 {
+  color: #bc6e44;
+  margin: 2rem 0;
+  text-align: center;
+}
+.block-intro-text ul {
+  list-style-type: circle;
+  margin: 1rem 0;
+  padding-left: 4rem;
+}
+.block-intro-text ul li {
+  margin: 0.8rem 0;
+}
+.block-intro.cols-2 .block-intro-text {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  -moz-column-break-inside: avoid;
+  column-count: 2;
+  column-gap: 4rem;
 }
 .block-intro-stamp {
   position: absolute;
@@ -1219,6 +1286,32 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   display: block;
   height: auto;
   width: 20rem;
+}
+
+.home .block-intro-title {
+  margin-bottom: 1.5rem;
+}
+.home .block-intro-subtitle {
+  font-size: 2.4rem;
+  font-weight: normal;
+}
+.home .block-intro-content {
+  padding-top: 6rem;
+}
+
+.page-template-page-vins .block-intro-content {
+  margin: 0 auto;
+  max-width: 68rem;
+  padding: 0;
+}
+.page-template-page-vins .block-intro-text {
+  margin-bottom: 0;
+  max-width: 100%;
+}
+
+.page-template-page-store-locator .block-intro-subtitle {
+  font-size: 2.4rem;
+  font-weight: normal;
 }
 
 .block-list .block-inside {
@@ -1238,6 +1331,10 @@ h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigat
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 2rem;
+}
+
+.home .block-list .block-inside {
+  padding-bottom: 6rem;
 }
 
 .block-region .block-inside {

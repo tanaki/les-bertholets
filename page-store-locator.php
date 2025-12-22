@@ -5,11 +5,22 @@
     get_header();
 ?>
     <main class="page-content">
+
+        <?php
+            $podPage = pods('page', [
+                'limit' => 1,
+                'where' => "ID = '". $post->ID ."'"
+            ]);
+
+            get_template_part( 'template-parts/common/block-intro', null, array(
+                'title' => $podPage->display('intro_title'),
+                'subtitle' => $podPage->display('intro_subtitle'),
+                'text' => $podPage->display('intro_text'),
+            ) );
+        ?>
+
         <div class="block block-store-locator">
             <div class="block-inside">
-                <h2>
-                    <?php the_title(); ?>
-                </h2>
                 <div class="block-store-locator-container">
                     <div id="store-locator" class="store-locator">
                         

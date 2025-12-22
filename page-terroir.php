@@ -79,6 +79,7 @@
         'title' => $podPage->display('intro_title'),
         'subtitle' => $podPage->display('intro_subtitle'),
         'text' => $podPage->display('intro_text'),
+        'layout' => 'cols-2'
     ) );
     
     $content = apply_filters( 'the_content', get_the_content() );

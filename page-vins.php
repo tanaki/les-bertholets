@@ -125,13 +125,22 @@ $params = [
 ];
 
 $pods = pods('wines', $params);
-?>
 
+$podPage = pods('page', [
+    'limit' => 1,
+    'where' => "ID = '". $post->ID ."'"
+]);
+
+get_template_part( 'template-parts/common/block-intro', null, array(
+    'text' => $podPage->display('intro_text'),
+) );
+
+?>
 <div class="block block-grid">
     <div class="block-inside">
 
+        
         <?php render_child_categories_nav($child_categories, $active_category_slug); ?>
-
         
         <?php if ($pods->total() > 0) : ?>
 

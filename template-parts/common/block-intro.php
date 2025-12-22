@@ -1,10 +1,10 @@
 <?php extract($args); ?>
-<div class="block block-intro">
+<div class="block block-intro <?php if ( isset($layout) && !empty($layout) ) echo $layout; ?>">
     <div class="block-inside">
 
         <div class="block-intro-content">
 
-            <?php if ( isset($title) ) : ?>
+            <?php if ( isset($title) && !empty($title) ) : ?>
                 <h2 class="block-intro-title">
                     <?php echo $title; ?>
                 </h2>
