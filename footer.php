@@ -2,6 +2,25 @@
                 
             </div>
         </div>
+        
+        <div class="block block-contact-popin" id="contactPopin" aria-hidden="true">
+            <div class="block-inside">
+                <span class="contact-popin-close">
+                    &cross;
+                </span>
+                <div class="contact-popin-content">
+                    <?php 
+                        $lang = pll_current_language();
+                        $page = get_page_by_path( $lang === 'fr' ? 'contactez-nous' : 'contact-us' );
+
+                        if ($page) {
+                            echo '<h4>'.apply_filters('the_title', $page->post_title).'</h4>';
+                            echo apply_filters('the_content', $page->post_content);
+                        }
+                    ?>
+                </div>
+            </div>
+        </div>
 
         <?php 
             get_template_part('template-parts/common/footer'); 

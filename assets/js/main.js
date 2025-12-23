@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if ( AgeGate ) AgeGate.init();
     if ( ListSwipe ) ListSwipe.init();
     if ( DetailGallery ) DetailGallery.init();
+    if ( Contact ) Contact.init();
 
     // if (Client) Client.init();
     // if (Grid) Grid.init();

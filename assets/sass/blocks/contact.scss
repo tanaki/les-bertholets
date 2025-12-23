@@ -3,7 +3,8 @@
 @use '../titles' as *;
 
 .page-contact-us,
-.page-contactez-nous {
+.page-contactez-nous,
+.contact-popin-content {
 
     h2 {
         @extend .h3;
@@ -29,13 +30,14 @@
     form {
         input[type=text],
         input[type=email],
-        textarea {
+        textarea,
+        input[type=file] {
             @extend .font-serif;
             appearance: none;
             border: 0.1rem solid $grey;
             border-radius: 0;
             font-size: 1.6rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             padding: 1.2rem;
             width: 100%;
         }
@@ -63,12 +65,22 @@
             text-align: right;
             bottom: 0.5rem;
         }
+        input[type=file] {
+            border: none;
+            padding: 0;
+        }
+        .submit-area p {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row-reverse;
+        }
     }
 
     .wpcf7 form .wpcf7-response-output {
         border: none;
         color: white;
-        margin: 2rem 0 0;
+        margin: 1.5rem 0 0;
         padding: 1rem;
     }
     .wpcf7 form.invalid .wpcf7-response-output {
@@ -131,4 +143,69 @@
         outline-offset: 2px;
     }
 
+}
+
+.block-contact-popin {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 0, 0, 0.5);
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+/* Popin visible */
+.block-contact-popin.is-open {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 999;
+}
+
+/* Contenu de la popin */
+.block-contact-popin .block-inside {
+    position: relative;
+    background: #fff;
+    max-width: 600px;
+    width: calc(100% - 40px);
+    padding: 4rem;
+    max-height: 90vh;
+    overflow-y: auto;
+
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+
+    h4 {
+        @extend .h4;
+        margin-top: 0;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+}
+
+/* Animation à l’ouverture */
+.block-contact-popin.is-open .block-inside {
+    transform: translateY(0);
+}
+
+/* Bouton fermer */
+.contact-popin-close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+
+    background: none;
+    border: none;
+    font-family: system-ui, sans-serif;
+    font-size: 1.5rem;
+    cursor: pointer;
+    line-height: 1;
+    padding: 1rem;
 }
