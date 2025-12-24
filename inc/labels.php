@@ -1,5 +1,8 @@
 <?php
 return [
+    'wine_category' => 'Category',
+    'wine_appellation' => 'Appellation',
+    'wine_variety' => 'Grape Variety',
     'follow-us-instagram' => 'Follow us on Instagram',
     'alcohol-message' => 'Message about alcohol consumption',
     'all-rights-reserved' => 'All Rights Reserved',
