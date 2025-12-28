@@ -122,3 +122,32 @@
     font-weight: normal;
   }
 }
+
+
+@media screen and (max-width: $desktop) {
+
+  .block-intro {
+
+    &-title, 
+    &-subtitle {
+      padding: 0 2rem;
+    }
+
+    &-text {
+      max-width: 100%;
+      padding: 0 2rem;
+    }
+    
+    &-stamp {
+      img {
+        opacity: 0.5;
+        width: 10rem;
+      }
+    }
+  }
+
+  .home .block-intro-content {
+    padding: 0;
+  }
+  
+}

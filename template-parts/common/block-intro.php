@@ -10,13 +10,13 @@
                 </h2>
             <?php endif; ?>
 
-            <?php if ( isset($subtitle) ) : ?>
+            <?php if ( isset($subtitle) && !empty($subtitle) ) : ?>
                 <div class="block-intro-subtitle">
                     <?php echo $subtitle; ?>
                 </div>
             <?php endif; ?>
 
-            <?php if ( isset($text) ) : ?>
+            <?php if ( isset($text) && !empty($text)  ) : ?>
                 <div class="block-intro-text">
                     <?php echo $text; ?>
                 </div>

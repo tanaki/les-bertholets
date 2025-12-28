@@ -227,7 +227,10 @@ footer .block-bottom .block-bottom-inside,
 @media screen and (max-width: 1279px) {
   .block .block-inside {
     margin: 0;
-    padding: 8rem 0;
+    padding: 0 0 4rem;
+  }
+  .block-hero .block-inside {
+    max-height: 80vh;
   }
   body {
     overflow-x: hidden;
@@ -1331,6 +1334,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
 }
+@media screen and (max-width: 1279px) {
+  .page-contact-us form .wpcf7-not-valid-tip,
+  .page-contactez-nous form .wpcf7-not-valid-tip,
+  .contact-popin-content form .wpcf7-not-valid-tip {
+    line-height: 0.5;
+  }
+}
 
 .block-contact-popin {
   position: fixed;
@@ -1544,6 +1554,22 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   font-weight: normal;
 }
 
+@media screen and (max-width: 1279px) {
+  .block-intro-title, .block-intro-subtitle {
+    padding: 0 2rem;
+  }
+  .block-intro-text {
+    max-width: 100%;
+    padding: 0 2rem;
+  }
+  .block-intro-stamp img {
+    opacity: 0.5;
+    width: 10rem;
+  }
+  .home .block-intro-content {
+    padding: 0;
+  }
+}
 .block-list .block-inside {
   background-color: white;
 }

@@ -143,6 +143,13 @@
         outline-offset: 2px;
     }
 
+    @media screen and (max-width: $desktop) {
+        form {
+            .wpcf7-not-valid-tip {
+                line-height: 0.5;
+            }
+        }
+    }
 }
 
 .block-contact-popin {

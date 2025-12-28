@@ -141,7 +141,12 @@ footer,
 	.block {
 		.block-inside {
 			margin: 0;
-			padding: 8rem 0;
+			padding: 0 0 4rem;
+		}
+	}
+	.block-hero {
+		.block-inside {
+			max-height: 80vh;
 		}
 	}
 	body {
