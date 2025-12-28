@@ -192,6 +192,10 @@ header {
 
 	header {
 
+		.site-navigation {
+			display: block;
+		}
+
 		.block-inside {
 			margin: 0 auto;
 		}
@@ -204,7 +208,7 @@ header {
 			height: 100%;
 		}
 		.header-nav {
-			padding: 2rem;
+			padding: 0;
 		}
 		.container {
 			position: relative;
@@ -247,6 +251,10 @@ header {
 
 			ul {
 				display: block;
+
+				li {
+					padding: 2rem 0;
+				}
 			}
 			a {
 				color: $black;
@@ -261,6 +269,42 @@ header {
 
 			.current-menu-item a {
 				color: red;
+			}
+
+			.extra-nav {
+				display: block;
+				height: auto;
+				margin-left: 3rem;
+				margin-top: 2rem;
+				width: auto;
+
+				.lang-switcher {
+					align-items: center;
+					background: none;
+					border: none;
+					display: flex;
+					justify-content: flex-start;
+					width: auto;
+
+					a {
+						border: 0.1rem solid $black;
+						color: $black;
+						display: block;
+						font-weight: bold;
+						font-size: 1.6rem;
+						opacity: 1;
+					}
+
+					.active {
+						background-color: $orange;
+						a {
+							color: white;
+						}
+					}
+				}
+				.extra-side--btn-open {
+					display: none;
+				}
 			}
 		}
 
@@ -306,6 +350,9 @@ header {
 		}
 		
 		&.nav-open {
+
+			position: relative;
+			z-index: 999;
 
 			.header-nav:after {
 				background-color: $white;

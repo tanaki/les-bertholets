@@ -67,6 +67,36 @@
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_varieties'); ?></span>
                         </div>
                     </div>
+
+                    <div class="product-toggles">
+
+                        <details class="toggle">
+                            <summary>
+                            Description
+                            <span class="icon"></span>
+                            </summary>
+                            <div class="content">
+                            <p>
+                                Contenu de la description produit.  
+                                Texte, images, listes…
+                            </p>
+                            </div>
+                        </details>
+
+                        <details class="toggle">
+                            <summary>
+                            Livraison
+                            <span class="icon"></span>
+                            </summary>
+                            <div class="content">
+                            <p>Informations sur la livraison.</p>
+                            </div>
+                        </details>
+
+                    </div>
+
+
+
                 </div>
 
             </div>
