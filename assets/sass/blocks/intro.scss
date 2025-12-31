@@ -137,8 +137,11 @@
       max-width: 100%;
       padding: 0 2rem;
     }
-    
+
     &-stamp {
+      right: -1rem;
+      top: -1rem;
+
       img {
         opacity: 0.5;
         width: 10rem;
@@ -146,8 +149,18 @@
     }
   }
 
-  .home .block-intro-content {
-    padding: 0;
+  .home .block-intro {
+
+    overflow: hidden;
+
+    &-title {
+      padding: 4rem 0 0;
+      max-width: 75%;
+    }
+
+    &-content {
+      padding: 0;
+    }
   }
   
 }

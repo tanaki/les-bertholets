@@ -6,7 +6,7 @@
 		background-color: white;
 	}
 
-    .block-list-header {
+    &-header {
         align-items: center;
         display: flex;
         gap: 4rem;
@@ -18,7 +18,7 @@
         }
     }
 
-    .block-list-items {
+    &-items {
         display: grid;
         grid-template-columns: repeat(6, 1fr);
         gap: 2rem;
@@ -28,5 +28,21 @@
 .home .block-list {
     .block-inside {
         padding-bottom: 6rem;
+    }
+}
+
+@media screen and (max-width: $desktop) {
+    .block-list {
+        .block-inside {
+            padding: 0 2rem 4rem;
+        }
+
+        &-header {
+            display: block;
+        }
+        &-title {
+            margin-bottom: 2rem;
+            text-align: center;
+        }
     }
 }

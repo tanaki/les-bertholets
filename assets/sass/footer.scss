@@ -61,4 +61,48 @@ footer {
 			margin: 4rem 0 0;
 		}
 	}
+
+	@media screen and (max-width: $tablet) {
+		.block-footer {
+			display: flex;
+			padding: 4rem 2rem;
+			flex-direction: column;
+
+			.logo-collection--container {
+				order: 1;
+			}
+			nav {
+				order: 2;
+			}
+			.image {
+				order: 3;
+			}
+		}
+		.image img {
+			width: 100%;
+		}
+		nav {
+			align-items: center;
+
+			ul {
+				text-align: center;
+			}
+			.social-link {
+				max-height: 5rem;
+				max-width: 5rem;
+			}
+		}
+	}
+
+	@media screen and (max-width: $desktop) {
+		.logo-collection {
+			&--svg {
+				width: 24rem;
+			}
+			&--signature {
+				width: 22rem;
+			}
+		}
+		
+	}
 }

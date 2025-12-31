@@ -252,6 +252,10 @@ header {
 			ul {
 				display: block;
 
+				&.menu {
+					margin-top: 2rem;
+				}
+
 				li {
 					padding: 2rem 0;
 				}
@@ -283,6 +287,8 @@ header {
 					background: none;
 					border: none;
 					display: flex;
+					gap: 0;
+					height: auto;
 					justify-content: flex-start;
 					width: auto;
 
@@ -293,6 +299,9 @@ header {
 						font-weight: bold;
 						font-size: 1.6rem;
 						opacity: 1;
+					}
+					li:not(:first-child) a {
+						border-left: none;
 					}
 
 					.active {

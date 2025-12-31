@@ -295,22 +295,24 @@ let ListSwipe = {
             if (swiperEl && typeof Swiper !== "undefined") {
                 if (!swiperEl.swiper) {
                     ListSwipe.swiperInstance = new Swiper(swiperEl, {
-                        spaceBetween: '40px',
+                        spaceBetween: '20px',
+                        slidesPerView: 2,
                         breakpoints: {
                             640: {
+                                spaceBetween: '20px',
                                 slidesPerView: 2,
                             },
                             768: {
+                                spaceBetween: '40px',
                                 slidesPerView: 4,
                             },
                             1024: {
+                                spaceBetween: '40px',
                                 slidesPerView: 6,
                             },
                         },
                     });
                 }
-            } else {
-                console.warn("Swiper: .home-swipe-container not found or Swiper is undefined");
             }
         }
     }
