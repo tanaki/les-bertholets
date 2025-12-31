@@ -87,5 +87,27 @@
         }
     }
 
+    @media screen and (max-width: $mobile) {
+
+        &-details {
+            flex-direction: column;
+            gap: 2rem;
+        }
+        &-map {
+            border: none;
+            max-width: 100%;
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $desktop) {
+
+        &-title {
+            max-width: 100%;
+        }
+        &-content {
+            padding: 0 2rem;
+        }
+    }
 
 }

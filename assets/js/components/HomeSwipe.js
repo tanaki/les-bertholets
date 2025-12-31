@@ -18,15 +18,15 @@ let ListSwipe = {
                         spaceBetween: '20px',
                         slidesPerView: 2,
                         breakpoints: {
-                            640: {
-                                spaceBetween: '20px',
-                                slidesPerView: 2,
-                            },
                             768: {
                                 spaceBetween: '40px',
-                                slidesPerView: 4,
+                                slidesPerView: 3,
                             },
                             1024: {
+                                spaceBetween: '30px',
+                                slidesPerView: 4,
+                            },
+                            1280: {
                                 spaceBetween: '40px',
                                 slidesPerView: 6,
                             },

@@ -191,6 +191,8 @@ header {
 @media screen and (max-width: $desktop) {
 
 	header {
+		position: relative;
+		z-index: 999;
 
 		.site-navigation {
 			display: block;
@@ -359,9 +361,6 @@ header {
 		}
 		
 		&.nav-open {
-
-			position: relative;
-			z-index: 999;
 
 			.header-nav:after {
 				background-color: $white;

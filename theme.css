@@ -395,6 +395,10 @@ header .mobile-nav {
 }
 
 @media screen and (max-width: 1279px) {
+  header {
+    position: relative;
+    z-index: 999;
+  }
   header .site-navigation {
     display: block;
   }
@@ -537,10 +541,6 @@ header .mobile-nav {
   }
   header .toggle-nav:after {
     margin-top: 0.6rem;
-  }
-  header.nav-open {
-    position: relative;
-    z-index: 999;
   }
   header.nav-open .header-nav:after {
     background-color: #faf9f5;
@@ -1600,9 +1600,20 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   font-weight: normal;
 }
 
+@media screen and (max-width: 767px) {
+  .block-intro.cols-2 .block-intro-text {
+    columns: 1;
+  }
+}
 @media screen and (max-width: 1279px) {
+  .block-intro .block-inside {
+    padding: 4rem 0;
+  }
   .block-intro-title, .block-intro-subtitle {
     padding: 0 2rem;
+  }
+  .block-intro-title {
+    max-width: 75%;
   }
   .block-intro-text {
     max-width: 100%;
@@ -1616,15 +1627,14 @@ h4, .h4, .block-contact-popin .block-inside h4 {
     opacity: 0.5;
     width: 10rem;
   }
+  .block-intro-content {
+    padding: 0;
+  }
   .home .block-intro {
     overflow: hidden;
   }
-  .home .block-intro-title {
-    padding: 4rem 0 0;
-    max-width: 75%;
-  }
-  .home .block-intro-content {
-    padding: 0;
+  .page-template-page-terroir .block-intro-subtitle {
+    max-width: 100%;
   }
 }
 .block-list .block-inside {
@@ -1732,6 +1742,25 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   display: block;
   height: auto;
   width: 100%;
+}
+@media screen and (max-width: 767px) {
+  .block-region-details {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .block-region-map {
+    border: none;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+@media screen and (max-width: 1279px) {
+  .block-region-title {
+    max-width: 100%;
+  }
+  .block-region-content {
+    padding: 0 2rem;
+  }
 }
 
 .block-wine-detail {
