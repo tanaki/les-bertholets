@@ -119,3 +119,15 @@
     flex: 2;
     min-height: 50rem;
 }
+
+@media screen and (max-width: $tablet) {
+    .store-locator {
+        flex-direction: column;
+    }
+    .store-left {
+        padding-bottom: 2rem;
+    }
+    .store-list {
+        height: 50rem;
+    }
+}

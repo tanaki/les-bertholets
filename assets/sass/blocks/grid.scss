@@ -44,6 +44,28 @@
         text-align: center;
         margin-bottom: 4rem;
     }
+
+    @media screen and (max-width: $tablet) {
+        
+        .block-inside {
+            padding: 0 2rem;
+        }
+
+        .nav-child-categories {
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        &-items {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        &-items {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
 }
 
 .page .block-grid {

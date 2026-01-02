@@ -7,17 +7,6 @@
         $images = $pod->field('wine_gallery');
 ?>
 
-<div class="block block-title">
-    <div class="block-inside">
-        <h4>
-            
-        </h4>
-        <h3>
-            <?php echo $pod->display('wine_category') .' - '. get_the_title(); ?>
-        </h3>
-    </div>
-</div>
-
 <div class="block block-wine-detail">
     <div class="block-inside">
 
@@ -58,38 +47,73 @@
                         <?php the_content(); ?>
                     </div>
                     <div class="product-details-list">
+
                         <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_volume'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_appellation'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_appellation'); ?></span>
                         </div>
                         <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_producer'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_producer'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_variety'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_varieties'); ?></span>
                         </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_geography'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_geography'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_geography'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_climate'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_climate'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_soil'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_soil'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_alcohol'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_alcohol'); ?></span>
+                        </div>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_labels'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo get_icon_label($pod->display('wine_labels')); ?></span> 
+                        </div>
+
                     </div>
 
                     <div class="product-toggles">
 
                         <details class="toggle">
                             <summary>
-                            Description
+                            Ingrédients
                             <span class="icon"></span>
                             </summary>
                             <div class="content">
-                            <p>
-                                Contenu de la description produit.  
-                                Texte, images, listes…
-                            </p>
+                                <?php echo $pod->display('wine_ingredients'); ?>
                             </div>
                         </details>
 
                         <details class="toggle">
                             <summary>
-                            Livraison
-                            <span class="icon"></span>
+                                Valeurs nutritionelles
+                                <span class="icon"></span>
                             </summary>
                             <div class="content">
-                            <p>Informations sur la livraison.</p>
+                                <?php echo $pod->display('wine_info'); ?>
                             </div>
                         </details>
 

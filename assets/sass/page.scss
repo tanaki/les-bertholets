@@ -1,8 +1,7 @@
 @use 'variables' as *;
 @use 'titles' as *;
 
-.page,
-.single {
+.page {
 
     .block-post-content {
         .block-inside {
@@ -27,7 +26,12 @@
             margin-bottom: 2.5rem;
         }
     }
-    
+
+    @media screen and (max-width: $largedesktop) {
+        .block-post-content .block-inside {
+            padding: 2rem;
+        }
+    }
 }
 
 .single-blog,

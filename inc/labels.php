@@ -3,6 +3,13 @@ return [
     'wine_category' => 'Category',
     'wine_appellation' => 'Appellation',
     'wine_variety' => 'Grape Variety',
+    'wine_volume' => 'Volume',
+    'wine_producer' => 'Producer',
+    'wine_geography' => 'Geography',
+    'wine_climate' => 'Climate',
+    'wine_soil' => 'Soil',
+    'wine_alcohol' => 'Alcohol',
+    'wine_labels' => 'Labels',
     'follow-us-instagram' => 'Follow us on Instagram',
     'alcohol-message' => 'Message about alcohol consumption',
     'all-rights-reserved' => 'All Rights Reserved',
@@ -16,3 +23,5 @@ return [
     'no-wine-found' => 'No wine found in this category.',
 ];
 ?>
+
+

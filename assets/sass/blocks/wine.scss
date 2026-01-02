@@ -2,10 +2,10 @@
 @use '../titles' as *;
 
 .block-wine-detail {
-    background-color: white;
 
     .block-inside {
         align-items: flex-start;
+        background-color: white;
         display: flex;
         gap: 4rem;
         justify-content: space-between;
@@ -113,7 +113,9 @@
 }
 
 .block-wine-navigation {
-    background-color: white;
+    .block-inside {
+        background-color: white;
+    }
 
     .wine-navigation-title {
         @extend .h3;

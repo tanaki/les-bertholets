@@ -103,7 +103,7 @@ table {
 
 .font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .block-intro-text h6, .page-contact-us .block-post-content-container > p,
 .page-contactez-nous .block-post-content-container > p,
-.contact-popin-content .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .single .block-title h3, .tagline {
+.contact-popin-content .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
 
@@ -621,6 +621,14 @@ footer nav a:hover {
 footer nav .social-link {
   margin: 4rem 0 0;
 }
+@media screen and (max-width: 1279px) {
+  footer .logo-collection--svg {
+    width: 24rem;
+  }
+  footer .logo-collection--signature {
+    width: 22rem;
+  }
+}
 @media screen and (max-width: 1023px) {
   footer .block-footer {
     display: flex;
@@ -650,18 +658,9 @@ footer nav .social-link {
     max-width: 5rem;
   }
 }
-@media screen and (max-width: 1279px) {
-  footer .logo-collection--svg {
-    width: 24rem;
-  }
-  footer .logo-collection--signature {
-    width: 22rem;
-  }
-}
 
 /* TITLE */
-h2, .h2, .page .block-post-content h2,
-.single .block-post-content h2 {
+h2, .h2, .page .block-post-content h2 {
   font-size: 3rem;
   font-variant: small-caps;
   font-weight: bold;
@@ -670,8 +669,7 @@ h2, .h2, .page .block-post-content h2,
 
 h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .page-contact-us h2,
 .page-contactez-nous h2,
-.contact-popin-content h2, .block-store-locator h2, .single .block-title h4, .page .block-post-content-container h3,
-.single .block-post-content-container h3 {
+.contact-popin-content h2, .block-store-locator h2, .page .block-post-content-container h3 {
   font-size: 2.2rem;
   font-variant: small-caps;
   font-weight: bold;
@@ -685,21 +683,23 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   letter-spacing: 0.1rem;
 }
 
-.page .block-post-content .block-inside,
-.single .block-post-content .block-inside {
+.page .block-post-content .block-inside {
   background-color: white;
 }
-.page .block-post-content h2,
-.single .block-post-content h2 {
+.page .block-post-content h2 {
   font-size: 4rem;
   margin-bottom: 2.5rem;
   text-align: center;
 }
-.page .block-post-content-container p,
-.single .block-post-content-container p {
+.page .block-post-content-container p {
   font-size: 1.6rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
+}
+@media screen and (max-width: 1439px) {
+  .page .block-post-content .block-inside {
+    padding: 2rem;
+  }
 }
 
 .single {
@@ -708,18 +708,6 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   /* contenu */
   /* ouvert */
 }
-.single .block-title .block-inside {
-  align-items: center;
-  display: flex;
-  justify-content: space-between;
-}
-.single .block-title h3 {
-  color: #bc6e44;
-  font-variant: normal;
-}
-.single .block-title h4 {
-  font-size: 3rem;
-}
 .single .product-toggles {
   border-top: 1px solid #e5e5e5;
 }
@@ -727,13 +715,14 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   border-bottom: 1px solid #e5e5e5;
 }
 .single .toggle summary {
-  list-style: none;
-  cursor: pointer;
-  padding: 1.2rem 0;
-  font-weight: 600;
-  display: flex;
-  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
+  display: flex;
+  font-variant: small-caps;
+  font-weight: bold;
+  justify-content: space-between;
+  list-style: none;
+  padding: 1.2rem 0;
 }
 .single .toggle summary::-webkit-details-marker {
   display: none;
@@ -767,12 +756,21 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .single .toggle .content {
   padding-bottom: 2rem;
 }
+.single .toggle .content table td {
+  border: 0.1rem solid #727271;
+  padding: 0.5rem 1rem;
+}
+.single .toggle .content p b {
+  font-weight: bold;
+}
+.single .toggle .content p i {
+  font-style: italic;
+}
 .single .toggle .content > * {
   transform-origin: top;
   clip-path: inset(0 0 100% 0);
   opacity: 0;
   transform: translateY(-8px) scaleY(0.98);
-  transition: clip-path 0.45s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease, transform 0.45s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .single .toggle[open] .content > * {
   clip-path: inset(0 0 0 0);
@@ -1173,6 +1171,17 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   min-height: 50rem;
 }
 
+@media screen and (max-width: 1023px) {
+  .store-locator {
+    flex-direction: column;
+  }
+  .store-left {
+    padding-bottom: 2rem;
+  }
+  .store-list {
+    height: 50rem;
+  }
+}
 .wine-item-title {
   text-align: center;
 }
@@ -1479,6 +1488,23 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   text-align: center;
   margin-bottom: 4rem;
 }
+@media screen and (max-width: 1023px) {
+  .block-grid .block-inside {
+    padding: 0 2rem;
+  }
+  .block-grid .nav-child-categories {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .block-grid-items {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media screen and (max-width: 767px) {
+  .block-grid-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
 .page .block-grid .block-inside {
   padding-bottom: 6rem;
@@ -1603,6 +1629,12 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 @media screen and (max-width: 767px) {
   .block-intro.cols-2 .block-intro-text {
     columns: 1;
+  }
+  .page-template-page-store-locator .block-intro-title, .page-template-page-store-locator .block-intro-subtitle {
+    max-width: 100%;
+  }
+  .page-template-page-store-locator .block-intro-subtitle {
+    margin-top: 2rem;
   }
 }
 @media screen and (max-width: 1279px) {
@@ -1763,11 +1795,9 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   }
 }
 
-.block-wine-detail {
-  background-color: white;
-}
 .block-wine-detail .block-inside {
   align-items: flex-start;
+  background-color: white;
   display: flex;
   gap: 4rem;
   justify-content: space-between;
@@ -1849,7 +1879,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   color: #bc6e44;
 }
 
-.block-wine-navigation {
+.block-wine-navigation .block-inside {
   background-color: white;
 }
 .block-wine-navigation .wine-navigation-title {
@@ -1875,10 +1905,6 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   max-height: 100%;
   max-width: 100%;
   margin: 0 auto;
-}
-
-.single-wines header {
-  background-color: white;
 }
 
 /*# sourceMappingURL=theme.css.map */

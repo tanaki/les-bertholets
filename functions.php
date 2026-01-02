@@ -47,6 +47,16 @@ function get_label(string $key): string {
     return $default;
 }
 
+function get_icon(string $key): string {
+    
+    return "icon_".$key;
+}
+
+function get_icon_label(string $key): string {
+    
+    return "icon_LABEL_".$key;
+}
+
 
 add_action('init', function () {
 
