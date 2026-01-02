@@ -54,17 +54,17 @@
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_volume'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_appellation'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_appellation'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_appellation'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_producer'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_producer'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_producer'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_varieties'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_variety'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_varieties'); ?></span>
                         </div>
@@ -74,21 +74,21 @@
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_geography'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_climate'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_climate'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_climate'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_soil'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_soil'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_soil'); ?></span>
                         </div>
                         <div class="product-details-list-item">
-                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_alcohol'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_alcohol'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_alcohol'); ?></span>
                         </div>
-                        <div class="product-details-list-item">
+                        <div class="product-details-list-labels">
                             <span class="product-details-list-item-label"><?php echo get_label('wine_labels'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo get_icon_label($pod->display('wine_labels')); ?></span> 
                         </div>

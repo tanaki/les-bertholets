@@ -86,6 +86,10 @@
     transform: translateY(-8px) scaleY(0.98);
   }
 
+  .toggle .content p {
+    line-height: 1.5;
+  }
+
   /* ouvert */
   .toggle[open] .content > * {
     clip-path: inset(0 0 0 0);

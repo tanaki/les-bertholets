@@ -96,15 +96,44 @@
 
         &-details-list {
             &-item {
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+                justify-content: flex-start;
                 margin-bottom: 1rem;
+            }
+            &-item-icon {
+                display: block;
+                height: 2rem;
+                width: 2rem;
+
+                img {
+                    display: block;
+                    max-height: 100%;
+                    max-width: 100%;
+                    margin: 0 auto;
+                }
             }
             &-item-label {
                 font-weight: 600;
                 font-variant: small-caps;
+                white-space: nowrap;
             }
             &-item-info {
                 @extend .font-italic;
                 color: $orange;
+            }
+
+            &-labels {
+                align-items: center;
+                display: flex;
+                gap: 1rem;
+                margin-bottom: 2rem;
+
+                img {
+                    display: block;
+                    width: 4rem;
+                }
             }
         }
 
@@ -144,6 +173,87 @@
             max-height: 100%;
             max-width: 100%;
             margin: 0 auto;
+        }
+    }
+}
+
+@media screen and (max-width: $tablet) {
+    .block-wine-detail {
+        .block-inside {
+            padding: 2rem;
+        }
+
+        .product-container {
+            display: block;
+        }
+
+        .product-gallery-block, 
+        .product-text-block {
+            flex: auto;
+        }
+
+        .product-main-image {
+            display: none;
+        }
+
+        .product-gallery-block {
+            margin-bottom: 2rem;
+        }
+        .product-gallery {
+            align-items: flex-start;
+            overflow: auto;
+        }
+        .product-thumbs {
+            .thumb {
+                img {
+                    height: 20rem;
+                    width: 20rem;
+                }
+            }
+        }
+    }
+
+    .block-wine-navigation {
+        .block-inside {
+            padding: 2rem;
+        }
+        .wine-list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (max-width: $desktop) {
+    .block-wine-detail {
+        .block-inside {
+            padding: 4rem;
+        }
+
+        .product-title, 
+        .product-content {
+            max-width: 100%;
+        }
+
+        .product-gallery-block, 
+        .product-text-block {
+            flex: 0 0 calc(50% - 2rem);
+        }
+
+        .product-gallery {
+            flex-direction: column;
+        }
+        .product-thumbs {
+            flex-direction: row;
+            order: 2;
+        }
+        .product-main-image {
+            order: 1;
+        }
+    }
+
+    .block-wine-navigation {
+        .block-inside {
+            padding: 4rem;
         }
     }
 }

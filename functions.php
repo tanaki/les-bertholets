@@ -48,13 +48,17 @@ function get_label(string $key): string {
 }
 
 function get_icon(string $key): string {
-    
-    return "icon_".$key;
+    return '<img 
+        class="icon"
+        src="'. get_template_directory_uri() .'/assets/img/icons/icon_'. $key .'.png" 
+        alt="'. get_label($key) .'">';
 }
 
 function get_icon_label(string $key): string {
-    
-    return "icon_LABEL_".$key;
+    return '<img 
+        class="icon"
+        src="'. get_template_directory_uri() .'/assets/img/icons/icon_'. $key .'.png" 
+        alt="'. get_label($key) .'">';
 }
 
 

@@ -23,5 +23,3 @@ return [
     'no-wine-found' => 'No wine found in this category.',
 ];
 ?>
-
-
