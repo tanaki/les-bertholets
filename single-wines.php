@@ -88,10 +88,15 @@
                             <span class="product-details-list-item-label"><?php echo get_label('wine_alcohol'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo $pod->display('wine_alcohol'); ?></span>
                         </div>
+                        <?php 
+                            $labels = $pod->display('wine_labels');
+                            if ( $labels && !empty($labels) ) :
+                         ?>
                         <div class="product-details-list-labels">
                             <span class="product-details-list-item-label"><?php echo get_label('wine_labels'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo get_icon_label($pod->display('wine_labels')); ?></span> 
                         </div>
+                        <?php endif; ?>
 
                     </div>
 

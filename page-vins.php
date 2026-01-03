@@ -19,7 +19,7 @@ $lang = function_exists('pll_current_language') ? pll_current_language() : 'fr';
  * Catégorie parente selon la langue
  * -------------------------------------------------------
  */
-$parent_slug = ($lang === 'en') ? 'wines' : 'vins';
+$parent_slug = ($lang === 'en') ? 'vins-en' : 'vins';
 $parent_cat  = get_category_by_slug($parent_slug);
 
 if (!$parent_cat) {

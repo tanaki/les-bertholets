@@ -1303,7 +1303,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   position: absolute;
   right: 0;
   text-align: right;
-  bottom: 0.5rem;
+  bottom: 0;
 }
 .page-contact-us form input[type=file],
 .page-contactez-nous form input[type=file],
@@ -1870,6 +1870,9 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .block-wine-detail .product-details-content strong {
   font-weight: 600;
   font-variant: small-caps;
+}
+.block-wine-detail .product-details-content em {
+  font-style: italic;
 }
 .block-wine-detail .product-details-list-item {
   align-items: center;
