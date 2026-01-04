@@ -179,16 +179,27 @@
                     </div>
 
                     <div class="product-toggles">
-
+                        
+                    <?php 
+                        $ingredients = $pod->display('wine_ingredients');
+                        if ( isset($ingredients) && !empty($ingredients) ) :
+                    ?>
                         <details class="toggle">
                             <summary>
                             <?php echo get_label('wine_ingredients'); ?>
                             <span class="icon"></span>
                             </summary>
                             <div class="content">
-                                <?php echo $pod->display('wine_ingredients'); ?>
+                                <?php echo $ingredients; ?>
                             </div>
                         </details>
+
+                    <?php 
+                        endif;
+
+                        $info = $pod->display('wine_info');
+                        if ( isset($info) && !empty($info) ) :
+                    ?>
 
                         <details class="toggle">
                             <summary>
@@ -196,9 +207,11 @@
                                 <span class="icon"></span>
                             </summary>
                             <div class="content">
-                                <?php echo $pod->display('wine_info'); ?>
+                                <?php echo $info; ?>
                             </div>
                         </details>
+
+                    <?php endif; ?>
 
                     </div>
 
