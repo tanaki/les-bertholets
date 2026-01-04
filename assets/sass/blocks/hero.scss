@@ -20,7 +20,8 @@
 }
 
 @media screen and (min-width: $desktop) {
-    .home .block-hero .block-inside {
+    .home .block-hero .block-inside,
+    .block-hero.is-home .block-inside {
         aspect-ratio: 2/1;
     }
 }

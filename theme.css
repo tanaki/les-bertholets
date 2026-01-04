@@ -1530,7 +1530,8 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 
 @media screen and (min-width: 1279px) {
-  .home .block-hero .block-inside {
+  .home .block-hero .block-inside,
+  .block-hero.is-home .block-inside {
     aspect-ratio: 2/1;
   }
 }

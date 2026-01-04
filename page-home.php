@@ -10,6 +10,7 @@
     get_template_part( 'template-parts/common/block-hero', null, array(
         'image' => get_template_directory_uri() . '/assets/img/temp/home/home.jpeg',
         'title' => 'Wineyard',
+        'classname' => 'is-home'
     ) );
 
     $podPage = pods('page', [
@@ -25,7 +26,7 @@
     ) );
 
     $paramsWines = [
-        'limit'      => -1,
+        'limit'      => 6,
         'where'      => "
             t.post_type = 'wines'
             AND t.post_status = 'publish'
