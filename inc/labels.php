@@ -1,5 +1,8 @@
 <?php
 return [
+    'wine_tasting' => 'Tasting Notes',
+    'wine_pairing' => 'Food & Wine Pairing',
+    'wine_temperature' => 'Serving temperature',
     'wine_category' => 'Category',
     'wine_appellation' => 'Appellation',
     'wine_variety' => 'Grape Variety',
@@ -10,6 +13,8 @@ return [
     'wine_soil' => 'Soil',
     'wine_alcohol' => 'Alcohol',
     'wine_labels' => 'Labels',
+    'wine_ingredients' => 'Ingredients',
+    'wine_nutritional_values' => 'Nutritional Values',
     'follow-us-instagram' => 'Follow us on Instagram',
     'alcohol-message' => 'Message about alcohol consumption',
     'all-rights-reserved' => 'All Rights Reserved',

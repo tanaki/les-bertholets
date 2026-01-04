@@ -107,6 +107,7 @@
             }
             &-item-icon {
                 display: block;
+                flex-shrink: 0;
                 height: 2rem;
                 width: 2rem;
 

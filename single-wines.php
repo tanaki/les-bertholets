@@ -43,60 +43,138 @@
                 </h2>
 
                 <div class="product-content">
-                    <div class="product-details-content">
-                        <?php the_content(); ?>
-                    </div>
+                    <?php 
+                        $content = get_the_content();
+                        if ( isset($content) && !empty($content) ) : 
+                    ?>
+                        <div class="product-details-content">
+                            <?php the_content(); ?>
+                        </div>
+                    <?php 
+                        endif; 
+                    ?>
                     <div class="product-details-list">
 
+                    <?php 
+                        $tasting = $pod->display('wine_tasting');
+                        if ( isset($tasting) && !empty($tasting)  ) : 
+                    ?>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_tasting'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_tasting'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $tasting; ?></span>
+                        </div>
+                    <?php 
+                        endif; 
+                        $pairing = $pod->display('wine_pairing');
+                        if ( isset($pairing) && !empty($pairing)  ) : 
+                    ?>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_pairing'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_pairing'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $pairing; ?></span>
+                        </div>
+                    <?php 
+                        endif; 
+                        $temperature = $pod->display('wine_temperature');
+                        if ( isset($temperature) && !empty($temperature)  ) : 
+                    ?>
+                        <div class="product-details-list-item">
+                            <span class="product-details-list-item-icon"><?php echo get_icon('wine_temperature'); ?></span> 
+                            <span class="product-details-list-item-label"><?php echo get_label('wine_temperature'); ?></span> 
+                            <span class="product-details-list-item-info"><?php echo $temperature; ?></span>
+                        </div>
+                    <?php 
+                        endif; 
+                        $volume = $pod->display('wine_volume');
+                        if ( isset($volume) && !empty($volume)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_volume'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_volume'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_volume'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $volume; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $appellation = $pod->display('wine_appellation');
+                        if ( isset($appellation) && !empty($appellation)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_appellation'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_appellation'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_appellation'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $appellation; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $producer = $pod->display('wine_producer');
+                        if ( isset($producer) && !empty($producer)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_producer'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_producer'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_producer'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $producer; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $varieties = $pod->display('wine_varieties');
+                        if ( isset($varieties) && !empty($varieties)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_varieties'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_variety'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_varieties'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $varieties; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $geography = $pod->display('wine_geography');
+                        if ( isset($geography) && !empty($geography)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_geography'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_geography'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_geography'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $geography; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $climate = $pod->display('wine_climate');
+                        if ( isset($climate) && !empty($climate)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_climate'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_climate'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_climate'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $climate; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $soil = $pod->display('wine_soil');
+                        if ( isset($soil) && !empty($soil)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_soil'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_soil'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_soil'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $soil; ?></span>
                         </div>
+                    <?php 
+                        endif; 
+                        $alcohol = $pod->display('wine_alcohol');
+                        if ( isset($alcohol) && !empty($alcohol)  ) : 
+                    ?>
                         <div class="product-details-list-item">
                             <span class="product-details-list-item-icon"><?php echo get_icon('wine_alcohol'); ?></span> 
                             <span class="product-details-list-item-label"><?php echo get_label('wine_alcohol'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $pod->display('wine_alcohol'); ?></span>
+                            <span class="product-details-list-item-info"><?php echo $alcohol; ?></span>
                         </div>
-                        <?php 
-                            $labels = $pod->display('wine_labels');
-                            if ( $labels && !empty($labels) ) :
-                         ?>
+                    <?php 
+                        endif; 
+
+                        $labels = $pod->display('wine_labels');
+                        if ( isset($labels) && !empty($labels) ) :
+                    ?>
                         <div class="product-details-list-labels">
                             <span class="product-details-list-item-label"><?php echo get_label('wine_labels'); ?></span> 
                             <span class="product-details-list-item-info"><?php echo get_icon_label($pod->display('wine_labels')); ?></span> 
                         </div>
-                        <?php endif; ?>
+                    <?php endif; ?>
 
                     </div>
 
@@ -104,7 +182,7 @@
 
                         <details class="toggle">
                             <summary>
-                            Ingrédients
+                            <?php echo get_label('wine_ingredients'); ?>
                             <span class="icon"></span>
                             </summary>
                             <div class="content">
@@ -114,7 +192,7 @@
 
                         <details class="toggle">
                             <summary>
-                                Valeurs nutritionelles
+                                <?php echo get_label('wine_nutritional_values'); ?>
                                 <span class="icon"></span>
                             </summary>
                             <div class="content">

@@ -1883,6 +1883,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 .block-wine-detail .product-details-list-item-icon {
   display: block;
+  flex-shrink: 0;
   height: 2rem;
   width: 2rem;
 }
