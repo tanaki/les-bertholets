@@ -11,7 +11,7 @@
 
                 $params = [
                     'limit'      => 3,
-                    'orderby'    => 'RAND()',   // tri aléatoire
+                    'orderby'    => 'RAND()', 
                     'where'      => "
                         t.ID != $id 
                         AND t.post_type = 'wines'

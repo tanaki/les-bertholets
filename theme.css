@@ -1900,7 +1900,11 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   white-space: nowrap;
 }
 .block-wine-detail .product-details-list-item-info {
+  align-items: center;
   color: #bc6e44;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
 }
 .block-wine-detail .product-details-list-labels {
   align-items: center;

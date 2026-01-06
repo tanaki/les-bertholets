@@ -4,6 +4,8 @@ let AgeGate = {
     const yesBtn = document.querySelector('[data-answer="yes"]');
     const noBtn = document.querySelector('[data-answer="no"]');
 
+    if ( !yesBtn || !noBtn ) return;
+
     // Vérifie le cookie
     if (AgeGate.getCookie('ageVerified') === 'true') {
         document.body.classList.add('age-verified');

@@ -168,11 +168,26 @@
                         endif; 
 
                         $labels = $pod->display('wine_labels');
-                        if ( isset($labels) && !empty($labels) ) :
+
+                        if ( ! empty($labels) ) :
+                        // On transforme la chaîne en tableau
+                        $labels_array = explode('___', $labels);
                     ?>
                         <div class="product-details-list-labels">
-                            <span class="product-details-list-item-label"><?php echo get_label('wine_labels'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo get_icon_label($pod->display('wine_labels')); ?></span> 
+                            <span class="product-details-list-item-label">
+                                <?php echo get_label('wine_labels'); ?>
+                            </span>
+
+                            <span class="product-details-list-item-info">
+                                <?php
+                                    foreach ( $labels_array as $label ) {
+                                        $label = trim($label);
+                                        if ( ! empty($label) ) {
+                                            echo get_icon_label($label);
+                                        }
+                                    }
+                                ?>
+                            </span>
                         </div>
                     <?php endif; ?>
 
@@ -229,7 +244,7 @@
     }
 
     get_template_part('template-parts/common/component/wine-list', false, array(
-        'title' => 'Related products',
+        'title' => get_label('related_products'),
         'id' => get_the_id()
     ));
 

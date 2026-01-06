@@ -19,6 +19,7 @@
     
     $params = [
         'limit'      => 6,
+        'orderby'    => 'RAND()',
         'where'      => "
             t.post_type = 'wines'
             AND t.post_status = 'publish'

@@ -3,17 +3,21 @@
     <div class="age-gate--modal">
         <?php get_template_part('template-parts/common/component/logo'); ?>
         <div class="age-gate--title">
-            Are you over 18?
+            <?php echo get_label('age_gate_title'); ?>
         </div>
         <div class="age-gate--subtitle">
-            By entering this site you agree to our Privacy Policy
+            <?php echo get_label('age_gate_subtitle'); ?>
         </div>
         <div class="age-gate--text">
-            To enter this website you must be of legal age as required by the laws of your country. By clicking "Yes I am" you confirm that you are of legal age in your country to visit this website.
+            <?php echo get_label('age_gate_text'); ?>
         </div>
         <div class="age-gate--buttons">
-            <a href="#" class="button button--primary" data-answer="yes">Yes I am</a>
-            <a href="#" class="button button--transparent" data-answer="no">No I am not</a>
+            <a href="#" class="button button--primary" data-answer="yes">
+                <?php echo get_label('age_gate_btn_yes'); ?>
+            </a>
+            <a href="#" class="button button--transparent" data-answer="no">
+                <?php echo get_label('age_gate_btn_no'); ?>
+            </a>
         </div>
     </div>
 </div>

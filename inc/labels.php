@@ -1,5 +1,10 @@
 <?php
 return [
+    'age_gate_title' => 'Are you over 18?',
+    'age_gate_subtitle' => 'By entering this site you agree to our <a href="/privacy-policy" target="_blank">Privacy Policy</a>',
+    'age_gate_text' => 'To enter this website you must be of legal age as required by the laws of your country. By clicking "Yes I am" you confirm that you are of legal age in your country to visit this website.',
+    'age_gate_btn_yes' => 'Yes I am',
+    'age_gate_btn_no' => 'No I am not',
     'wine_tasting' => 'Tasting Notes',
     'wine_pairing' => 'Food & Wine Pairing',
     'wine_temperature' => 'Serving temperature',
@@ -26,5 +31,6 @@ return [
     'privacy-policy' => 'Privacy Policy',
     'privacy-policy-link' => 'Link to privacy policy page',
     'no-wine-found' => 'No wine found in this category.',
+    'related_products' => 'Related products'
 ];
 ?>

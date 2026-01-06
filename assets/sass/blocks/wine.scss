@@ -125,7 +125,11 @@
             }
             &-item-info {
                 @extend .font-italic;
+                align-items: center;
                 color: $orange;
+                display: flex;
+                gap: 2rem;
+                justify-content: flex-start;
             }
 
             &-labels {
