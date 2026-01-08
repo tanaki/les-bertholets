@@ -1875,24 +1875,64 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .block-wine-detail .product-details-content em {
   font-style: italic;
 }
+.block-wine-detail .product-details-highlight {
+  align-items: flex-start;
+  border-bottom: 0.1rem solid #e5e5e5;
+  border-top: 0.1rem solid #e5e5e5;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 0 2rem;
+  padding: 2rem 0;
+}
+.block-wine-detail .product-details-highlight .product-details-icon {
+  height: 5rem;
+  width: 5rem;
+}
+.block-wine-detail .product-details-highlight-item {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  width: 33.33%;
+}
+.block-wine-detail .product-details-highlight-label {
+  font-weight: 600;
+  font-variant: small-caps;
+  margin-top: 1rem;
+}
+.block-wine-detail .product-details-highlight-info {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.block-wine-detail .product-details-tasting, .block-wine-detail .product-details-pairing {
+  align-items: center;
+  display: flex;
+  gap: 2rem;
+  justify-content: flex-start;
+  margin-bottom: 2rem;
+}
+.block-wine-detail .product-details-tasting .product-details-icon, .block-wine-detail .product-details-pairing .product-details-icon {
+  height: 5rem;
+  width: 5rem;
+}
+.block-wine-detail .product-details-icon {
+  display: block;
+  flex-shrink: 0;
+  height: 2rem;
+  width: 2rem;
+}
+.block-wine-detail .product-details-icon img {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+}
 .block-wine-detail .product-details-list-item {
   align-items: center;
   display: flex;
   gap: 1rem;
   justify-content: flex-start;
   margin-bottom: 1rem;
-}
-.block-wine-detail .product-details-list-item-icon {
-  display: block;
-  flex-shrink: 0;
-  height: 2rem;
-  width: 2rem;
-}
-.block-wine-detail .product-details-list-item-icon img {
-  display: block;
-  max-height: 100%;
-  max-width: 100%;
-  margin: 0 auto;
 }
 .block-wine-detail .product-details-list-item-label {
   font-weight: 600;

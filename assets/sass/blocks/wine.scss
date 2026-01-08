@@ -97,6 +97,67 @@
             }
         }
 
+        &-details-highlight {
+            align-items: flex-start;
+            border-bottom: 0.1rem solid $lightgrey;
+            border-top: 0.1rem solid $lightgrey;
+            display: flex;
+            justify-content: space-between;
+            margin: 0 0 2rem;
+            padding: 2rem 0;
+
+            .product-details-icon {
+                height: 5rem;
+                width: 5rem;
+            }
+
+            &-item {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                flex-shrink: 0;
+                width: 33.33%;
+            }
+
+            &-label {
+                font-weight: 600;
+                font-variant: small-caps;
+                margin-top: 1rem;
+            }
+            &-info {
+                font-size: 1.8rem;
+                text-align: center;
+            }
+        }
+
+        &-details-tasting,
+        &-details-pairing {
+            align-items: center;
+            display: flex;
+            gap: 2rem;
+            justify-content: flex-start;
+            margin-bottom: 2rem;
+
+            .product-details-icon {
+                height: 5rem;
+                width: 5rem;
+            }
+        }
+
+        &-details-icon {
+            display: block;
+            flex-shrink: 0;
+            height: 2rem;
+            width: 2rem;
+            
+            img {
+                display: block;
+                max-height: 100%;
+                max-width: 100%;
+                margin: 0 auto;
+            }
+        }
+
         &-details-list {
             &-item {
                 align-items: center;
@@ -104,19 +165,6 @@
                 gap: 1rem;
                 justify-content: flex-start;
                 margin-bottom: 1rem;
-            }
-            &-item-icon {
-                display: block;
-                flex-shrink: 0;
-                height: 2rem;
-                width: 2rem;
-
-                img {
-                    display: block;
-                    max-height: 100%;
-                    max-width: 100%;
-                    margin: 0 auto;
-                }
             }
             &-item-label {
                 font-weight: 600;
