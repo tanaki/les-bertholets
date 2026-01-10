@@ -12,7 +12,7 @@
                 // TODO Replace with "Dans la meme gamme"
                 $params = [
                     'limit'      => 3,
-                    // 'orderby'    => 'post_type_order',
+                    'orderby'    => 'menu_order',
                     'where'      => "
                         t.ID != $id 
                         AND t.post_type = 'wines'

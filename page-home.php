@@ -27,7 +27,7 @@
 
     $paramsWines = [
         'limit'      => -1,
-        'orderby'    => 'post_type_order',
+        'orderby'    => 'menu_order',
         'where'      => "
             t.post_type = 'wines'
             AND t.post_status = 'publish'

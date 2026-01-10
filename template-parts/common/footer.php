@@ -6,7 +6,7 @@
             <?php get_template_part('template-parts/common/component/logo', null, array( 'mode' => 'white', 'signature' => true )); ?>
 
             <div class="image">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine_3.png" alt="Domaine Les Bertholets" />
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine_2.png" alt="Domaine Les Bertholets" />
                 <?php get_template_part('template-parts/common/component/tagline'); ?>
             </div>
 
