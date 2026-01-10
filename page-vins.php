@@ -108,7 +108,7 @@ if ($active_category_slug) {
  */
 $params = [
     'limit'   => -1,
-    'orderby' => 'post_title ASC',
+    'orderby' => 't.menu_order ASC, t.post_title ASC',
     'where'   => "
         t.post_type = 'wines'
         AND t.post_status = 'publish'

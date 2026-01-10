@@ -90,7 +90,12 @@
 		margin-top: 1.6rem;
 	}
 	.tagline {
+		color: $black;
 		margin: 4rem 0;
+
+		a {
+			color: $black;
+		}
 	}
 
     &-cover {

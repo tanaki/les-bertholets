@@ -68,16 +68,6 @@
                             </div>
                         <?php 
                             endif; 
-                            $producer = $pod->display('wine_producer');
-                            if ( isset($producer) && !empty($producer)  ) : 
-                        ?>
-                            <div class="product-details-highlight-item">
-                                <span class="product-details-icon"><?php echo get_icon('wine_producer'); ?></span> 
-                                <span class="product-details-highlight-label"><?php echo get_label('wine_producer'); ?></span> 
-                                <span class="product-details-highlight-info"><?php echo $producer; ?></span>
-                            </div>
-                        <?php 
-                            endif; 
                             $varieties = $pod->display('wine_varieties');
                             if ( isset($varieties) && !empty($varieties)  ) : 
                         ?>
@@ -130,16 +120,6 @@
                         </div>
                     <?php 
                         endif; 
-                        $volume = $pod->display('wine_volume');
-                        if ( isset($volume) && !empty($volume)  ) : 
-                    ?>
-                        <div class="product-details-list-item">
-                            <span class="product-details-icon"><?php echo get_icon('wine_volume'); ?></span> 
-                            <span class="product-details-list-item-label"><?php echo get_label('wine_volume'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $volume; ?></span>
-                        </div>
-                    <?php 
-                        endif; 
                         $geography = $pod->display('wine_geography');
                         if ( isset($geography) && !empty($geography)  ) : 
                     ?>
@@ -172,17 +152,7 @@
                         </div>
                     <?php 
                         endif; 
-                        $alcohol = $pod->display('wine_alcohol');
-                        if ( isset($alcohol) && !empty($alcohol)  ) : 
-                    ?>
-                        <div class="product-details-list-item">
-                            <span class="product-details-icon"><?php echo get_icon('wine_alcohol'); ?></span> 
-                            <span class="product-details-list-item-label"><?php echo get_label('wine_alcohol'); ?></span> 
-                            <span class="product-details-list-item-info"><?php echo $alcohol; ?></span>
-                        </div>
-                    <?php 
-                        endif; 
-
+                        
                         $labels = $pod->display('wine_labels');
 
                         if ( ! empty($labels) ) :

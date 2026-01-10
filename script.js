@@ -299,19 +299,27 @@ let ListSwipe = {
                     ListSwipe.swiperInstance = new Swiper(swiperEl, {
                         spaceBetween: '20px',
                         slidesPerView: 2,
+                        slidesPerGroup: 1,
                         breakpoints: {
                             768: {
                                 spaceBetween: '40px',
                                 slidesPerView: 3,
+                                slidesPerGroup: 2,
                             },
                             1024: {
                                 spaceBetween: '30px',
                                 slidesPerView: 4,
+                                slidesPerGroup: 3,
                             },
                             1280: {
                                 spaceBetween: '40px',
                                 slidesPerView: 6,
+                                slidesPerGroup: 5,
                             },
+                        },
+                        navigation: {
+                            nextEl: ".block-list-button-next",
+                            prevEl: ".block-list-button-prev",
                         },
                     });
                 }
@@ -389,6 +397,43 @@ window.StoreLocator = {
             fullscreenControl: false,
             clickableIcons: true,
             tilt: 0,
+            styles: [
+                { featureType: "poi", stylers: [{ visibility: "off" }] },
+                { featureType: "transit", stylers: [{ visibility: "off" }] },
+
+                { featureType: "administrative", stylers: [{ visibility: "off" }] },
+                {
+                    featureType: "administrative.country",
+                    elementType: "labels",
+                    stylers: [{ visibility: "on" }]
+                },
+                { featureType: "administrative.province", stylers: [{ visibility: "off" }] },
+                { 
+                    featureType: "administrative.locality", 
+                    elementType: "labels",
+                    stylers: [{ visibility: "on" }]
+                },
+                { featureType: "administrative.neighborhood", stylers: [{ visibility: "off" }] },
+
+                { featureType: "road", elementType: "labels", stylers: [{ visibility: "off" }] },
+                {
+                    featureType: "road",
+                    elementType: "geometry",
+                    stylers: [{ saturation: -90 }, { lightness: 40 }]
+                },
+                {
+                    featureType: "landscape",
+                    stylers: [{ color: "#f4f5f6" }]
+                },
+                {
+                    featureType: "water",
+                    stylers: [{ color: "#e1eaf0" }]
+                },
+                {
+                    featureType: "poi.park",
+                    stylers: [{ visibility: "off" }]
+                }
+            ]
         });
 
         if (!window.STORES_TO_LOCATE || window.STORES_TO_LOCATE.length === 0) return;
@@ -402,10 +447,60 @@ window.StoreLocator = {
         StoreLocator.map.fitBounds(bounds);
 
         // Création du cluster natif
+
         StoreLocator.markerCluster = new markerClusterer.MarkerClusterer({
             map: StoreLocator.map,
             markers: StoreLocator.markers.map(obj => obj.marker),
+
+            algorithm: new markerClusterer.SuperClusterAlgorithm({
+                radius: 140,
+                maxZoom: 15
+            }),
+
+            renderer: {
+                render({ count, position }) {
+                    const size = 40;
+                    const stroke = 2;
+                    const color = "#bc6e44"; // orange
+
+                    const svg = `
+                        <svg width="${size}" height="${size}" viewBox="0 0 ${size} ${size}" xmlns="http://www.w3.org/2000/svg">
+                            <circle 
+                                cx="${size / 2}" 
+                                cy="${size / 2}" 
+                                r="${size / 2 - stroke}" 
+                                fill="white"
+                                stroke="${color}"
+                                stroke-width="${stroke}"
+                            />
+                            <text
+                                x="50%"
+                                y="50%"
+                                text-anchor="middle"
+                                dominant-baseline="central"
+                                font-family="Arial, sans-serif"
+                                font-size="14"
+                                font-weight="600"
+                                fill="${color}"
+                            >
+                                ${count}
+                            </text>
+                        </svg>
+                    `;
+
+                    return new google.maps.Marker({
+                        position,
+                        icon: {
+                            url: "data:image/svg+xml;charset=UTF-8," + encodeURIComponent(svg),
+                            scaledSize: new google.maps.Size(size, size),
+                            anchor: new google.maps.Point(size / 2, size / 2),
+                        },
+                        zIndex: google.maps.Marker.MAX_ZINDEX + count,
+                    });
+                }
+            }
         });
+
 
         // Affiche la liste initiale
         StoreLocator.displayStores(window.STORES_TO_LOCATE);
@@ -431,10 +526,10 @@ window.StoreLocator = {
             position: { lat: store.lat, lng: store.lng },
             title: store.name,
             icon: {
-                url: "/wp-content/themes/les-bertholets/assets/img/marker.png",
-                scaledSize: new google.maps.Size(40, 40),
+                url: "/wp-content/themes/les-bertholets/assets/img/icons/icon-marker.png",
+                scaledSize: new google.maps.Size(40, 60),
                 origin: new google.maps.Point(0, 0),
-                anchor: new google.maps.Point(20, 40)
+                anchor: new google.maps.Point(20, 60)
             },
             optimized: true,
         });

@@ -14,8 +14,7 @@ html {
 
 body {
 	@extend .font-serif;
-	// background: $white url(./assets/img/bg_pattern.jpg) repeat top left;
-	background: $white url(./assets/img/bg_footer.jpg) repeat center center;
+	background: white;
 	font-size: 1.6rem;
 	line-height: 1.2;
 }
@@ -66,10 +65,16 @@ a {
 /* TAGLINE */
 .tagline {
 	@extend .font-italic;
+	color: $white;
 	margin: 4rem 0 0;
 
-	a:hover {
-		text-decoration: underline;
+	a {
+		color: white;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
 	}
 }
 

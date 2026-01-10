@@ -29,6 +29,69 @@
     .block-inside {
         padding-bottom: 6rem;
     }
+
+    .swiper-container {
+        position: relative;
+    }
+
+    .block-list-button-prev,
+    .block-list-button-next {
+
+        background-color: $orange;
+        color: white;
+        cursor: pointer;
+        z-index: 999;
+        border: none;
+        width: 4.5rem;
+        height: 4.5rem;
+        font-size: 2.2rem;
+        opacity: 1;
+        position: absolute;
+        transform: scale(1);
+        transition: transform 0.3s;
+
+        &:before,
+        &:after {
+            content: "";
+            background: $white;
+            position: absolute;
+            height: 0.2rem;
+            width: 1.4rem;
+        }
+        &:before {
+            top: 50%;
+            left: 60%;
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+        &:after {
+            top: 50%;	
+            left: 40%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        &.swiper-button-disabled {
+            opacity: 0.5;
+            cursor: default;
+        }
+    }
+    .block-list-button-prev {
+        top: 12.75rem;
+        left: -2.25rem;
+        transform: rotate(-90deg);
+
+        &:hover {
+            transform: scale(0.9) rotate(-90deg);
+        }
+    }
+    .block-list-button-next {
+        top: 12.75rem;
+        right: -2.25rem;
+        transform: rotate(90deg);
+
+        &:hover {
+            transform: scale(0.9) rotate(90deg);
+        }
+    }
 }
 
 @media screen and (max-width: $desktop) {

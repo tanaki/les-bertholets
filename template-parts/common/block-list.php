@@ -18,19 +18,23 @@
         </div>
         
         <?php if ( isset( $items ) && is_array( $items ) && count( $items ) > 0 ) : ?>
-            <div class="block-list-items block-list-swiper swiper">
-                <div class="swiper-wrapper">
-                    <?php foreach ( $items as $item ) :
-                        get_template_part('template-parts/common/component/wine-item', null, array(
-                            "className" => "block-list-item swiper-slide",
-                            "image" => $item['image'],
-                            "link" => $item['link'],
-                            "label" => $item['label'],
-                            "collection" => $item['collection'],
-                            "detail" => $item['detail'],
-                        ));
-                    endforeach; ?>
+            <div class="swiper-container">
+                <div class="block-list-items block-list-swiper swiper">
+                    <div class="swiper-wrapper">
+                        <?php foreach ( $items as $item ) :
+                            get_template_part('template-parts/common/component/wine-item', null, array(
+                                "className" => "block-list-item swiper-slide",
+                                "image" => $item['image'],
+                                "link" => $item['link'],
+                                "label" => $item['label'],
+                                "collection" => $item['collection'],
+                                "detail" => $item['detail'],
+                            ));
+                        endforeach; ?>
+                    </div>
                 </div>
+                <div class="block-list-button-prev"></div>
+                <div class="block-list-button-next"></div>
             </div>
         <?php endif; ?>
     </div>

@@ -86,23 +86,23 @@ table {
 .page-contact-us form input[type=email],
 .page-contact-us form textarea,
 .page-contact-us form input[type=file],
-.page-contactez-nous form input[type=text],
-.page-contactez-nous form input[type=email],
-.page-contactez-nous form textarea,
-.page-contactez-nous form input[type=file],
+.page-nous-contacter form input[type=text],
+.page-nous-contacter form input[type=email],
+.page-nous-contacter form textarea,
+.page-nous-contacter form input[type=file],
 .contact-popin-content form input[type=text],
 .contact-popin-content form input[type=email],
 .contact-popin-content form textarea,
 .contact-popin-content form input[type=file], .page-contact-us .wpcf7-file::file-selector-button,
-.page-contactez-nous .wpcf7-file::file-selector-button,
+.page-nous-contacter .wpcf7-file::file-selector-button,
 .contact-popin-content .wpcf7-file::file-selector-button, .button--primary, .page-contact-us form input[type=submit],
-.page-contactez-nous form input[type=submit],
+.page-nous-contacter form input[type=submit],
 .contact-popin-content form input[type=submit], .age-gate--title, header a, header .extra-nav .lang-switcher a, body {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
 .font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .block-intro-text h6, .page-contact-us .block-post-content-container > p,
-.page-contactez-nous .block-post-content-container > p,
+.page-nous-contacter .block-post-content-container > p,
 .contact-popin-content .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
 }
@@ -129,7 +129,7 @@ html {
 }
 
 body {
-  background: #faf9f5 url(./assets/img/bg_footer.jpg) repeat center center;
+  background: white;
   font-size: 1.6rem;
   line-height: 1.2;
 }
@@ -170,7 +170,12 @@ a {
 /* MAIN */
 /* TAGLINE */
 .tagline {
+  color: #faf9f5;
   margin: 4rem 0 0;
+}
+.tagline a {
+  color: white;
+  text-decoration: none;
 }
 .tagline a:hover {
   text-decoration: underline;
@@ -572,11 +577,13 @@ header .mobile-nav {
   }
 }
 /* FOOTER */
+footer {
+  background: #bc6e44;
+}
 footer .block-inside {
   padding: 0;
 }
 footer .block-footer {
-  background: transparent;
   display: grid;
   grid-template-columns: 3fr 5fr 2fr;
   gap: 1rem;
@@ -609,14 +616,14 @@ footer nav li {
   margin-top: 1.6rem;
 }
 footer nav a {
-  color: #000000;
+  color: #faf9f5;
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.12rem;
   text-transform: uppercase;
 }
 footer nav a:hover {
-  color: #bc6e44;
+  color: #000000;
 }
 footer nav .social-link {
   margin: 4rem 0 0;
@@ -668,7 +675,7 @@ h2, .h2, .page .block-post-content h2 {
 }
 
 h3, .h3, .block-wine-detail .product-title, .block-wine-navigation .wine-navigation-title, .page-contact-us h2,
-.page-contactez-nous h2,
+.page-nous-contacter h2,
 .contact-popin-content h2, .block-store-locator h2, .page .block-post-content-container h3 {
   font-size: 2.2rem;
   font-variant: small-caps;
@@ -808,22 +815,28 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .age-gate--modal {
   color: #faf9f5;
   text-align: center;
-  max-width: 60rem;
+  max-width: 50%;
   width: 100%;
   position: relative;
   z-index: 2;
 }
 .age-gate--title {
-  font-size: 4.8rem;
-  font-variant: small-caps;
+  font-size: 3rem;
   font-weight: bold;
-  letter-spacing: 0.7rem;
-  margin: 3rem 0 0;
+  letter-spacing: 0.1rem;
+  margin: 3rem 0;
 }
 .age-gate--subtitle {
   color: #bc6e44;
   font-size: 2rem;
   margin-bottom: 3rem;
+}
+.age-gate--subtitle a {
+  color: #bc6e44;
+  text-decoration: underline;
+}
+.age-gate--subtitle a:hover {
+  text-decoration: none;
 }
 .age-gate--text {
   font-weight: bold;
@@ -891,7 +904,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 
 /* Button */
 .button, .page-contact-us form input[type=submit],
-.page-contactez-nous form input[type=submit],
+.page-nous-contacter form input[type=submit],
 .contact-popin-content form input[type=submit] {
   border: 0.1rem solid #000000;
   color: #000000;
@@ -906,19 +919,19 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   text-transform: uppercase;
 }
 .button:hover, .page-contact-us form input[type=submit]:hover,
-.page-contactez-nous form input[type=submit]:hover,
+.page-nous-contacter form input[type=submit]:hover,
 .contact-popin-content form input[type=submit]:hover {
   opacity: 0.9;
 }
 .button--primary, .page-contact-us form input[type=submit],
-.page-contactez-nous form input[type=submit],
+.page-nous-contacter form input[type=submit],
 .contact-popin-content form input[type=submit] {
   background-color: #bc6e44;
   border-color: #bc6e44;
   color: #faf9f5;
 }
 .button--primary:hover, .page-contact-us form input[type=submit]:hover,
-.page-contactez-nous form input[type=submit]:hover,
+.page-nous-contacter form input[type=submit]:hover,
 .contact-popin-content form input[type=submit]:hover {
   border-color: #faf9f5;
 }
@@ -933,7 +946,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 
 @media screen and (max-width: 1023px) {
   .button, .page-contact-us form input[type=submit],
-  .page-contactez-nous form input[type=submit],
+  .page-nous-contacter form input[type=submit],
   .contact-popin-content form input[type=submit] {
     display: block;
     text-align: center;
@@ -1016,7 +1029,11 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   margin-top: 1.6rem;
 }
 .extra-side .tagline {
+  color: #000000;
   margin: 4rem 0;
+}
+.extra-side .tagline a {
+  color: #000000;
 }
 .extra-side-cover {
   height: 100%;
@@ -1230,7 +1247,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 
 .page-contact-us,
-.page-contactez-nous,
+.page-nous-contacter,
 .contact-popin-content {
   /* Conteneur */
   /* Input file */
@@ -1238,21 +1255,21 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   /* Focus accessibilité */
 }
 .page-contact-us h2,
-.page-contactez-nous h2,
+.page-nous-contacter h2,
 .contact-popin-content h2 {
   font-size: 3rem;
   margin-bottom: 1rem;
   text-align: center;
 }
 .page-contact-us .block-post-content-container > p,
-.page-contactez-nous .block-post-content-container > p,
+.page-nous-contacter .block-post-content-container > p,
 .contact-popin-content .block-post-content-container > p {
   color: #bc6e44;
   font-size: 2rem;
   text-align: center;
 }
 .page-contact-us .block-post-content-container p + .wp-block-columns,
-.page-contactez-nous .block-post-content-container p + .wp-block-columns,
+.page-nous-contacter .block-post-content-container p + .wp-block-columns,
 .contact-popin-content .block-post-content-container p + .wp-block-columns {
   margin-top: 4rem;
 }
@@ -1260,10 +1277,10 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .page-contact-us form input[type=email],
 .page-contact-us form textarea,
 .page-contact-us form input[type=file],
-.page-contactez-nous form input[type=text],
-.page-contactez-nous form input[type=email],
-.page-contactez-nous form textarea,
-.page-contactez-nous form input[type=file],
+.page-nous-contacter form input[type=text],
+.page-nous-contacter form input[type=email],
+.page-nous-contacter form textarea,
+.page-nous-contacter form input[type=file],
 .contact-popin-content form input[type=text],
 .contact-popin-content form input[type=email],
 .contact-popin-content form textarea,
@@ -1277,27 +1294,27 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   width: 100%;
 }
 .page-contact-us form input[type=submit],
-.page-contactez-nous form input[type=submit],
+.page-nous-contacter form input[type=submit],
 .contact-popin-content form input[type=submit] {
   appearance: none;
   cursor: pointer;
 }
 .page-contact-us form input[aria-invalid=true],
 .page-contact-us form textarea[aria-invalid=true],
-.page-contactez-nous form input[aria-invalid=true],
-.page-contactez-nous form textarea[aria-invalid=true],
+.page-nous-contacter form input[aria-invalid=true],
+.page-nous-contacter form textarea[aria-invalid=true],
 .contact-popin-content form input[aria-invalid=true],
 .contact-popin-content form textarea[aria-invalid=true] {
   border-color: #dc3232;
 }
 .page-contact-us form .wpcf7-form-control-wrap,
-.page-contactez-nous form .wpcf7-form-control-wrap,
+.page-nous-contacter form .wpcf7-form-control-wrap,
 .contact-popin-content form .wpcf7-form-control-wrap {
   display: block;
   position: relative;
 }
 .page-contact-us form .wpcf7-not-valid-tip,
-.page-contactez-nous form .wpcf7-not-valid-tip,
+.page-nous-contacter form .wpcf7-not-valid-tip,
 .contact-popin-content form .wpcf7-not-valid-tip {
   font-size: 1.2rem;
   position: absolute;
@@ -1306,13 +1323,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   bottom: 0;
 }
 .page-contact-us form input[type=file],
-.page-contactez-nous form input[type=file],
+.page-nous-contacter form input[type=file],
 .contact-popin-content form input[type=file] {
   border: none;
   padding: 0;
 }
 .page-contact-us form .submit-area p,
-.page-contactez-nous form .submit-area p,
+.page-nous-contacter form .submit-area p,
 .contact-popin-content form .submit-area p {
   display: flex;
   align-items: center;
@@ -1320,7 +1337,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   flex-direction: row-reverse;
 }
 .page-contact-us .wpcf7 form .wpcf7-response-output,
-.page-contactez-nous .wpcf7 form .wpcf7-response-output,
+.page-nous-contacter .wpcf7 form .wpcf7-response-output,
 .contact-popin-content .wpcf7 form .wpcf7-response-output {
   border: none;
   color: white;
@@ -1328,22 +1345,22 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   padding: 1rem;
 }
 .page-contact-us .wpcf7 form.invalid .wpcf7-response-output,
-.page-contactez-nous .wpcf7 form.invalid .wpcf7-response-output,
+.page-nous-contacter .wpcf7 form.invalid .wpcf7-response-output,
 .contact-popin-content .wpcf7 form.invalid .wpcf7-response-output {
   background: #dc3232;
 }
 .page-contact-us .wpcf7 form.sent .wpcf7-response-output,
-.page-contactez-nous .wpcf7 form.sent .wpcf7-response-output,
+.page-nous-contacter .wpcf7 form.sent .wpcf7-response-output,
 .contact-popin-content .wpcf7 form.sent .wpcf7-response-output {
   background: #46b450;
 }
 .page-contact-us .wp-block-image,
-.page-contactez-nous .wp-block-image,
+.page-nous-contacter .wp-block-image,
 .contact-popin-content .wp-block-image {
   height: 60rem;
 }
 .page-contact-us .wp-block-image img,
-.page-contactez-nous .wp-block-image img,
+.page-nous-contacter .wp-block-image img,
 .contact-popin-content .wp-block-image img {
   display: block;
   object-fit: cover;
@@ -1354,20 +1371,20 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   width: 100%;
 }
 .page-contact-us .wpcf7-form-control-wrap,
-.page-contactez-nous .wpcf7-form-control-wrap,
+.page-nous-contacter .wpcf7-form-control-wrap,
 .contact-popin-content .wpcf7-form-control-wrap {
   display: inline-block;
   position: relative;
 }
 .page-contact-us .wpcf7-file,
-.page-contactez-nous .wpcf7-file,
+.page-nous-contacter .wpcf7-file,
 .contact-popin-content .wpcf7-file {
   font-family: inherit;
   font-size: 14px;
   color: #111;
 }
 .page-contact-us .wpcf7-file::file-selector-button,
-.page-contactez-nous .wpcf7-file::file-selector-button,
+.page-nous-contacter .wpcf7-file::file-selector-button,
 .contact-popin-content .wpcf7-file::file-selector-button {
   font-variant: small-caps;
   padding: 10px 16px;
@@ -1381,20 +1398,20 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   transition: all 0.3s ease;
 }
 .page-contact-us .wpcf7-file::file-selector-button:hover,
-.page-contactez-nous .wpcf7-file::file-selector-button:hover,
+.page-nous-contacter .wpcf7-file::file-selector-button:hover,
 .contact-popin-content .wpcf7-file::file-selector-button:hover {
   border-color: #faf9f5;
   opacity: 0.9;
 }
 .page-contact-us .wpcf7-file:focus::file-selector-button,
-.page-contactez-nous .wpcf7-file:focus::file-selector-button,
+.page-nous-contacter .wpcf7-file:focus::file-selector-button,
 .contact-popin-content .wpcf7-file:focus::file-selector-button {
   outline: 2px solid #93c5fd;
   outline-offset: 2px;
 }
 @media screen and (max-width: 1279px) {
   .page-contact-us form .wpcf7-not-valid-tip,
-  .page-contactez-nous form .wpcf7-not-valid-tip,
+  .page-nous-contacter form .wpcf7-not-valid-tip,
   .contact-popin-content form .wpcf7-not-valid-tip {
     line-height: 0.5;
   }
@@ -1695,6 +1712,66 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .home .block-list .block-inside {
   padding-bottom: 6rem;
 }
+.home .block-list .swiper-container {
+  position: relative;
+}
+.home .block-list .block-list-button-prev,
+.home .block-list .block-list-button-next {
+  background-color: #bc6e44;
+  color: white;
+  cursor: pointer;
+  z-index: 999;
+  border: none;
+  width: 4.5rem;
+  height: 4.5rem;
+  font-size: 2.2rem;
+  opacity: 1;
+  position: absolute;
+  transform: scale(1);
+  transition: transform 0.3s;
+}
+.home .block-list .block-list-button-prev:before, .home .block-list .block-list-button-prev:after,
+.home .block-list .block-list-button-next:before,
+.home .block-list .block-list-button-next:after {
+  content: "";
+  background: #faf9f5;
+  position: absolute;
+  height: 0.2rem;
+  width: 1.4rem;
+}
+.home .block-list .block-list-button-prev:before,
+.home .block-list .block-list-button-next:before {
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.home .block-list .block-list-button-prev:after,
+.home .block-list .block-list-button-next:after {
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.home .block-list .block-list-button-prev.swiper-button-disabled,
+.home .block-list .block-list-button-next.swiper-button-disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+.home .block-list .block-list-button-prev {
+  top: 12.75rem;
+  left: -2.25rem;
+  transform: rotate(-90deg);
+}
+.home .block-list .block-list-button-prev:hover {
+  transform: scale(0.9) rotate(-90deg);
+}
+.home .block-list .block-list-button-next {
+  top: 12.75rem;
+  right: -2.25rem;
+  transform: rotate(90deg);
+}
+.home .block-list .block-list-button-next:hover {
+  transform: scale(0.9) rotate(90deg);
+}
 
 @media screen and (max-width: 1279px) {
   .block-list .block-inside {
@@ -1893,7 +1970,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   display: flex;
   flex-direction: column;
   flex-shrink: 0;
-  width: 33.33%;
+  width: 50%;
 }
 .block-wine-detail .product-details-highlight-label {
   font-weight: 600;

@@ -3,10 +3,10 @@
 
         <div class="block-footer">
     
-            <?php get_template_part('template-parts/common/component/logo', null, array( 'signature' => true )); ?>
+            <?php get_template_part('template-parts/common/component/logo', null, array( 'mode' => 'white', 'signature' => true )); ?>
 
             <div class="image">
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine.png" alt="Domaine Les Bertholets" />
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine_3.png" alt="Domaine Les Bertholets" />
                 <?php get_template_part('template-parts/common/component/tagline'); ?>
             </div>
 
@@ -17,7 +17,7 @@
                         'container'      => null
                     ) );
                 ?>
-                <?php get_template_part('template-parts/common/component/social'); ?>
+                <?php get_template_part('template-parts/common/component/social', null, array( 'inverted' => true )); ?>
             </nav>
         </div>
 

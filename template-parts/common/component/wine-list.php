@@ -9,9 +9,10 @@
             <?php
                 $lang = pll_current_language();
 
+                // TODO Replace with "Dans la meme gamme"
                 $params = [
                     'limit'      => 3,
-                    'orderby'    => 'RAND()', 
+                    // 'orderby'    => 'post_type_order',
                     'where'      => "
                         t.ID != $id 
                         AND t.post_type = 'wines'

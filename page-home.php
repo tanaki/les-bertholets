@@ -26,8 +26,8 @@
     ) );
 
     $paramsWines = [
-        'limit'      => 6,
-        'orderby'    => 'RAND()',
+        'limit'      => -1,
+        'orderby'    => 'post_type_order',
         'where'      => "
             t.post_type = 'wines'
             AND t.post_status = 'publish'
