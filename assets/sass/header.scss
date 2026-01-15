@@ -3,6 +3,22 @@
 /* HEADER */
 header {
 
+	/* HEADROOM */
+	&.headroom {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		will-change: transform;
+		transition: transform 0.3s linear;
+		z-index: 900;
+	}
+	&.headroom--pinned {
+		transform: translateY(0%);
+	}
+	&.headroom--unpinned {
+		transform: translateY(-100%);
+	}
+
 	.logo {
 		display: block;
 		height: 7rem;
@@ -27,7 +43,7 @@ header {
 	}
 
 	.header-nav {
-		padding: 2.5rem 2.5rem 0;
+		padding: 2.1rem 2.5rem 2rem;
 	}
 
 	.navigation,
@@ -35,7 +51,7 @@ header {
 		gap: 1rem;
 	}
 	nav ul li {
-		padding: 5rem 0;
+		padding: 5rem 1.2rem;
 	}
 
 	a {
@@ -50,37 +66,25 @@ header {
 	.menu {
 		a {
 			position: relative;
-			
-			&:before,
-			&:after {
-				background-color: currentColor;
-				content: "";
-				display: inline-block;
-				vertical-align: middle;
-				width: 8px;
-				height: 1px;
-				margin-top: -2px;
-				transform: scaleX(0);
-				opacity: 0;
-				transition: .2s cubic-bezier(.22,.75,.39,.92);
-			}
 
 			&:before {
-				margin-right: 5px;
-				transform-origin: right;
+				background-color: rgba($orange, 0.5);
+				content: "";
+				left: 0;
+				right: 0;
+				top: auto;
+				bottom: -1rem;
+				height: 0.3rem;
+				position: absolute;
+				width: 100%;
+				transform: scaleX(0);
+				transition: transform 0.4s ease;
+				transform-origin: center right;
 			}
 
-			&:after {
-				margin-left: 5px;
-				transform-origin: left;
-			}
-
-			&:hover {
-				&:before,
-				&:after {
-					transform: scaleX(1);
-					opacity: 1;
-				}
+			&:hover:before {
+				transform: scaleX(1);
+				transform-origin: center left;
 			}
 		}
 
@@ -88,10 +92,9 @@ header {
 			a {
 				color: $orange;
 				
-				&:before,
-				&:after {
+				&:before {
+					background-color: $orange;
 					transform: scaleX(1);
-					opacity: 1;
 				}
 			}
 		}
@@ -192,7 +195,7 @@ header {
 
 	header {
 		position: relative;
-		z-index: 999;
+		z-index: 900;
 
 		.site-navigation {
 			display: block;
@@ -201,10 +204,7 @@ header {
 		.block-inside {
 			margin: 0 auto;
 		}
-		&.headroom {
-			border-bottom: 0;
-			height: 8rem;
-		}
+
 		.container,
 		.header-nav {
 			height: 100%;
@@ -222,18 +222,6 @@ header {
 
 		.header-nav {
 			border-bottom: none;
-			
-			&:after {
-				border-bottom: 1px solid $black;
-				content: "";
-				display: block;
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				height: 8rem;
-				width: 100%;
-				transiton: all 0.4s ease;
-			}
 		}
 
 		nav {

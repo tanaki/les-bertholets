@@ -32,7 +32,7 @@
 		<noscript><link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri(); ?>/theme.css"></noscript>	
 
 		<!-- libs -->
-        <!-- <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/headroom.min.js"></script> -->
+        <script src="<?php echo get_stylesheet_directory_uri(); ?>/assets/js/libs/headroom.min.js"></script>
 	
 		<link
 			rel="stylesheet"

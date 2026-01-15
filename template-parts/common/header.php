@@ -3,7 +3,7 @@
         <div class="container">
 
             <div class="header-nav">
-                <a href="/" class="logo">
+                <a href="<?php echo esc_url( pll_home_url() ); ?>" class="logo">
                     <?php echo file_get_contents( get_template_directory_uri() . '/assets/img/logo.svg' ); ?>
                 </a>
 

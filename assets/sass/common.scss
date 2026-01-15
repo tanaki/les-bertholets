@@ -59,7 +59,11 @@ a {
 
 /* MAIN */
 .main {
-    
+    padding-top: 16rem;
+
+	& > .block .block-inside {
+		padding-top: 0;
+	}
 }
 
 /* TAGLINE */
@@ -165,7 +169,7 @@ footer,
 	}
 
 	.main {
-		
+		padding-top: 8rem;
 	}
 }
 

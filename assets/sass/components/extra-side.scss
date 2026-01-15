@@ -2,9 +2,13 @@
 
 /* Extra Side */
 .extra-side {
+	align-items: center;
 	background: $white url(./assets/img/bg_pattern.jpg) repeat top left;
 	bottom: 0;
+	display: flex;
+	flex-direction: column;
 	height: 100vh;
+	justify-content: center;
 	left: auto;
 	position: fixed;
 	right: 0;
@@ -70,16 +74,17 @@
 
 	img {
 		display: block;
-		margin: 0 auto;
+		margin: 4rem auto 0;
 		max-height: 22rem;
 	}
 
 	&--inside {
-		height: 100vh;
+		height: auto;
 		overflow-x: hidden;
 		overflow-y: auto;
-		padding: 12rem 0; 
+		padding: 2rem 0; 
 		text-align: center;
+		width: 100%;
 	}
 
 	&--subtitle {

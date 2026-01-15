@@ -10,7 +10,6 @@ let Contact = {
         if ( !Contact.popin || !Contact.closeBtn ) return;
 
         // Exemple : bouton d’ouverture
-        console.log("document.querySelectorAll('.open-contact-popin a')", document.querySelectorAll('.open-contact-popin a'))
         document.querySelectorAll('.open-contact-popin a').forEach(btn => {
             btn.addEventListener('click', Contact.openPopin);
         });

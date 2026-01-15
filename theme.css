@@ -168,6 +168,13 @@ a {
   }
 }
 /* MAIN */
+.main {
+  padding-top: 16rem;
+}
+.main > .block .block-inside {
+  padding-top: 0;
+}
+
 /* TAGLINE */
 .tagline {
   color: #faf9f5;
@@ -245,8 +252,28 @@ footer .block-bottom .block-bottom-inside,
     height: 100svh;
     overflow: hidden;
   }
+  .main {
+    padding-top: 8rem;
+  }
 }
 /* HEADER */
+header {
+  /* HEADROOM */
+}
+header.headroom {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  will-change: transform;
+  transition: transform 0.3s linear;
+  z-index: 900;
+}
+header.headroom--pinned {
+  transform: translateY(0%);
+}
+header.headroom--unpinned {
+  transform: translateY(-100%);
+}
 header .logo {
   display: block;
   height: 7rem;
@@ -268,14 +295,14 @@ header nav ul {
   justify-content: space-between;
 }
 header .header-nav {
-  padding: 2.5rem 2.5rem 0;
+  padding: 2.1rem 2.5rem 2rem;
 }
 header .navigation,
 header nav ul {
   gap: 1rem;
 }
 header nav ul li {
-  padding: 5rem 0;
+  padding: 5rem 1.2rem;
 }
 header a {
   color: #000000;
@@ -287,36 +314,30 @@ header a {
 header .menu a {
   position: relative;
 }
-header .menu a:before, header .menu a:after {
-  background-color: currentColor;
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  width: 8px;
-  height: 1px;
-  margin-top: -2px;
-  transform: scaleX(0);
-  opacity: 0;
-  transition: 0.2s cubic-bezier(0.22, 0.75, 0.39, 0.92);
-}
 header .menu a:before {
-  margin-right: 5px;
-  transform-origin: right;
+  background-color: rgba(188, 110, 68, 0.5);
+  content: "";
+  left: 0;
+  right: 0;
+  top: auto;
+  bottom: -1rem;
+  height: 0.3rem;
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+  transform-origin: center right;
 }
-header .menu a:after {
-  margin-left: 5px;
-  transform-origin: left;
-}
-header .menu a:hover:before, header .menu a:hover:after {
+header .menu a:hover:before {
   transform: scaleX(1);
-  opacity: 1;
+  transform-origin: center left;
 }
 header .menu .current-menu-item a {
   color: #bc6e44;
 }
-header .menu .current-menu-item a:before, header .menu .current-menu-item a:after {
+header .menu .current-menu-item a:before {
+  background-color: #bc6e44;
   transform: scaleX(1);
-  opacity: 1;
 }
 header .extra-nav {
   align-items: center;
@@ -402,17 +423,13 @@ header .mobile-nav {
 @media screen and (max-width: 1279px) {
   header {
     position: relative;
-    z-index: 999;
+    z-index: 900;
   }
   header .site-navigation {
     display: block;
   }
   header .block-inside {
     margin: 0 auto;
-  }
-  header.headroom {
-    border-bottom: 0;
-    height: 8rem;
   }
   header .container,
   header .header-nav {
@@ -430,17 +447,6 @@ header .mobile-nav {
   }
   header .header-nav {
     border-bottom: none;
-  }
-  header .header-nav:after {
-    border-bottom: 1px solid #000000;
-    content: "";
-    display: block;
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 8rem;
-    width: 100%;
-    transiton: all 0.4s ease;
   }
   header nav {
     background-color: #faf9f5;
@@ -626,7 +632,9 @@ footer nav a:hover {
   color: #000000;
 }
 footer nav .social-link {
+  height: 4rem;
   margin: 4rem 0 0;
+  width: 4rem;
 }
 @media screen and (max-width: 1279px) {
   footer .logo-collection--svg {
@@ -955,9 +963,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 /* Extra Side */
 .extra-side {
+  align-items: center;
   background: #faf9f5 url(./assets/img/bg_pattern.jpg) repeat top left;
   bottom: 0;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  justify-content: center;
   left: auto;
   position: fixed;
   right: 0;
@@ -1012,15 +1024,16 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 .extra-side img {
   display: block;
-  margin: 0 auto;
+  margin: 4rem auto 0;
   max-height: 22rem;
 }
 .extra-side--inside {
-  height: 100vh;
+  height: auto;
   overflow-x: hidden;
   overflow-y: auto;
-  padding: 12rem 0;
+  padding: 2rem 0;
   text-align: center;
+  width: 100%;
 }
 .extra-side--subtitle {
   color: #bc6e44;
@@ -1602,13 +1615,6 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .block-intro-text ul li {
   margin: 0.8rem 0;
 }
-.block-intro.cols-2 .block-intro-text {
-  break-inside: avoid;
-  -webkit-column-break-inside: avoid;
-  -moz-column-break-inside: avoid;
-  column-count: 2;
-  column-gap: 4rem;
-}
 .block-intro-stamp {
   position: absolute;
   right: 0;
@@ -1648,9 +1654,6 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 
 @media screen and (max-width: 767px) {
-  .block-intro.cols-2 .block-intro-text {
-    columns: 1;
-  }
   .page-template-page-store-locator .block-intro-title, .page-template-page-store-locator .block-intro-subtitle {
     max-width: 100%;
   }

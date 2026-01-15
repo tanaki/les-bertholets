@@ -98,7 +98,6 @@ let Contact = {
         if ( !Contact.popin || !Contact.closeBtn ) return;
 
         // Exemple : bouton d’ouverture
-        console.log("document.querySelectorAll('.open-contact-popin a')", document.querySelectorAll('.open-contact-popin a'))
         document.querySelectorAll('.open-contact-popin a').forEach(btn => {
             btn.addEventListener('click', Contact.openPopin);
         });
@@ -733,8 +732,8 @@ let Title = {
 }
 
 /* Headroom */
-// var headerEl = document.querySelector("header");
-// var headroom  = new Headroom(headerEl);
+var headerEl = document.querySelector("header");
+var headroom  = new Headroom(headerEl);
 
 /* Nav Mobile */
 var 
@@ -803,9 +802,9 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  /*
+  console.log("headroom", headroom, headerEl)
   if (headroom) headroom.init();
-
+  /*
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
     gsap.registerPlugin(ScrollTrigger);
   }

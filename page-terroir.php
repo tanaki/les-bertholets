@@ -78,8 +78,7 @@
     get_template_part( 'template-parts/common/block-intro', null, array(
         'title' => $podPage->display('intro_title'),
         'subtitle' => $podPage->display('intro_subtitle'),
-        'text' => $podPage->display('intro_text'),
-        'layout' => 'cols-2'
+        'text' => $podPage->display('intro_text')
     ) );
     
     $content = apply_filters( 'the_content', get_the_content() );

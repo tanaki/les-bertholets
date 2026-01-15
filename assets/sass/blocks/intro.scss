@@ -63,16 +63,6 @@
     }
   }
 
-  &.cols-2 .block-intro-text {
-    break-inside: avoid;
-    -webkit-column-break-inside: avoid;
-    -moz-column-break-inside: avoid;
-
-    column-count: 2;
-    column-gap: 4rem;
-  }
-
-
   &-stamp {
     position: absolute;
     right: 0;
@@ -124,12 +114,6 @@
 }
 
 @media screen and (max-width: $mobile) {
-  .block-intro {
-
-    &.cols-2 .block-intro-text {
-      columns: 1;
-    }
-  }
 
   .page-template-page-store-locator .block-intro {
     &-title,
