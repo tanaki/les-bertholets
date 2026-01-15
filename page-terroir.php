@@ -65,10 +65,25 @@
 
     get_header();
 
-    get_template_part( 'template-parts/common/block-hero', null, array(
-        'image' => get_template_directory_uri() . '/assets/img/temp/misc/terroir.jpg',
-        'title' => 'Terroir',
-    ) );
+    $pod = pods( get_post_type(), get_the_ID() );
+    $intro_images = $pod->field( 'intro_images' );
+    $swiper_items = [];
+
+    if ( ! empty( $intro_images ) ) {
+        foreach ( $intro_images as $img ) {
+            $swiper_items[] = array(
+                'image' => wp_get_attachment_image_url( $img['ID'], 'full' ),
+                'title' => $img['post_title'] ?? '',
+            );
+        }
+    }
+    get_template_part(
+        'template-parts/common/block-hero-swiper',
+        null,
+        array(
+            'items' => $swiper_items
+        )
+    );
 
     $podPage = pods('page', [
         'limit' => 1,

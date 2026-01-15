@@ -7,11 +7,23 @@
     
     get_header(); 
 
-    get_template_part( 'template-parts/common/block-hero', null, array(
-        'image' => get_template_directory_uri() . '/assets/img/temp/home/home.jpeg',
-        'title' => 'Wineyard',
-        'classname' => 'is-home'
-    ) );
+
+    $pod = pods( get_post_type(), get_the_ID() );
+    $intro_images = $pod->field( 'intro_images' );
+    $hero_image = null;
+    if ( ! empty( $intro_images ) ) {
+        $hero_image = wp_get_attachment_image_url( $intro_images[0]['ID'], 'full' );
+    }
+
+    get_template_part(
+        'template-parts/common/block-hero',
+        null,
+        array(
+            'image'     => $hero_image,
+            'title'     => get_the_title(),
+            'classname' => 'is-home'
+        )
+    );
 
     $podPage = pods('page', [
         'limit' => 1,

@@ -9,6 +9,19 @@
     .block-inside {
 		background-color: white;
 	}
+}
+
+.block-hero-swiper {
+    margin-bottom: 4rem;
+
+    .swiper {
+        height: 60rem;
+        overflow: hidden;
+    }
+}
+
+.block-hero,
+.block-hero-swiper {
 
     img {
         width: 100%;

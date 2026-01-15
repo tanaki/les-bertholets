@@ -279,6 +279,34 @@ let Grid = {
         }
     }
 }
+let HeroSwiper = {
+    swiperInstance : null,
+    
+    init: () => {
+        HeroSwiper.initSwiper();
+    },
+    initSwiper: () => {
+        const swiperEl = document.querySelector('.block-hero-swiper .swiper');
+        if (swiperEl && typeof Swiper !== "undefined") {
+            if (!swiperEl.swiper) {
+                HeroSwiper.swiperInstance = new Swiper(swiperEl, {
+                    loop: true,
+                    autoplay: {
+                        delay: 4000,
+                        disableOnInteraction: false,
+                    },
+                    effect: 'fade',
+                    fadeEffect: {
+                        crossFade: true
+                    },
+                    speed: 1000,
+                });
+            }
+        } else {
+            console.warn("Swiper: .block-hero-swiper not found or Swiper is undefined");
+        }
+    }
+}
 let ListSwipe = {
 
     swiperInstance : null,
@@ -802,7 +830,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  console.log("headroom", headroom, headerEl)
   if (headroom) headroom.init();
   /*
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
@@ -830,6 +857,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, 50);
 
     if ( AgeGate ) AgeGate.init();
+    if ( HeroSwiper ) HeroSwiper.init();
     if ( ListSwipe ) ListSwipe.init();
     if ( DetailGallery ) DetailGallery.init();
     if ( Contact ) Contact.init();

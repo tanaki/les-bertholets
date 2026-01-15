@@ -70,7 +70,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
-  console.log("headroom", headroom, headerEl)
   if (headroom) headroom.init();
   /*
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
@@ -98,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
 		}, 50);
 
     if ( AgeGate ) AgeGate.init();
+    if ( HeroSwiper ) HeroSwiper.init();
     if ( ListSwipe ) ListSwipe.init();
     if ( DetailGallery ) DetailGallery.init();
     if ( Contact ) Contact.init();
