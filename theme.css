@@ -699,6 +699,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   letter-spacing: 0.1rem;
 }
 
+.page .block-home-intro .block-inside {
+  padding: 0 12rem 8rem;
+}
+.page .block-home-intro-content {
+  max-width: min(80%, 80rem);
+  margin: 0 auto;
+}
 .page .block-post-content .block-inside {
   background-color: white;
 }
@@ -707,7 +714,38 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   margin-bottom: 2.5rem;
   text-align: center;
 }
-.page .block-post-content-container p {
+.page .block-post-content h4 {
+  margin-bottom: 2rem;
+}
+.page .block-post-content strong {
+  font-weight: bold;
+}
+.page .block-post-content em {
+  font-style: italic;
+}
+.page .block-post-content .wp-block-columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  max-width: none;
+  margin-left: max(50% - 50vw + 2rem, -30rem);
+  margin-right: max(50% - 50vw + 2rem, -30rem);
+  margin-bottom: 4rem;
+  margin-top: 4rem;
+}
+.page .block-post-content .wp-block-columns figure {
+  margin: 0;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+}
+.page .block-post-content .wp-block-columns img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.page .block-post-content p {
   font-size: 1.6rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
@@ -1091,6 +1129,9 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
+}
+.logo-collection--subtitle--white {
+  color: white;
 }
 .logo-collection--signature {
   margin-top: 1rem;
@@ -1940,7 +1981,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   background-color: #faf9f5;
   width: 8rem;
   height: 8rem;
-  object-fit: cover;
+  object-fit: contain;
   cursor: pointer;
   transition: opacity 0.3s, transform 0.2s;
 }

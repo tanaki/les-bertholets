@@ -25,17 +25,7 @@
         )
     );
 
-    $podPage = pods('page', [
-        'limit' => 1,
-        'where' => "ID = '". $post->ID ."'"
-    ]);
-
-    get_template_part( 'template-parts/common/block-intro', null, array(
-        'title' => $podPage->display('intro_title'),
-        'subtitle' => $podPage->display('intro_subtitle'),
-        'text' => $podPage->display('intro_text'),
-        'stamp' => $podPage->display('intro_stamp') === "Oui" ? true : false,
-    ) );
+    get_template_part( 'template-parts/common/block-home' );
 
     $paramsWines = [
         'limit'      => -1,

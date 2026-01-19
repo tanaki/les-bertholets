@@ -3,6 +3,18 @@
 
 .page {
 
+    .block-home-intro {
+
+        .block-inside {
+            padding: 0 12rem 8rem; 
+        }
+
+        &-content {
+            max-width: min(80%, 80rem);
+            margin: 0 auto;
+        }
+    }
+
     .block-post-content {
         .block-inside {
             background-color: white;
@@ -14,16 +26,55 @@
             margin-bottom: 2.5rem;
             text-align: center;
         }
+
+        h4 {
+            margin-bottom: 2rem;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+        em {
+            font-style: italic;
+        }
+
+        .wp-block-columns {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+
+            max-width: none;
+            margin-left: max(calc(50% - 50vw + 2rem), -30rem);
+            margin-right: max(calc(50% - 50vw + 2rem), -30rem);
+            margin-bottom: 4rem;
+            margin-top: 4rem;
+
+            figure {
+                margin: 0;
+                width: 100%;
+                aspect-ratio: 2 / 3;
+                overflow: hidden;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        p {
+            font-size: 1.6rem;
+            line-height: 1.5;
+            margin-bottom: 2.5rem;
+        }
+
     }
 
     .block-post-content-container {
         h3 {
             @extend .h3;
-        }
-        p {
-            font-size: 1.6rem;
-            line-height: 1.5;
-            margin-bottom: 2.5rem;
         }
     }
 

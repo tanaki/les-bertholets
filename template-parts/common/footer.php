@@ -3,7 +3,11 @@
 
         <div class="block-footer">
     
-            <?php get_template_part('template-parts/common/component/logo', null, array( 'mode' => 'white', 'signature' => true )); ?>
+            <?php get_template_part('template-parts/common/component/logo', null, array( 
+                'mode' => 'white', 
+                'subtitle' => true, 
+                'signature' => true 
+            )); ?>
 
             <div class="image">
                 <img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/domaine_2.png" alt="Domaine Les Bertholets" />

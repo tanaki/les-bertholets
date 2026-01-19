@@ -1,7 +1,7 @@
 <div class="extra-side-cover"></div>
 <div class="extra-side">
     <div class="extra-side--inside">
-        <?php get_template_part('template-parts/common/component/logo'); ?>
+        <?php get_template_part('template-parts/common/component/logo', null, array( 'subtitle' => true )); ?>
 
         <div class="extra-side--subtitle">
             <?php echo get_label('follow-us-instagram'); ?>

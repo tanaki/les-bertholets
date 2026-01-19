@@ -11,7 +11,7 @@
                 <div class="contact-popin-content">
                     <?php 
                         $lang = pll_current_language();
-                        $page = get_page_by_path( $lang === 'fr' ? 'nous-contacter' : 'contact-us' );
+                        $page = get_page_by_path( $lang === 'fr' ? 'contactez-nous' : 'contact-us' );
 
                         if ($page) {
                             echo '<h4>'.apply_filters('the_title', $page->post_title).'</h4>';
