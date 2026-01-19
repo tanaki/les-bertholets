@@ -699,13 +699,6 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   letter-spacing: 0.1rem;
 }
 
-.page .block-home-intro .block-inside {
-  padding: 0 12rem 8rem;
-}
-.page .block-home-intro-content {
-  max-width: min(80%, 80rem);
-  margin: 0 auto;
-}
 .page .block-post-content .block-inside {
   background-color: white;
 }
@@ -749,6 +742,29 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   font-size: 1.6rem;
   line-height: 1.5;
   margin-bottom: 2.5rem;
+}
+.page .block-home-intro {
+  margin-top: 4rem;
+}
+.page .block-home-intro .block-inside {
+  padding: 0 12rem 8rem;
+}
+.page .block-home-intro-title {
+  margin: 0 0 4rem;
+  text-align: center;
+}
+.page .block-home-intro-title h5 {
+  font-weight: bold;
+  font-size: 2.8rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+.page .block-home-intro-content {
+  max-width: min(80%, 80rem);
+  margin: 0 auto;
+}
+.page .block-home-intro p {
+  font-size: 1.8rem;
 }
 @media screen and (max-width: 1439px) {
   .page .block-post-content .block-inside {
@@ -1642,11 +1658,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   margin-bottom: 4rem;
 }
 .block-intro-text {
-  font-size: 1.6rem;
-  font-weight: bold;
-  line-height: 2.6rem;
   margin: 0 auto 2.5rem;
   max-width: 80%;
+}
+.block-intro-text p {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  margin-bottom: 2.5rem;
 }
 .block-intro-text i {
   font-style: italic;

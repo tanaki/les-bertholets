@@ -31,6 +31,7 @@ return [
     'privacy-policy' => 'Privacy Policy',
     'privacy-policy-link' => 'Link to privacy policy page',
     'no-wine-found' => 'No wine found in this category.',
-    'related_products' => 'Related products'
+    'related_products' => 'Related products',
+    'intro-bertholets' => 'Step into the world of'
 ];
 ?>

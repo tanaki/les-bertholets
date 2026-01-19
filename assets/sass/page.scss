@@ -3,18 +3,6 @@
 
 .page {
 
-    .block-home-intro {
-
-        .block-inside {
-            padding: 0 12rem 8rem; 
-        }
-
-        &-content {
-            max-width: min(80%, 80rem);
-            margin: 0 auto;
-        }
-    }
-
     .block-post-content {
         .block-inside {
             background-color: white;
@@ -70,6 +58,37 @@
             margin-bottom: 2.5rem;
         }
 
+    }
+
+
+    .block-home-intro {
+
+        margin-top: 4rem;
+
+        .block-inside {
+            padding: 0 12rem 8rem; 
+        }
+
+        &-title {
+            margin: 0 0 4rem;
+            text-align: center;
+
+            h5 {
+                font-weight: bold;
+                font-size: 2.8rem;
+                font-style: italic;
+                margin-bottom: 1rem;
+            }
+        }
+
+        &-content {
+            max-width: min(80%, 80rem);
+            margin: 0 auto;
+        }
+
+        p {
+            font-size: 1.8rem;
+        }
     }
 
     .block-post-content-container {
