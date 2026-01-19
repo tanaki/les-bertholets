@@ -1551,24 +1551,30 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 }
 .block-grid .nav-child-categories {
   align-items: center;
+  border-bottom: 0.1rem solid #bc6e44;
   display: flex;
   justify-content: center;
   gap: 4rem;
   margin-bottom: 4rem;
+  padding: 1rem 0;
 }
 .block-grid .nav-item a {
-  color: #000000;
+  color: #bc6e44;
   font-size: 1.4rem;
   font-weight: bold;
   letter-spacing: 0.12rem;
+  padding: 1rem;
+  position: relative;
   text-transform: uppercase;
+  transition: background-color 0.3s ease;
 }
 .block-grid .nav-item a:hover {
-  color: #bc6e44;
+  background-color: #bc6e44;
+  color: #faf9f5;
 }
 .block-grid .nav-item.is-active a {
-  color: #bc6e44;
-  font-weight: bold;
+  background-color: #bc6e44;
+  color: #faf9f5;
 }
 .block-grid-items {
   display: grid;

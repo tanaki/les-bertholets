@@ -7,30 +7,38 @@
 
     .nav-child-categories {
         align-items: center;
+        // background-color: $orange;
+        border-bottom: 0.1rem solid $orange;
         display: flex;
         justify-content: center;
         gap: 4rem;
         margin-bottom: 4rem;
+        padding: 1rem 0;
     }
 
     .nav-item{
 
         a {
             @extend .font-serif;
-            color: $black;
+            color: $orange;
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 0.12rem;
+            padding: 1rem;
+            position: relative;
             text-transform: uppercase;
+            transition: background-color 0.3s ease;
 
             &:hover {
-                color: $orange;
+                background-color: $orange;
+                color: $white;
             }
         }
 
         &.is-active a {
-            color: $orange;
-            font-weight: bold;
+            background-color: $orange;
+            color: $white;
+            // padding: 1.9rem;
         }
     }
 

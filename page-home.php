@@ -8,6 +8,12 @@
     get_header(); 
 
 
+    if ( have_posts() ) {
+        while ( have_posts() ) {
+            the_post();
+        }
+    }
+
     $pod = pods( get_post_type(), get_the_ID() );
     $intro_images = $pod->field( 'intro_images' );
     $hero_image = null;
