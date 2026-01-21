@@ -45,20 +45,9 @@
 
                     $post_id = get_the_ID();
 
-                    $gallery   = get_post_meta($post_id, 'wine_gallery', true);
-                    $first_img = null;
-
-                    if ( is_array($gallery) && ! empty($gallery[0]) ) {
-                        $first_img = is_numeric($gallery[0])
-                            ? wp_get_attachment_url($gallery[0])
-                            : ($gallery[0]['url'] ?? null);
-                    }
-
-                    $categories = get_the_category($post_id);
-                    $category_names = ! empty($categories)
-                        ? implode(', ', wp_list_pluck($categories, 'name'))
-                        : '';
-
+                    $gallery = pods('wines', $post_id)->field('wine_gallery');
+                    $first_img = (!empty($gallery) && !empty($gallery[0]['guid'])) ? $gallery[0]['guid'] : null;
+                    
                     get_template_part(
                         'template-parts/common/component/wine-item',
                         null,
@@ -67,7 +56,6 @@
                             'link'       => get_permalink(),
                             'label'      => esc_attr(get_the_title()),
                             'collection' => get_post_meta($post_id, 'wine_appellation', true),
-                            'detail'     => esc_html($category_names),
                         ]
                     );
 

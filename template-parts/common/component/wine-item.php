@@ -6,6 +6,5 @@
     <div class="wine-item-title">
         <span class="collection"><?php echo $collection; ?></span>
         <span class="label"><?php echo $label; ?></span>
-        <span class="detail"><?php echo $detail; ?></span>
     </div>
 </a>

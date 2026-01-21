@@ -245,6 +245,12 @@ header {
 
 				&.menu {
 					margin-top: 2rem;
+
+					a:before {
+						bottom: 1rem;
+						left: 2rem;
+						width: calc(100% - 4rem);
+					}
 				}
 
 				li {

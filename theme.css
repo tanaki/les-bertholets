@@ -470,6 +470,11 @@ header .mobile-nav {
   header nav ul.menu {
     margin-top: 2rem;
   }
+  header nav ul.menu a:before {
+    bottom: 1rem;
+    left: 2rem;
+    width: calc(100% - 4rem);
+  }
   header nav ul li {
     padding: 2rem 0;
   }
@@ -851,12 +856,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .single .toggle[open] summary .icon {
   transform: rotate(45deg);
 }
-.single .toggle[open] summary img {
+.single .toggle[open] .content img {
   display: block;
   max-width: 100%;
 }
 
 .block-interlude {
+  padding: 0 2rem;
   text-align: center;
 }
 .block-interlude .signature {
@@ -1611,6 +1617,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
     padding: 0 2rem;
   }
   .block-grid .nav-child-categories {
+    border-bottom: 0;
     flex-direction: column;
     gap: 3rem;
   }

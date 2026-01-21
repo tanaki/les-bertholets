@@ -99,14 +99,14 @@
     transform: rotate(45deg);
   }
 
-  .toggle[open] summary img {
+  .toggle[open] .content img {
     display: block;
     max-width: 100%;
   }
-
 }
 
 .block-interlude {
+  padding: 0 2rem;
   text-align: center;
 
   h4 {
