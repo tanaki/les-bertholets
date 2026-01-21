@@ -86,6 +86,38 @@ add_filter('style_loader_tag', function ($html, $handle, $href) {
   return $html;
 }, 10, 3);
 
+add_action('wp_footer', function () {
+  ?>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const fileInput = document.querySelector('input[name="your-file"]');
+
+      if (!fileInput) return;
+
+      // Création du bouton "supprimer"
+      const removeBtn = document.createElement('button');
+      removeBtn.type = 'button';
+      removeBtn.innerHTML = '✕';
+      removeBtn.className = 'cf7-remove-file';
+      removeBtn.style.display = 'none';
+
+      fileInput.parentNode.appendChild(removeBtn);
+
+      // Quand un fichier est sélectionné
+      fileInput.addEventListener('change', function () {
+        removeBtn.style.display = fileInput.files.length ? 'inline-flex' : 'none';
+      });
+
+      // Clic sur la croix
+      removeBtn.addEventListener('click', function () {
+        fileInput.value = '';
+        removeBtn.style.display = 'none';
+      });
+    });
+  </script>
+  <?php
+});
+
 /*
 function get_thumb ( $postType, $id ) {
     return pods($postType, array( 'where'   => 't.ID = "' . $id . '"'))->display('thumbnail_image');

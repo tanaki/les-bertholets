@@ -57,6 +57,18 @@
         .wpcf7-form-control-wrap {
             display: block;
             position: relative;
+
+
+            &[data-name="your-file"] {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                margin-bottom: 1.5rem;
+
+                input {
+                    margin-bottom: 0;
+                }
+            }
         }
         .wpcf7-not-valid-tip {
             font-size: 1.2rem;
@@ -102,12 +114,6 @@
             height: 100%;
             width: 100%;
         }
-    }
-
-    /* Conteneur */
-    .wpcf7-form-control-wrap {
-        display: inline-block;
-        position: relative;
     }
 
     /* Input file */
@@ -215,4 +221,22 @@
     cursor: pointer;
     line-height: 1;
     padding: 1rem;
+}
+
+.cf7-remove-file {
+    margin-left: 0.8rem;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border: none;
+    background: #e63946;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.cf7-remove-file:hover {
+    background: #c1121f;
 }
