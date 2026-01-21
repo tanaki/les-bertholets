@@ -1,51 +1,84 @@
-<?php extract($args); ?>
+<?php 
+    extract($args); 
+
+    $lang = function_exists('pll_current_language')
+        ? pll_current_language()
+        : null;
+
+    $current_categories = wp_get_post_terms($id, 'category', [
+        'fields' => 'ids',
+    ]);
+
+    if ( ! empty($current_categories) ) :
+
+        $query_args = [
+            'post_type'      => 'wines',
+            'posts_per_page' => 3,
+            'post__not_in'   => [$id],
+            'category__in'   => $current_categories,
+            'orderby'        => 'menu_order',
+            'order'          => 'ASC',
+        ];
+
+        if ( $lang ) {
+            $query_args['lang'] = $lang;
+        }
+
+        $query = new WP_Query($query_args);
+
+        if ( $query->have_posts() ) :
+?>
+
 <div class="block block-wine-navigation">
     <div class="block-inside">
-        <div class="wine-navigation-title">
-            <?php echo $title; ?>
-        </div>
+
+        <?php if ( ! empty($title) ) : ?>
+            <div class="wine-navigation-title">
+                <?php echo esc_html($title); ?>
+            </div>
+        <?php endif; ?>
 
         <div class="wine-list">
             <?php
-                $lang = pll_current_language();
+                while ( $query->have_posts() ) :
+                    $query->the_post();
 
-                // TODO Replace with "Dans la meme gamme"
-                $params = [
-                    'limit'      => 3,
-                    'orderby'    => 'menu_order',
-                    'where'      => "
-                        t.ID != $id 
-                        AND t.post_type = 'wines'
-                        AND t.post_status = 'publish'
-                        AND t.ID IN (
-                            SELECT object_id 
-                            FROM {$wpdb->prefix}term_relationships tr
-                            INNER JOIN {$wpdb->prefix}term_taxonomy tt ON tr.term_taxonomy_id = tt.term_taxonomy_id
-                            INNER JOIN {$wpdb->prefix}terms t2 ON tt.term_id = t2.term_id
-                            WHERE tt.taxonomy = 'language' AND t2.slug = '$lang'
-                        )
-                    ",
-                ];
+                    $post_id = get_the_ID();
 
-                $related = pods('wines', $params);
+                    $gallery   = get_post_meta($post_id, 'wine_gallery', true);
+                    $first_img = null;
 
-                if ( $related->total() > 0 ) :
-                    while ( $related->fetch() ) :
-                        $post_id = $related->field('ID'); 
-                        $gallery = pods('wines', $post_id)->field('wine_gallery');
-                        $first_img = (!empty($gallery) && !empty($gallery[0]['guid'])) ? $gallery[0]['guid'] : null;
-                        
-                        get_template_part('template-parts/common/component/wine-item', null, array(
-                            "image" => $first_img,
-                            "link" => get_permalink($post_id),
-                            "label" => esc_attr(get_the_title($post_id)),
-                            "collection" => $related->display('wine_appellation'),
-                            "detail" => $related->display('wine_category'),
-                        ));
-                    endwhile;
-                endif;
+                    if ( is_array($gallery) && ! empty($gallery[0]) ) {
+                        $first_img = is_numeric($gallery[0])
+                            ? wp_get_attachment_url($gallery[0])
+                            : ($gallery[0]['url'] ?? null);
+                    }
+
+                    $categories = get_the_category($post_id);
+                    $category_names = ! empty($categories)
+                        ? implode(', ', wp_list_pluck($categories, 'name'))
+                        : '';
+
+                    get_template_part(
+                        'template-parts/common/component/wine-item',
+                        null,
+                        [
+                            'image'      => $first_img,
+                            'link'       => get_permalink(),
+                            'label'      => esc_attr(get_the_title()),
+                            'collection' => get_post_meta($post_id, 'wine_appellation', true),
+                            'detail'     => esc_html($category_names),
+                        ]
+                    );
+
+                endwhile;
+                wp_reset_postdata();
             ?>
-
         </div>
     </div>
 </div>
+
+<?php
+        endif;
+    endif;
+?>

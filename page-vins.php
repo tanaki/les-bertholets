@@ -79,6 +79,13 @@ function render_child_categories_nav($categories, $active_category_slug) {
     }
 
     echo '</ul>';
+
+    foreach ($categories as $cat) {
+        if ($cat->slug === $active_category_slug && !empty($cat->description)) {
+            echo '<p class="category-description">' . $cat->description . '</p>';
+            break; 
+        }
+    }
 }
 
 /**
@@ -139,7 +146,6 @@ get_template_part( 'template-parts/common/block-intro', null, array(
 <div class="block block-grid">
     <div class="block-inside">
 
-        
         <?php render_child_categories_nav($child_categories, $active_category_slug); ?>
         
         <?php if ($pods->total() > 0) : ?>

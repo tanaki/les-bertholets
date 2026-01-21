@@ -7,20 +7,30 @@
 
     .nav-child-categories {
         align-items: center;
-        // background-color: $orange;
-        border-bottom: 0.1rem solid $orange;
+        border-bottom: 0.2rem solid $orange;
         display: flex;
         justify-content: center;
         gap: 4rem;
-        margin-bottom: 4rem;
-        padding: 1rem 0;
+        margin: 0 auto 4rem;
+        width: fit-content;
+    }
+
+    .category-description {
+        font-size: 1.8rem;
+        line-height: 1.5;
+        margin: 0 auto 2.5rem;
+        max-width: 68rem;
+        text-align: center;
     }
 
     .nav-item{
 
+        display: block;
+
         a {
             @extend .font-serif;
             color: $orange;
+            display: block;
             font-size: 1.4rem;
             font-weight: bold;
             letter-spacing: 0.12rem;
@@ -38,7 +48,6 @@
         &.is-active a {
             background-color: $orange;
             color: $white;
-            // padding: 1.9rem;
         }
     }
 

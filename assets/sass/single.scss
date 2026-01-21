@@ -4,14 +4,13 @@
 .single {
 
   .product-toggles {
-    border-top: 1px solid $lightgrey;
+    border-top: 0.1rem solid $lightgrey;
   }
 
   .toggle {
-    border-bottom: 1px solid $lightgrey;
+    border-bottom: 0.1rem solid $lightgrey;
   }
 
-  /* summary */
   .toggle summary {
     align-items: center;
     cursor: pointer;
@@ -27,22 +26,21 @@
     display: none;
   }
 
-  /* icône + */
-  .toggle .icon {
-    width: 12px;
-    height: 12px;
+  .toggle summary .icon {
+    width: 1.2rem;
+    height: 1.2rem;
     position: relative;
     transition: transform 0.35s cubic-bezier(.4,0,.2,1);
   }
 
-  .toggle .icon::before,
-  .toggle .icon::after {
+  .toggle summary .icon::before,
+  .toggle summary .icon::after {
     content: '';
     position: absolute;
     background: currentColor;
   }
 
-  .toggle .icon::before {
+  .toggle summary .icon::before {
     top: 50%;
     left: 0;
     right: 0;
@@ -50,7 +48,7 @@
     transform: translateY(-50%);
   }
 
-  .toggle .icon::after {
+  .toggle summary .icon::after {
     left: 50%;
     top: 0;
     bottom: 0;
@@ -97,8 +95,26 @@
     transform: translateY(0) scaleY(1);
   }
 
-  .toggle[open] .icon {
+  .toggle[open] summary .icon {
     transform: rotate(45deg);
   }
 
+  .toggle[open] summary img {
+    display: block;
+    max-width: 100%;
+  }
+
+}
+
+.block-interlude {
+  text-align: center;
+
+  h4 {
+    
+  }
+
+  .signature {
+    margin: 2rem auto;
+    max-width: 30rem;
+  }
 }
