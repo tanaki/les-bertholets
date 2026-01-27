@@ -99,9 +99,13 @@
     transform: rotate(45deg);
   }
 
+  .toggle[open] .content a {
+    display: block;
+  }
+
   .toggle[open] .content img {
     display: block;
-    max-width: 100%;
+    max-width: 30rem;
   }
 }
 

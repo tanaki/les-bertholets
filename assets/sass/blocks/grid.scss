@@ -21,6 +21,10 @@
         margin: 0 auto 2.5rem;
         max-width: 68rem;
         text-align: center;
+
+        strong {
+            font-weight: bold;
+        }
     }
 
     .nav-item{
@@ -52,9 +56,17 @@
     }
 
     &-items {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        // display: grid;
+        // grid-template-columns: repeat(4, 1fr);
+        align-items: flex-start;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
         gap: 4rem;
+
+        .block-list-item {
+            width: calc(25% - 4rem);
+        }
     }
 
     .no-wines {
@@ -75,13 +87,21 @@
         }
 
         &-items {
-            grid-template-columns: repeat(3, 1fr);
+            // grid-template-columns: repeat(3, 1fr);
+
+            .block-list-item {
+                width: calc(33% - 4rem);
+            }
         }
     }
 
     @media screen and (max-width: $mobile) {
         &-items {
-            grid-template-columns: repeat(2, 1fr);
+            // grid-template-columns: repeat(2, 1fr);
+            
+            .block-list-item {
+                width: calc(50% - 4rem);
+            }
         }
     }
 }

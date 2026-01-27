@@ -213,7 +213,8 @@
                         </details>
                     <?php 
                         $qr_code = $pod->display('wine_qr_code');
-                        if ( isset($qr_code) && !empty($qr_code) ) :
+                        $qr_link = $pod->display('wine_qr_link');
+                        if ( isset($qr_code) && !empty($qr_code) && isset($qr_link) && !empty($qr_link)) :
                     ?>
                         <details class="toggle">
                             <summary>
@@ -221,7 +222,9 @@
                             <span class="icon"></span>
                             </summary>
                             <div class="content">
-                                <img src="<?php echo $qr_code; ?>" alt="<?php echo get_the_title(); ?>" />
+                                <a href="<?php echo $qr_link; ?>" target="_blank">
+                                    <img src="<?php echo $qr_code; ?>" alt="<?php echo get_the_title(); ?>" />
+                                </a>
                             </div>
                         </details>
 

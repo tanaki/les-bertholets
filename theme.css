@@ -82,7 +82,7 @@ table {
   font-family: "Baskerville", serif;
 }
 
-.font-serif, .block-grid .nav-item a, .page-contact-us form input[type=text],
+.font-serif, .block-wine-detail .product-details-eye p, .block-wine-detail .product-details-nose p, .block-wine-detail .product-details-tasting p, .block-wine-detail .product-details-pairing p, .block-grid .nav-item a, .page-contact-us form input[type=text],
 .page-contact-us form input[type=email],
 .page-contact-us form textarea,
 .page-contact-us form input[type=file],
@@ -856,9 +856,12 @@ h4, .h4, .block-contact-popin .block-inside h4 {
 .single .toggle[open] summary .icon {
   transform: rotate(45deg);
 }
+.single .toggle[open] .content a {
+  display: block;
+}
 .single .toggle[open] .content img {
   display: block;
-  max-width: 100%;
+  max-width: 30rem;
 }
 
 .block-interlude {
@@ -1605,6 +1608,9 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   max-width: 68rem;
   text-align: center;
 }
+.block-grid .category-description strong {
+  font-weight: bold;
+}
 .block-grid .nav-item {
   display: block;
 }
@@ -1628,9 +1634,14 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   color: #faf9f5;
 }
 .block-grid-items {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 4rem;
+}
+.block-grid-items .block-list-item {
+  width: calc(25% - 4rem);
 }
 .block-grid .no-wines {
   text-align: center;
@@ -1645,13 +1656,13 @@ h4, .h4, .block-contact-popin .block-inside h4 {
     flex-direction: column;
     gap: 3rem;
   }
-  .block-grid-items {
-    grid-template-columns: repeat(3, 1fr);
+  .block-grid-items .block-list-item {
+    width: calc(33% - 4rem);
   }
 }
 @media screen and (max-width: 767px) {
-  .block-grid-items {
-    grid-template-columns: repeat(2, 1fr);
+  .block-grid-items .block-list-item {
+    width: calc(50% - 4rem);
   }
 }
 
@@ -1933,7 +1944,7 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   text-align: center;
 }
 .block-region-details {
-  align-items: flex-start;
+  align-items: center;
   display: flex;
   gap: 4rem;
   justify-content: space-between;
@@ -2124,7 +2135,12 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   height: 5rem;
   width: 5rem;
 }
+.block-wine-detail .product-details-eye .product-details-list-item-label, .block-wine-detail .product-details-nose .product-details-list-item-label, .block-wine-detail .product-details-tasting .product-details-list-item-label, .block-wine-detail .product-details-pairing .product-details-list-item-label {
+  color: #bc6e44;
+}
 .block-wine-detail .product-details-eye p, .block-wine-detail .product-details-nose p, .block-wine-detail .product-details-tasting p, .block-wine-detail .product-details-pairing p {
+  font-style: normal;
+  color: #000000;
   margin-bottom: 0;
 }
 .block-wine-detail .product-details-icon {
@@ -2177,9 +2193,14 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   text-align: center;
 }
 .block-wine-navigation .wine-list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 4rem;
+  align-items: flex-start;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 4rem;
+}
+.block-wine-navigation .wine-list .wine-item {
+  width: calc(33% - 4rem);
 }
 .block-wine-navigation .wine-link {
   text-align: center;
@@ -2196,6 +2217,32 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1279px) {
+  .block-wine-detail .block-inside {
+    padding: 4rem;
+  }
+  .block-wine-detail .product-title,
+  .block-wine-detail .product-content {
+    max-width: 100%;
+  }
+  .block-wine-detail .product-gallery-block,
+  .block-wine-detail .product-text-block {
+    flex: 0 0 calc(50% - 2rem);
+  }
+  .block-wine-detail .product-gallery {
+    flex-direction: column;
+  }
+  .block-wine-detail .product-thumbs {
+    flex-direction: row;
+    order: 2;
+  }
+  .block-wine-detail .product-main-image {
+    order: 1;
+  }
+  .block-wine-navigation .block-inside {
+    padding: 4rem;
+  }
+}
 @media screen and (max-width: 1023px) {
   .block-wine-detail .block-inside {
     padding: 2rem;
@@ -2224,34 +2271,16 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   .block-wine-navigation .block-inside {
     padding: 2rem;
   }
-  .block-wine-navigation .wine-list {
-    grid-template-columns: repeat(2, 1fr);
+  .block-wine-navigation .wine-list .wine-item {
+    width: calc(50% - 4rem);
   }
 }
-@media screen and (max-width: 1279px) {
-  .block-wine-detail .block-inside {
-    padding: 4rem;
+@media screen and (max-width: 767px) {
+  .block-wine-navigation .wine-list {
+    gap: 0;
   }
-  .block-wine-detail .product-title,
-  .block-wine-detail .product-content {
-    max-width: 100%;
-  }
-  .block-wine-detail .product-gallery-block,
-  .block-wine-detail .product-text-block {
-    flex: 0 0 calc(50% - 2rem);
-  }
-  .block-wine-detail .product-gallery {
-    flex-direction: column;
-  }
-  .block-wine-detail .product-thumbs {
-    flex-direction: row;
-    order: 2;
-  }
-  .block-wine-detail .product-main-image {
-    order: 1;
-  }
-  .block-wine-navigation .block-inside {
-    padding: 4rem;
+  .block-wine-navigation .wine-list .wine-item {
+    width: 100%;
   }
 }
 
