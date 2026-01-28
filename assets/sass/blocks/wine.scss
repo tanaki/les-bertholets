@@ -179,14 +179,14 @@
                 margin-bottom: 1rem;
             }
             &-item-label {
+                color: $orange;
                 font-weight: 600;
                 font-variant: small-caps;
                 white-space: nowrap;
             }
             &-item-info {
-                @extend .font-italic;
                 align-items: center;
-                color: $orange;
+                color: $black;
                 display: flex;
                 gap: 2rem;
                 justify-content: flex-start;

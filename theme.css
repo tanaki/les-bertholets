@@ -101,7 +101,7 @@ table {
   font-family: "MinionVariableConcept-Roman", serif;
 }
 
-.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-wine-detail .product-details-list-item-info, .block-intro-text h6, .page-contact-us .block-post-content-container > p,
+.font-serif-italic, .block-region-text-item h4, .block-intro-subtitle, .wine-item-title .collection, .font-italic, .block-intro-text h6, .page-contact-us .block-post-content-container > p,
 .page-nous-contacter .block-post-content-container > p,
 .contact-popin-content .block-post-content-container > p, .extra-side--subtitle, .age-gate--subtitle, .age-gate--text, .tagline {
   font-family: "MinionVariableConcept-Italic", serif;
@@ -2163,13 +2163,14 @@ h4, .h4, .block-contact-popin .block-inside h4 {
   margin-bottom: 1rem;
 }
 .block-wine-detail .product-details-list-item-label {
+  color: #bc6e44;
   font-weight: 600;
   font-variant: small-caps;
   white-space: nowrap;
 }
 .block-wine-detail .product-details-list-item-info {
   align-items: center;
-  color: #bc6e44;
+  color: #000000;
   display: flex;
   gap: 2rem;
   justify-content: flex-start;
